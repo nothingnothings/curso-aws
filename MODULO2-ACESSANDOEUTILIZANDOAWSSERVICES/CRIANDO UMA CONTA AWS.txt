@@ -1,0 +1,369 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... PARA MERGULHARMOS NO AWS E COMEÇARMOS A O UTILIZAR,
+
+PRECISAMOS 
+
+CRIAR UMA AWS ACCOUNT..
+
+
+
+
+
+
+
+
+-> CREATE AN ACCOUNT..
+
+
+
+
+
+
+
+
+-> 'SIGN IN TO THE CONSOLE'..
+
+
+
+
+
+
+
+
+
+-> AÍ 
+
+
+CHEGAMOS 
+
+
+NA TELA DE LOGIN --> OU 'CREATE AN ACCOUNT'...
+
+
+
+
+
+
+
+
+
+
+
+
+--> DE QUALQUER FORMA,
+
+
+PODEMOS CHEGAR 
+
+NA PÁGINA DE 'CREATE AN ACCOUNT'...
+
+
+
+
+
+
+
+
+
+
+--> AÍ TEMOS 'ROOT USER' --> CLICAMOS 
+
+EM
+
+'CREATE AWS ACCOUNT'...
+
+
+
+
+
+
+
+
+
+E O CREATE DE UMA ACCOUNT DESSAS 
+É 
+
+STRAIGHTFORWARD --> PRECISAMOS DO NOSSO EMAIL,
+
+PERSONAL ACCESS,
+
+
+E AÍ 
+
+
+CREDIT CARD INFORMATION --> O AWS 
+
+
+
+É UMA COMPANHIA QUE QUER NOSSO DINHEIRO --> POR ISSO 
+
+
+A MAIOR PARTE DOS SERVIÇOS 
+DO 
+
+AWS 
+
+
+
+PEDEM POR DINHEIRO..
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR MOSTRARÁ COMO ECONOMIZAR DINHEIRO,
+
+NOS PLANOS do aws..
+
+
+
+
+
+
+HÁ ALGUNS PLANOS 'FREE',
+
+
+SIM,
+
+
+
+PODEMOS GET STARTED DE GRAÇA,
+
+
+
+MAS 
+
+
+
+
+QUANDO CRIAMOS UMA CONTA,
+
+ 
+ O 
+
+
+
+AWS EXIGE CREDIT CARD DATA,
+
+
+E 
+
+
+
+VOCê SERÁ COBRADO
+
+POR 
+
+1 PEQUENA 
+QUANTIA,
+
+
+PARA QUE 
+
+
+
+
+ELES CONSIGAM VERIFICAR SEU CREDIT CARD...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MESMO SEM CARTÃO DE CRÉDITO,
+
+
+
+PODEMOS PROSSEGUIR 
+
+
+
+COM O CURSO...
+
+
+
+
+
+
+
+
+
+--> MAS SE VOCÊ QUER 
+
+
+
+
+FIDDLE COM O AWS,
+
+PRECISA DE UM CARTÃO DE CRÉDITO...
+
+
+
+
+
+
+
+
+TERMINADA 
+
+
+
+A ACCOUNT CREATION,
+
+
+
+CHEGAREMOS NA PAGE DE 'SIGN UP FOR AWS'...
+
+
+
+
+
+
+
+
+'''SELECT A SUPPORT PLAN''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+BASIC SUPPORT --> É FREE --> RECOMENDADO PARA NOVOS USERS COMEÇANDO COM O AWS..
+
+
+
+
+24/7 access to AWS RESOURCES 
+
+
+
+
+
+--> ACESSO A 'PERSONAL HEALTH DASHBOARD' E TRUSTED ADVISOR...
+
+
+
+
+
+
+
+
+
+
+
+
+DEVELOPER SUPPORT --> É PAGO, 30 DOLAR POR MES,
+
+
+É RECOMENDADO PARA DESENVOLVEDORES 
+
+
+
+EXPERIMENTANDO COM O AWS..
+
+
+
+
+--> EMAIL ACCESS A AWS SUPPORT, DURANTE 
+
+
+HORAS DE SUPORTE (hotline do AWS)...
+
+
+
+
+
+
+
+
+
+12 HOUR RESPONSE TIMES...
+
+
+
+
+
+
+
+
+
+
+
+BUSINESS SUPORT --> 24/7 TECH SUPPORT,
+
+POR EMAIL, PHONE E CHAT..
+
+
+
+
+
+
+
+1 HOUR RESPONSE TIMES..
+
+
+
+
+
+-> É RECOMENDADO PARA PRODUCTION WORKLOADS NO AWS...
+
+
+
+
+
+
+
+
+--> PARA COMEÇAR,
+
+O FREE PLAN BASTA..
+
+
+
+
+
+
+
+MAS O PROFESSOR MOSTRARÁ OS SUPPORT PLANS,
+
+
+
+MAIS TARDE 
+
+
+NO CURSO.. (para mostrar o que fazer para 'GET HELP')..

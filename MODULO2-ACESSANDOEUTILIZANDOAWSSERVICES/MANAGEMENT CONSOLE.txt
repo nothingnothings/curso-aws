@@ -1,0 +1,257 @@
+
+
+
+
+
+
+
+
+
+
+NO MOMENTO EM QUE VOCÊ CRIAR 1 CONTA,
+
+
+
+VOCÊ CHEGARÁ 
+
+EM UMA 
+
+PAGE 
+
+COM ISTO:
+
+
+
+
+1) EC2 
+
+
+
+2) CLOUDSHELL 
+
+
+
+3) IAM 
+
+
+4) AWS HEALTH DASHBOARD 
+
+
+
+
+5) AWS COST EXPLORER..
+
+
+
+
+
+
+
+
+
+
+--> OK...
+ 
+
+
+
+ISSO É O CHAMADO 'AWS MANAGEMENT CONSOLE',
+
+ou 
+
+WEB MANAGEMENT CONSOLE.... --> É UM WEBSITE,
+
+MAS 
+
+É 
+
+UM 
+
+WEBSITE 
+
+
+QUE 
+
+VOCÊ 
+
+
+
+
+SÓ PODE 
+
+
+ACESSAR ASSIM QUE ESTIVER LOGGED IN...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSE SITE TE DEIXA MANAGE SUA AWS ACCOUNT --> E TE DEIXA 
+
+
+USAR ESSES SERVICES PROVIDENCIADAS PELO AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> BASTA CLICAR EM 'SERVICES'
+
+E AÍ
+
+VISITAR 1 SERVICE 
+
+PARA 
+
+
+VER COMO O UTILIZAR...
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ PODEMOS COMEÇAR A UTILIZAR ESSE SERVICE...
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE
+
+
+AS COISAS QUE 
+
+PODEMOS CLICAR EM CADA SERVICE DEPENDE DE CADA SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE CLICAMOS NO LOGO DO  'AWS',
+
+
+
+
+
+AÍ 
+
+PODEMOS TAMBÉM 'REACH'
+
+
+AS SERVICE PAGES,
+
+
+
+
+
+NA BOX DE 
+
+'RECENTLY VISITED'....
+
+
+
+
+
+
+
+
+
+
+
+
+----> certo.... É ASSIM QUE PODEMOS VER OS DIFERENTES SERVICES,
+
+E OS UTILIZAR...
+
+
+
+
+
+
+
+
+
+-> E AÍ VOCê PODE FAZER 
+
+PRATICAMENTE O QUE VOCÊ QUISER 
+
+COM ESSE MANAGEMENT CONSOLE,
+
+
+
+
+VOCÊ 
+PODE:
+
+1) COMEÇAR REMOTE SERVERS 
+
+
+
+2) COMEÇAR MACHINE LEARNING TASKS, DAQUI...
+
+
+
+
+
+
+
+3) pode alcançar 'FILE STORAGE SERVICES'
+
+E ATÉ MESMO UPLOADAR FILES,
+
+TUDO 
+
+POSSÍVEL
+
+DE DENTRO 
+
+DESSE CONSOLE..
+
+
+
+
+
+
+
+E VAMOS 
+
+EXPLORAR ESSE CONSOLE 
+
+E TODOS OS SERVICES DO AWS,
+
+AO LONGO DESTE CURSO...
