@@ -1,0 +1,563 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... AGORA SABEMOS A DIFERENÇA ENTRE SERVICES 
+
+'SELF-SERVICE' (usados por nossas próprias mãos) 
+
+
+E 'MANAGED'... (handlados pelo AWS, geralmente coisas mais complexas...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ok... mas QUE SERVIÇOS O AWS NOS OFERECE, EXATAMENTE?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> BEM, DEVEMOS ABRIR O AWS 
+
+
+E ENTÃO 
+
+CLICAR EM 'PRODUCTS '--> ENCONTRAREMOS UMA LONGA LISTA 
+
+DE 
+
+
+'SERVICE CATEGORIES'..
+
+
+
+
+
+
+
+
+
+
+
+-> EM CADA CATEGORY,
+
+
+
+ENCONTRAMOS 
+
+OS SERVICES ADEQUADOS A CADA 1 DELAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O AWS TEM 1 MONTE DE SERVICES OFERECIDOS A NÓS...
+
+
+
+
+
+
+
+
+
+--> TEM MTOS SERVICES,
+
+
+
+
+
+MAS _ O PROFESSOR ADMITE QUE 
+
+CERTOS 
+
+SERVICES 
+
+APARECEM 
+
+
+EM 
+
+VÁRIAS CATEGORIES AO MESMO TEMPO (
+
+
+    essa lista é mais intimidante do que o necessário...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+E TAMBÉM _ HÁ _ CERTAS COISAS LISTADAS COMO 'SERVICES', AQUI,
+
+
+QUE SÃO ACTUALLY APENAS FEATURES IMPORTANTES DE OUTROS 
+SERVICES...
+
+
+
+
+
+
+
+
+
+
+TAMBÉM HÁ CERTOS SERVICES QUE NÃO SÃO TÃO IMPORTANTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> AINDA ASSIM,
+
+
+O PROFESSOR 
+
+ACHA QUE 
+
+ESSA LISTA É 
+
+
+'CONFUSING' 
+
+
+E 'OVERWHELMING'...
+
+
+
+
+
+
+
+
+
+
+--> NÃO AJUDA MT...
+
+
+
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE 
+
+USAREMOS 
+
+
+A SEGUINTE 
+CLASSIFICAÇÃO 
+
+
+E CATEGORIZAÇÃO, PARA ESTE CURSO:
+
+
+
+
+
+
+
+
+
+
+1) COMPUTE 
+
+
+
+2) DATA STORAGE 
+
+
+
+3) DATABASE 
+
+
+
+4) NETWORKING E CONTENT DELIVERY 
+
+
+
+
+
+5) APPLICATION INTEGRATION 
+
+
+
+
+6) SECURITY 
+
+
+7) CLOUD MANAGEMENT 
+
+
+
+
+8) MIGRATION E EDGE COMPUTING 
+
+
+9) ANALYTICS E DATA INGESTION 
+
+
+
+
+10) MACHINE LEARNING E ARTIFICIAL INTELLIGENCE 
+
+
+
+
+11) DEV TOOLS 
+
+
+
+
+12) BUSINESS APPLICATIONS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E TODOS ESSES GROUPS CONTÉM MÚLTIPLOS SERVICES,
+
+
+
+
+
+
+MAS __ VAMOS EXPLORAR 
+
+
+TODOS ELES (
+    os  services 
+
+    importantes, usados no trabalho com o AWS,
+
+    e para MASTERIZAR O CERTIFICATION EXAM...
+)
+
+
+
+
+
+
+
+
+
+
+
+E TODOS OS GROUPS VISTOS AQUI SÃO 
+
+SOBRE 
+
+'SOLVE DIFFERENT PROBLEMS',
+
+
+
+
+
+
+
+'DOING DIFFERENT PARTS OF A WORKLOAD',
+
+
+ou então 
+
+
+
+
+
+'''RUNNING DIFFERENT WORKLOADS ALTOGETHER'...
+
+
+
+
+
+
+
+
+
+
+EX...
+
+
+
+
+
+
+
+
+1) COMPUTE ----> É ALL ABOUT 'SERVICES QUE TE DEIXAM RODAR APPS NA CLOUD'... --> É __ PROVAVELMENTE O GRUPO 
+
+MAIS 
+
+IMPORTANTE,
+
+
+O TIPO DE SERVICE MAIS IMPORTANTE...
+
+
+
+
+--> TEMOS MÚLTIPLOS SERVICES QUE ENCAIXAM NESSA CATEGORIA,
+
+
+MAS TODOS SÃO 'ALL ABOUT' 
+
+ 
+ O RUN DE 1 APP NA CLOUD,
+
+
+ O 
+
+
+ RUN DE 1 WEBSERVER,
+
+ O 
+
+
+
+ RUN DE 1 CRAWLER,
+
+ OU 
+
+ O 
+
+ RUN 
+
+ DE 
+
+1 TOOL QUE CONVERTE IMAGES EM PDF DOCUMENTS, ETC... (qualquer coisa que você quiser)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+2) DATA STORAGE -----> SERVE PARA __ 'STORING FILES' --> E TEMOS DIFERENTES SERVICES PARA ISSO...
+
+-> TAMBÉM VAMOS APRENDER A RAZÃO DE TERMOS DIFERENTES SERVICES PARA ISSO...
+
+
+
+
+
+
+
+
+
+
+3) DATABASE -> RUNNING DATABASES.....
+
+
+
+
+
+
+
+
+4) APPLICATION INTEGRATION --> É ALL ABOUT '''DEIXAR MÚLTIPLOS WORKLOADS SE COMUNICAREM''.'..
+
+
+
+
+
+
+
+
+
+5) CLOUD MANAGEMENT --> SÃO SOBRE O 'KEEP TRACK ___ DE SEU CLOUD ENVIRONMENT, DE ACORDO COM SEU CRESCIMENTO'...
+(
+
+    TAMBÉM TE DEIXA 
+
+    'KEEP TRACK' 
+
+    DO QUE 
+
+    SEUS EMPLOYEES ESTÃO FAZENDO, NESSE ENVIRONMENT...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+-> E VEREMOS TODAS ESSAS CATEGORIAS E SUAS DIFFERENCES,
+NESSE CURSO..
+
+
+
+
+
+
+
+
+
+
+
+MAS NÃO VEREMOS ALGUMAS COISINHAS:
+
+
+
+
+
+
+
+
+1) MACHINE LEARNING E ARTIFICIAL INTELLIGENCE
+
+
+
+--> APESAR DE O AWS TER VÁRIOS SERVICES PARA ISSO,
+
+
+HÁ 
+
+
+
+OS EXAMS PRÓPRIOS PARA ESSE TIPO DE 
+
+COISA... 
+
+
+
+
+
+
+
+
+
+2) BUSINESS APPLICATIONS -> COISAS COMO O 'CHIME' (slack alternative), ou o WORKMAIL (alternativa ao MICROSOFT EXCHANGE) --> 
+
+
+SÃO COISAS QUE 
+
+VOCê 
+
+NÃO USARÁ PARA 'BUILD PRODUCTS ON TOP',
+
+
+
+E TAMBÉM NÃO IMPORTAM PARA O EXAME..
+
+
+
+
+
+
+
+
+
+
+
+    MAS TEMOS UMA SECTION NO FINAL DO CURSO,
+
+    EM QUE 
+VEREMOS 
+1 POUCO SOBRE ESSAS ÁREAS (
+    para ver os services 
+    oferecidos pelo AWS..
+)
+
+
+
+
+
+
+
+
+TODOS OS OUTROS SERVICES SERÃO COBRIDOS POR ESTE CURSO...
+
+
+
+
