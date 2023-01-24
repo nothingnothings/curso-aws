@@ -1,0 +1,132 @@
+
+
+
+
+
+
+PARA O 'CLOUD PRACTICIONER EXAM',
+
+NÃO É NECESSÁRIO CONHECER O CLI 
+
+
+OU O AWS SDK...
+
+
+
+
+
+
+
+
+
+----->  MESMO ASSIM, SE VOCÊ QUER BRINCAR COM O CLI,
+
+INSTALE-O COM O LINK 
+
+
+https://aws.amazon.com/cli/
+
+
+
+
+
+
+
+
+
+-> ali temos diferentes instruções, para cada OS...
+
+
+
+
+
+
+
+
+This is done by running aws configure
+
+
+ in the command line and involves setting up "Access Keys"
+ 
+ 
+  which are required to log into the AWS account
+   (automatically, behind the scenes). You can create an "Access Key" 
+   and a "Secret Access Key"  from inside the Management Console by clicking on
+    your account name (top right corner) and choosing "Security Credentials".
+
+
+
+
+
+
+You find all the details here
+
+https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMO ALTERNATIVA AO USO DO 'AWS CLI' (que deve ser instalado LOCALMENTE),
+
+
+
+
+você também pode usar o service 'CLOUDSHELL',
+
+para
+
+
+INTERAGIR COM O AWS POR MEIO DE UMA COMMAND LINE....
+
+
+
+
+
+
+
+
+
+
+
+
+CLOUDSHELL --> É UM SERVICE INTEGRADO AO MANAGEMENT CONSOLE,
+
+E PODE 
+
+SER ACESSADO COM O 
+
+
+ÍCONE DE 'SHELL',
+
+LÁ NA PRATICAMENTE 
+
+DIREITA DE CIMA..
+
+
+
+
+
+
+
+
+-> CLOUDSHELL -->  gives you a shell environment
+ running on top of AWS infrastructure. This environment has the
+  CLI pre-installed and also automatically assumes your user permissions.
+   You can therefore run all aws CLI commands from inside CloudShell, without
+    installing the CLI on your local machine.
