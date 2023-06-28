@@ -1,0 +1,515 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... AGORA QUE TEMOS O BASICS SOBRE AS INSTANCES FORA DO CAMINHO,
+
+
+O PROFESSOR NOS MOSTRA 1 EXEMPLO MAIS CONCRETO..
+
+
+
+
+
+
+
+
+
+
+
+
+-> ELE USA 1 PACKAGE DE AMAZON LINUX,
+NORMAL..
+
+
+
+
+
+
+
+
+
+
+T2.MICRO INSTANCE TYPE...
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR VAI SEM KEY-PAIR,
+
+
+MAS ELE __ MUDA __ 
+
+
+
+AS NETWORK SETTINGS...
+
+
+
+
+
+
+
+
+
+
+
+--> ALÉM DE PERMITIR `SSH TRAFFIC``,
+
+
+
+
+
+o professor deixa ''allow http traffic from internet'',
+
+
+
+
+
+
+justamente pq ELE PLANEJA QUE ESSA INSTANCE SEJA 1 SERVER,
+
+ACESSÍVEL DO LADO DE FORA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS CONFIGS MT AVANÇADAS, COMO ''HIBERNATION''...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS 1 OPTION ÚTIL É ''USER DATA'' --> 
+
+
+
+NESSE LOCAL,
+
+
+PODEMOS ESCREVER 
+
+
+CÓDIGO QUE DEVE SER EXECUTADO 
+
+
+
+
+
+LOGO DEPOIS DA INSTANCE TER STARTADO...
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR ANEXOU 1 FILE COM 1 MONTE DE CÓDIGO, QUE PODEMOS SIMPLESMENTE  
+
+
+
+
+
+COPIAR E COLAR NESSE CAMPO...
+
+
+
+
+
+
+
+
+
+
+ESSE CÓDIGO 
+
+
+
+VAI SER EXECUTADO ASSIM QUE ESSA INSTANCE STARTAR...
+
+
+
+
+
+
+
+
+
+
+--> É UM CODE 
+
+QUE VAI INSTALAR 1 APACHE WEB SERVER,
+
+
+STARTAR ESSE WEB SERVER 
+
+E
+
+ENTÃO VAI CRIAR 1 BASIC WEBSITE FILE (com echo)
+
+
+QUE VAI 
+
+
+SER SERVIDO 
+
+POR ESSE WEB SERVER...
+
+
+
+
+
+
+
+
+
+--> O CÓDIGO É ISTO:
+
+
+
+
+
+
+#!/bin/bash
+
+## ec2-user is the default user name assigned by AWS
+cd /home/ec2-user/
+
+## Updating Packages
+sudo yum update -y
+
+## Install Apache web server
+sudo yum install -y httpd
+
+## Start Apache web server
+sudo systemctl start httpd
+
+## Create a very basic website which will be served
+echo "
+<!DOCTYPE html>
+<head>
+  <title>Getting Started with AWS!</title>
+  <style>
+    body {
+      margin: 3rem;
+      text-align: center;
+      background: linear-gradient(-10deg, #f8b013, #f08a05);
+      color: white;
+      font-family: sans-serif;
+      height: 100vh;
+    }
+
+    div {
+      border-radius: 12px;
+      background-color: #251f11;
+      padding: 2rem;
+      max-width: 50rem;
+      margin: auto;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      font-size: 4rem;
+    }
+
+    p {
+      font-size: 2rem;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Welcome To This Course</h1>
+    <p>Time to master AWS</p>
+  </div>
+</body>
+" > /var/www/html/index.html
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PORTANTO,
+
+
+
+USER DATA É UMA FEATURE ÚTIL PARA SIMPLIFICAR O START DE INSTANCES,
+
+
+PQ 
+
+VC 
+
+NÃO NECESSARIAMENTE 
+
+
+PRECISA SE CONECTAR A SUA INSTANCE 
+
+PARA 
+
+
+STARTAR SEU WORKLOAD... PQ VC PODE 
+
+
+COLAR SUAS INSTRUCTIONS NESSE FIELD...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE O AWS OFERECE AINDA MAIS AUTOMATION OPTIONS,
+
+PARA SETUPS AVANÇADOS,
+
+MAS ESSA É UMA BOA FEATURE..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE SE CONECTAR COM SSH, E AÍ INSTALAR ESSE SOFTWARE TODO MANUALMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... AGORA SE RODARMOS NOSSA INSTANCE NOVAMENTE,
+
+O 
+
+
+
+AWS VAI STARTÁ-LA E SERVIR AQUELA WEB PAGE...
+
+
+
+
+
+
+
+
+
+
+--> USAMOS AQUELE 'public IPV4 address' PARA ENVIAR 
+
+1 WEB REQUEST 
+
+
+AQUELA INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+--> EVENTUALMENTE, SEU SITE VAI SER CARREGADO...
+
+
+
+
+
+
+
+
+
+--> O SITE VAI SER CARREGADO,
+
+E ESSE SITE VAI SER HOSTEADO E SERVIDO POR ESSA 
+
+
+INSTANCE AWS QUE ESTAMOS USANDO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODE NÃO SER 1 SITE SUPER ÚTIL,
+
+MAS É BOM QUE O AWS NOS DÁ SERVICES QUE NOS DEIXAM 
+
+
+
+EXECUTAR TASKS COMO ESSA...
+
+
+
+
+
+
+
+
+
+
+
+--> VC PODE FAZER SHUT DOWN DAS INSTANCES,
+
+
+'terminate instance'...
+
+
+
+
+
+
+
+
+
+
+-> SE VC TIVER 1 SITE DE VERDADE, NÃO FAÇA TERMINATE DE SUAS INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1 PALAVRA SOBRE O IP ADDRESS E O DNS -> TEMOS A OPTIONS DE ADICIONAR NOSSO PRÓPRIO 
+
+DOMAIN... COM LOAD BALANCERS...
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM
+TEM INFLUENCIA NO IP ADDRESS, 
+
+PQ, POR DEFAULT,
+
+ELE SEMPRE MUDA 
+
+
+QUANDO VC 
+
+RESTARTA/RECRIA 1 INSTANCE...
+
+
+
+
+
+
+
+
+
+
+MAS VEREMOS ISSO MAIS TARDE..
+
+
+
+
+
+

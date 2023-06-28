@@ -1,0 +1,872 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> ok... VC TALVEZ SE LEMBRE DO SLIDE DE TODOS OS SERVICES DO AWS...
+
+
+
+
+
+
+
+
+
+
+O AWS TEM VARIOS SERVICES,
+
+
+
+
+
+
+
+
+E VARIAS CATEGORIAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+VEREMOS A CATEGORIA KEY 
+
+
+DE 
+
+`COMPUTE SERVICES'....
+
+
+
+
+
+
+
+
+
+
+
+--> ESSE SERVICE É ESSENCIAL, CAI EM TODAS AS PROVAS,
+
+
+E É IMPORTANTE PARA TODOS OS CUSTOMERS AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+EC2 --> ELASTIC COMPUTE CLOUD --> EC2...
+
+
+
+
+
+
+
+
+
+
+
+
+EC2 --> JÁ OUVIMOS FALAR SOBRE ESSE SERVICE...
+
+
+
+
+
+
+
+
+
+
+É 1 DOS SERVICES MAIS POPULARES E IMPORTANTES...
+
+
+
+
+
+
+
+
+
+
+
+
+ESSE SERVICE, NO FINAL DAS CONTAS,
+
+É IMPORTANTE PQ TE DEIXA, COMO 
+
+
+CUSTOMER AWS,
+
+
+RENTAR 1 REMOTE SERVER/COMPUTER...
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO TE DEIXA ALUGAR 1 COMPUTADOR USADO PELA AWS 
+
+EM 1 DOS DATA CENTERS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS A COISA LEGAL SOBRE ESSES RENTED SERVERS É QUE PODEMOS 
+
+OS CONFIGURAR EXATAMENTE COMO DESEJAMOS...
+
+
+
+
+
+
+
+
+
+--> VC DECIDE QUAL OPERATING SYSTEM 
+
+
+INSTALAR NELES,
+
+
+
+
+
+VOCË PODE INSTALAR QUALQUER OUTRO SOFTWARE, ETC...
+
+
+
+
+
+
+
+
+-_> VC PODE OS CONFIGURAR COMO SE FOSSEM COMPUTADORES 
+
+
+NA SUA SALA...
+
+
+
+
+
+
+
+
+--> ISSO DEIXA O EC2 SUPER VERSÁTIL E POWERFUL...
+
+
+
+
+
+
+
+
+
+
+
+--> PQ VC PODE ALUGAR 1 COMPUTER, QUE VC PODE USAR COMO SE VC 
+
+FOSSE DONO,
+
+
+
+
+
+
+E AÍ PODE RODAR QUALQEUR TIPO DE WORKLOAD NA CLOUD,
+
+
+EM CIMA DESSES EC2 RENTED COMPUTERS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COMO ESSE SERVICE É SUPER IMPORTANTE,
+
+
+
+
+
+
+DAREMOS UMA OLHADA MAIS APROFUNDADA NELE, NESSA SECTION..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS É IMPORTANTE MENCIONAR QUE EXISTEM OUTROS EC2 SERVICES,
+
+
+
+
+AINDA QUE O EC2 SEJA SUPER IMPORTANT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> HÁ ALGUNS OUTROS SERVICES, 
+
+
+
+ADEQUADOS A OUTRAS TAREFAS....
+
+
+
+
+
+
+
+
+
+
+
+
+ECS/EKS --> ELASTIC CONTAINER SERVICE 
+
+
+EKS --> ELASTIC KUBERNETES SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+ESSES SERVICES SÃO USADOS PARA RODAR CONTAINERIZED WORKLOADS NA AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ISSO TRAZ A PERGUNTA: ''O QUE SÃO CONTAINERS``...
+
+
+
+
+
+
+
+
+
+
+
+CONTAINERS --> SÃO PACKAGES DE CODE + CODE DEPENDENCIES (contem 
+
+o environment para seu code ser executado, como 
+
+o 
+
+
+operating system e o software necessário a ele)...
+
+
+
+
+
+
+
+
+
+
+--> containers, portanto,
+
+permitem a developers 
+
+
+distribuir e deploy reproducible code environments,
+
+pq 
+
+
+
+tudo que 
+
+é necessário para executar o código faz parte da PACKAGE..
+
+
+
+
+
+
+
+
+
+ e essas packages podem ser construídas por software como o DOCKER,
+
+
+
+ e tudo é mt útil..
+
+
+
+
+
+
+
+
+
+
+
+CONTAINERS --> SÃO PACKAGES OF CODE E O ENVIRONMENT 
+
+
+NECESSÁRIO A ESSE CODE...
+
+
+
+
+
+
+
+
+--> BEM, CONTAINERS SÃO SUPER POPULARES PQ,
+
+COMO TUDO 
+
+NECESSARIO JÁ FAZ PARTE DA PACKAGE,
+
+
+
+NÃO PRECISAMOS 
+
+
+
+
+
+
+DE UM UNDERLYING SERVER PARA RODAR SEU CÓDIGO,
+
+ISSO 
+
+PQ 
+
+O 
+
+REQUIRED ENVIRONMENT JÁ FAZ PARTE 
+
+
+
+
+DA PACKAGE...
+
+
+
+
+
+
+
+
+
+
+---> QUER DIZER QUE NENHUM OUTRO SETUP,
+
+
+ALÉM DA PACKAGE CREATION,
+
+
+
+É NECESSÁRIO..
+
+
+
+
+
+
+
+
+
+
+
+
+E ESSES CONTAINERS/PACKAGES PODEM ENTÃO SER DEPLOYADOS 
+
+
+EM TODOS 
+
+OS ENVIRONMENTS QUE SUPORTAM CONTAINERS...
+
+
+
+
+
+
+
+
+
+
+
+--> OS SUPPORTING ENVIRONMENTS 
+
+
+AINDA SÃO COMPUTADORES,
+
+
+
+
+COMPUTADORES COM O SOFTWARE (DOCKER) NECESSÁRIO PARA RODAR 
+
+OS CONTAINERS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O ECS E EKS TE DÃO ENVIRONMENTS PRÉ-CONFIGURADOS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> E É POR ISSO QUE OS SERVICES ECS E EKS EXISTEM..
+
+
+
+
+
+
+
+
+PQ SE VC TIVER 1 CONTAINERIZED APPROACH,
+
+
+
+VAI SER MAIS FÁCIL USAR O ECS/EKS 
+
+
+
+DO QUE O EC2 --> 
+
+
+
+
+
+
+
+
+
+PQ ELES SÃO MANAGED SERVICES (COM VAST AMOUNT OF CONFIGURATION OPTIONS)...
+
+
+
+
+
+
+
+--> ESSES SAO SERVICES PERFEITOS PARA RODAR QUALQUER TIPO 
+
+DE CONTAINERIZED WORKFLOW...
+
+
+
+
+
+
+
+
+
+EKS --> É UM SERVICE QUE TE DEIXA RODAR CONTAINERS QUE 
+
+SÃO CONECTADOS COM A AJUDA 
+
+DO FRAMEWORK E TECNOLOGIA KUBERNETES...
+
+
+
+
+
+
+
+
+
+
+ALÉM DE EC2 E ECS/EKS,
+
+
+
+
+
+
+
+
+
+
+TEMOS O AWS LAMBDA (SERVERLESS CODE EXECUTION)...
+
+
+
+
+
+
+
+
+
+
+
+É O SERVERLESS SERVICE MAIS POPULAR 
+
+
+
+DA AMAZON...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+````SERVERLESS```` --> É UM TERMO MEIO ESTRANHO,
+
+
+
+
+DEVEMOS O ESTUDAR...
+
+
+
+
+
+
+
+
+
+
+--> A IDEIA É SIMPLESMENTE QUE VC TEM 1 WORKLOAD, QUE TIPICAMNETE 
+
+RODARIA EM 1 COMPUTADOR,
+
+
+EM 1 SERVER,
+
+
+
+
+
+MAS COM A AJUDA DOS SERVERLESS SERVICES,
+
+VC PODE RODAR SEU CÓDIGO SEM 
+
+TER ESSE SETUP WORK (
+
+
+    SEM PRECISAR CONFIGURAR OU CONTROLAR QUALQUER SERVER...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE O AWS TOMA CONTA DE TUDO ISSO, 
+
+
+E AÍ VC PODE PERFORMAR SUAS TASKS EM RESPOSTA A CERTOS EVENTS,
+
+TUDO COM A AJUDA DESSES SERVERLESS SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> E O AWS LAMBDA É UM DESSES SERVICES,
+
+
+ELE TE DEIXA RODAR COMPUTE TASKS 
+
+
+
+
+DE FORMA 'SERVERLESS'
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A IDEIA É QUE VC PODE FOCAR 
+
+
+
+NO SEU CÓDIGO, EM VEZ DO ENVIRONMENT QUE RODA SEU CÓDIGO...
+
+
+
+
+
+
+
+
+VC:
+
+
+
+
+
+1) FAZ DEPLOY DO SEU CÓDIGO NO LAMBDA 
+
+
+2) VC DIZ AO AWS QUANDO SEU CÓDIGO DEVE SER EXECUTADO (a partir de cada tipo de event)...
+
+
+
+
+
+
+
+3) depois disso, o aws toma conta do resto...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> vc só precisa uploadar seu código e definir a condição para a execução 
+desse código...
+
+
+
+
+
+
+
+
+--> FREQUENTEMENTE MÚLTIPLAS LAMBDA FUNCTIONS/SERVICES 
+
+SÃO COMBINADAS PARA FORMAR SCENARIOS MAIS COMPLEXOS...
+
+
+
+
+
+
+--> MAS DEIXAR O AWS MANAGE A UNDERLYING SERVER 
+
+CONFIGURATION E SETUP É UMA GRANDE VANTAGEM, QUANDO USAMOS 
+SERVERLESS SERVICES...
+
+
+
+
+
+
+
+
+
+
+--> VEREMOS LAMBDA E SERVERLESS MAIS TARDE NO 
+
+CURSO... 
+
+
+
+
+
+
+--> MAS O LAMBDA TAMBÉM É UM COMPUTE SERVICE,
+
+É IMPORTANTE...
+
+
+
+
+
+
+
+
+
+
+LAMBDA:
+
+
+
+
+
+
+RODE QUALQUER CÓDIGO SEM PROVISIONING OU INFRASTRUCTURE 
+
+
+
+
+
+
+NENHUM ACESSO A UNDERLYING MACHINE OU OS 
+
+
+
+
+
+
+
+
+
+RODE QUALQUER CÓDIGO A PARTIR 
+
+DE EVENTOS PRÉ-DEFINIDOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+DAREMOS 1 OLHADA MAIS APROFUNDADA NOS OUTROS SERVICES MAIS TARDE...
+
+
+
+
+
+
+
+
+
+
+MAS AGORA VEREMOS O EC2...
+
+
+
+
+
+
+
+
+MESMO QUE OS OUTROS 3 SERVICES SEJAM TAMBÉM IMPORTANTES...
