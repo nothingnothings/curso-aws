@@ -1,0 +1,558 @@
+
+
+
+
+
+
+
+
+
+PUBLIC VS PRIVATE SUBNETS 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PUBLIC SUBNET:
+
+
+
+1) SEMPRE É ASSOCIADA A 1 ROUTE TABLE __ QUE __ TEM 1 INTERNET GATEWAY ROUTE 
+
+
+
+
+2) INSTANCES PODEM SE COMUNICAR ENTRE SI ___ __ E COM A _ __ INTERNET....
+
+
+
+
+
+
+
+PRIVATE SUBNET:
+
+
+
+
+
+
+1) SEMPRE É ASSOCIADA COM 1 ROUTE TABLE QUE __ NÃO TEM INTERNET 
+
+GATEWAY ROUTE ALGUM...
+
+
+
+
+
+
+2) INSTANCES PODEM COMUNICAR-SE APENAS ENTRE SI...
+
+
+
+
+
+2.5) SE VC AINDA QUISER OUTGOING INTERNET ACCESS,
+
+
+1 NAT GATEWAY PODE SER USADO....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+certo... até aí, tudo bem...
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS PUBLIC E PRIVATE SUBNETS DENTRO DE VPCS...
+
+
+
+
+
+
+
+
+
+
+
+É DENTRO DE VPCS que rodamos nossas instances...
+
+
+
+
+
+
+
+e essas instances são agrupadas 
+
+
+
+EM PUBLIC E PRIVATE SUBNETS,
+
+
+
+dentro de cada vpc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> VC PRECISA RODAR EC2 INSTANCES DENTRO DE VPCS..
+
+
+
+
+
+
+
+
+
+-> O Q VC PODE FAZER É OPTAR ENTRE PUBLIC E PRIVATE SUBNETS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- E VC DECIDE TUDO ISSO,
+O VPC 
+
+QUE VC VAI USAR,
+
+A SUBNET QUE VC 
+
+VAI USAR DENTRO DESSE VPC,
+
+
+
+TUDO ISSO,
+
+VC 
+
+
+
+DEFINE 
+
+LÁ QUANDO VC 
+
+
+FAZ LAUNCH DE SUA INSTANCE EC2...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, CLICAMOS EM ''EDIT'',
+
+
+
+
+PARA TERMOS SETTINGS MAIS AVANÇADAS --> PODEMOS, COM ISSO,
+
+
+ESCOLHER QUAL 
+
+
+VPC E QUAL SUBNET 
+
+
+1 DETERMINADA INSTANCE 
+
+
+
+
+
+DEVERÁ USAR/SER SETTADA..
+
+
+
+
+
+
+
+
+
+--> VC SEMPRE TEM 1 DEFAULT VPC POR REGION... MAS VC PODE TER MAIS 
+
+VPCS,
+
+SE VC OS CRIAR...
+
+
+
+
+
+
+
+AÍ, PARA O VPC SELECIONADO, 
+
+
+VC 
+
+
+PODE ESCOLHER ALGUMA DAS SUBNETS 
+
+
+QUE DEVERÃO SEGURAR 
+
+ESSA INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+certo... tudo isso faz sentido...
+
+
+
+
+
+
+
+
+PUBLIC VS PRIVATE SUBNET -->  ISSO DETERMINA
+
+
+
+SE SUA INSTANCE, NESSA SUBNET,
+
+CONSEGUE SER ALCANÇADA DO LADO DE FORA,
+
+
+LÁ DA INTERNET...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE SUA INSTANCE ESTÁ EM 1 PRIVATE SUBNET,
+
+
+
+
+ELA NÃO VAI CONSEGUIR RECEBER REQUESTS DA INTERNET...
+
+
+
+
+
+
+
+
+
+
+MAS SE VC TIVER MÚLTIPLOS EC2 INSTANCES,
+
+
+TODOS ELES EM 1 MESMO VPC,
+
+
+ELES __ PODERÃO COMUNICAR-SE ENTRE SI,
+
+
+
+MESMO ESTANDO 
+
+
+
+EM DIFERENTES SUBNETS (
+
+
+    esse é o comportamento default...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+--> POR DEFAULT,
+
+
+MÚLTIPLAS INSTANCES,
+
+
+EM DIFERENTES SUBNETS,
+
+EM 1 MESMO VPC,
+
+PODEM 
+
+ENVIAR REQUESTS ENTRE SI....
+
+
+
+
+
+
+
+OK... AÍ, NESSES CASOS,
+
+
+É O SECURITY GROUP, NOVAMENTE,
+
+
+
+
+QUE DETERMINA QUAIS TIPOS DE REQUESTS PODEM SER ENVIADOS,
+
+
+
+POR INSTANCES DE 1 VPC... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE VC NAO ACEITA HTTP REQUESTS EM 1 VPC, 
+
+
+MÚLTIPLAS INSTANCES, EM 1 MESMO VPC, NÃO VÃO PODER 
+
+ENVIAR HTTP REQUESTS  ENTRE SI (apesar de, tecnicamente, poderem)....
+
+
+
+
+
+
+
+
+
+--> OK.... ISSO QUER DIZER QUE 
+
+O SECURITY GROUP (esse firewall) É IMPORTANTE,
+
+PQ 
+
+SE 
+
+ELE ESTIVER SETTADO,
+
+
+VC 
+
+NÃO VAI PODER ENVIAR HTTP REQUESTS ENTRE INSTANCES... (é o controle interno, entre suas instances,
+basicamente)....
+
+
+
+
+
+
+
+
+
+
+
+--> OK....
+
+
+
+
+
+
+-_> MAS QUANDO LANÇAMOS 1 INSTANCE,
+
+
+
+PODEMOS ESCOLHER MAIS DO QUE O VPC/SUBNET A SER USADO COM ESSA INSTANCE...
+
+
+
+
+
+
+
+
+
+--> PODEMOS TAMBÉM ESCOLHER SE QUEREMOS 
+
+QUE O AWS ASSIGNE 1 '''PUBLIC IP ADDRESS'' ÀQUELA INSTANCE....
+
+
+
+
+
+
+
+
+
+--> ESSE PUBLIC IP ADDRESS  PODE SER USADO PARA ENVIAR 
+
+REQUESTS DO __ LADO _ DE FORA __ 
+DESSA INSTANCE... -> É CLARO QUE 
+
+
+
+ISSO SÓ FAZ SENTIDO SE VC 
+LANÇA 1 INSTANCE EM 1 __ PUBLIC SUBNET... PQ EM 1 PRIVATE SUBNET,
+
+
+
+OUTSIDE REQUESTS, VINDOS DA INTERNET,
+
+NÃO SÃO POSSÍVEIS...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE VC TIVER 1 INSTANCE EM 1 PUBLIC SUBNET,
+
+E SE VC QUER ASSEGURAR QUE 
+
+ESSA INSTANCE RECEBA 
+
+REQUESTS DA INTERNET,
+
+VC 
+
+TIPICAMENTE 
+
+VAI QUERER DAR A ESSA INSTANCE 
+
+1 
+PUBLIC IDENTIFIER,
+
+QUE 
+
+
+SERÁ 1 DESSES PUBLIC IPS,
+
+QUE VC 
+
+
+
+ENABLARÁ (auto-assign public ip),
+
+PARA QUE 
+
+
+
+SEJA ASSIGNADO 1 IP A ESSA INSTANCE QUE SERÁ LAUNCHED...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> E ISSO NOS LEVA AO PRÓXIMO TÓPICO IMPORTANTE:
+
+
+
+
+""""IP ADDRESSES E CIDR BLOCKS/RANGES""""
+
+
+
+
+Thus far in the course, we only explored EC2 instances for running workloads.
+
+EC2 instances indeed are one the main "things" placed 
+in VPCs (and subnets) but, as you will also see throughout this course,
+ it's not the only service the leverages VPCs. There also are 
+ other services that provide you with "things" that can be placed in VPCs.
+
+
+
+(como volumes)...
