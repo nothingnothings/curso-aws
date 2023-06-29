@@ -1,0 +1,1289 @@
+
+
+
+
+
+
+
+
+
+
+OK.... QUANDO O ASSUNTO É O TRABALHO COM O AWS,
+
+EC2 E VPCS,
+
+
+
+
+
+
+
+VC EVENTUALMENTE ENCONTRARÁ IP ADDRESSES ESTRANHOS COMO ESTE:
+
+
+
+
+
+
+
+
+
+
+TCP, 22, 0.0.0.0/0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AQUI O PROFESSOR NÃO QUER DIZER QUE ISSO É ESTRANHO PQ TEMOS APENAS 0s,
+
+e sim 
+
+
+PQ TEMOS 
+
+AQUELA PARTE DE 
+
+"/0" 
+
+
+
+NO FINAL...
+
+
+
+
+
+
+
+
+
+
+
+--> E VC VE ISSO 
+
+NÃO SÓ QUANDO 
+
+
+VC LANCA INSTANCES,
+
+
+
+
+
+
+MAS EM OUTROS LUGARES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> POR EXEMPLO, QUANDO O PROFESSOR COLOCA NA TELA DE VPCS,
+
+
+
+ELE 
+
+
+
+
+PERCEBE QUE 
+
+CADA 
+
+1 
+
+DOS NOSSOS VPCS,
+
+
+NA TABELA,
+
+
+ESTÁ COM UMA COLUNA 
+
+DE 
+
+
+
+""IPv4 CIDR"",
+
+
+
+
+
+
+
+e aí 
+
+com valores  como 
+
+
+
+172.31.0.0/16 
+
+10.0.0.0/16
+
+
+
+
+
+
+
+
+
+
+
+
+------> A PARTE INICIAL PARECE 1 IP ADDRESS COMUM,
+
+
+
+
+MAS DEPOIS 
+
+
+TEMOS /number ....
+
+
+
+
+
+
+
+
+
+
+
+-> MAS O QUE É ISSO....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> BEM, NO FINAL DAS CONTAS,
+
+
+ESSE 
+
+IP ADDRESS ESTRANHO AÍ NÃO É UM IP ADDRESS,
+
+E SIM 
+
+
+É UMA 
+
+
+
+
+__rANGE___ DE IP ADDRESSES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ENTENDER ISSO,
+
+É IMPORTANTE 
+
+PRIMEIRAMENTE 
+
+
+
+___ENTENDER__ QUE 1 IP ADDRESSES
+
+
+
+SÃO SEMPRE """32 BIT NUMBERS""
+
+
+
+
+
+
+
+
+
+
+
+
+
+CIDR --> ABREVIACAO DE "Classless Inter-Domain Routing" --> É UMA NOTATION PARA RANGES DE IP ADDRESSES...
+
+
+
+
+
+
+
+
+ISSO QUER DIZER QUE SE TEMOS APENAS 1 IP ADDRESSES,
+
+
+
+
+TEMOS 1 NUMBER DE 32 BITS,
+
+
+
+
+TIPICAMENTE 
+
+
+ORGANIZADO EM 4 GRUPOS DE 8 BITS...
+
+
+
+
+
+TIPO ASSIM:
+
+
+
+
+172 . 31 . 0 . 0 
+
+
+
+127 . 0 . 0 . 1
+
+
+
+
+
+
+
+
+
+o valor máximo é 
+
+255.255.255.255
+
+
+
+
+
+
+(pq o valor máximo capaz de ser representado por 8 bits é 256... 2 na 8...)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+QUER DIZER QUE CADA GRUPO PODE SEGURAR 1 NÚMERO DE NO MÁXIMO 8 BITS (255)...
+
+
+
+
+
+
+
+
+
+
+--> CADA SECTION DESSE IP ADDRESS 
+
+PODE 
+
+SER 
+
+
+1 NÚMERO ENTRE 0 E 255...
+
+
+
+
+
+
+
+-> ESSAS 4 SECTIONS, JUNTAS,
+
+FORMAM 
+
+
+
+O OVERALL 32 BIT IP ADDRESS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> E ESSA NOTATION, COM OS PONTOS (. . . .)
+
+
+
+É APENAS __ 1 COISA USADA PARA __ READABILITY (
+
+    para ser lido por humanos
+)
+
+
+
+
+
+
+
+
+
+--> A COISA IMPORTANTE SOBRE IP ADDRESSES É QUE __ ELES SÃO UNIQUE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO QUER DIZER QUE 
+SE VC TEM 1 IP ADDRESS  ASSIGNADO A 1 APARELHO,
+
+E ESSE 
+
+
+IP ADDRESS ESTÁ EXPOSTO À INTERNET,
+
+
+ESSE IP TEM DE SER UNIQUE.... -------> ISSO PQ ELE É O UNIQUE 
+
+IDENTIFIER 
+
+DE 
+
+1 
+CERTO 
+
+DEVICE CONECTADO NA INTERNET...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+___ENTRETANTO,__ FREQUENTEMENTE,
+
+
+
+QUANDO VC TRABALHA COM NETWORKS,
+
+
+VC TEM RANGES DE IP ADDRESSES --> POR EXEMPLO,
+
+
+QUANDO 
+
+VC 
+
+CRIA 
+
+
+1 VPC _ COM UM MONTE DE EC2 INSTANCES 
+
+NO INTERIOR,
+
+
+
+VC 
+
+TIPICAMENTE 
+
+
+QUER QUE 
+
+TODAS 
+
+ESSAS INSTANCES 
+
+
+TENHAM 
+
+
+
+
+
+1 __ IP ADDRESS __ QUE __ 
+
+
+FIQUE __ DENTRO __ 
+
+DE 
+
+1 
+CERTA 
+
+
+"""RANGE""" DE ADDRESSES...
+
+
+
+
+
+
+
+
+
+
+
+-------> E, BEM IMPORTANTE,
+
+
+AQUI O PROFESSOR ESTÁ FALANDO DE __INTERNAL IP ADDRESSES___ ... ---> OU SEJA,
+
+
+ESTÁ FALANDO DE IP ADDRESSES QUE SÓ PODEM SER USADOS 
+
+
+
+
+PARA A COMMUNICATION ENTRE __ AS INSTANCES __ NO LADO __ DE DENTRO _ DO VPC...
+
+
+
+
+
+
+
+
+
+
+
+---> TEMOS A DIFERENCIACAO ENTRE 
+
+
+INTERNAL ___ E EXTERNAL (public) IP ADDRESSES,
+
+
+
+
+MAS __ DEVIDO À NATUREZA 
+
+DOS IP 
+
+ADDRESSES,
+
+
+
+À NATUREZA 
+
+DE 
+
+
+ELES SEREM 32 BIT NUMBERS,
+
+
+
+
+
+
+
+NÓS APENAS TEMOS 1 NÚMERO __ LIMITADO __ DE AVAILABLE 
+
+IP ADDRESSES....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NÃO TEMOS IP ADDRESSES SUFICIENTES PARA 
+
+
+TODOS OS DEVICES JÁ PRODUZIDOS,
+
+
+
+MAS FELIZMENTE NEM TODOS OS DEVICES 
+
+
+PRECISAM 
+
+ESTAR CONECTADOS 
+
+
+
+
+NA INTERNET... -> FREQUENTEMENTE VC PODE COLOCAR OS DEVICES 
+
+""ATRÁS DE OUTRO DEVICE"",
+
+
+
+
+DEVICE QUE ENTÃO VAI EXPOR 1 SINGLE IP ADDRESS,
+
+E QUE 
+
+ENTÃO FORWARDA OS INCOMING REQUESTS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ISSO TUDO É TEORIA, E NÃO É TAO IMPORTANTE AQUI...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O QUE INTERESSA, AQUI, É QUE 
+
+VC FREQUENTEMENTE
+
+VAI QUERER 
+
+CRIAR RANGES DE IP ADDRESSES 
+
+DENTRO 
+
+DE 
+1 VPC... ----> por que fazer isso?
+
+
+
+
+
+
+
+
+
+
+pq queremos que na internal communication, entre ec2 instances,
+
+
+
+
+em 1 mesmo vpc (como o send de data de 1 web server para 1 database, em 1 mesmo vpc ),
+
+
+
+
+VC CONSIGA USAR O __ INTERNAL IP ADDRESS...
+
+
+
+
+
+
+
+
+
+
+------> E É ESSA RANGE QUE É DEFINIDA 
+
+
+
+COM ESSE TIPO DE NOTATION 
+
+
+
+
+""""""
+172.31.0.0/16 
+""""""",
+
+
+
+
+
+
+QUANDO CRIAMOS 1 VPC...
+
+
+
+
+
+E ESSA RANGE É CRIADA POR MEIO DESSA NOTATION ESPECIAL,
+
+QUE É CHAMADA DE 
+
+
+
+""CIDR NOTATION"""--> 
+
+
+
+
+
+/16...
+
+
+
+
+
+
+
+
+
+
+--> ESSA PARTE COM SLASH  __dEFINE __ QUANTOS 
+
+BITS DESSE IP ADDRESS DEVEM SER """FIXED"""
+
+
+
+
+
+
+
+O QUE, POR OUTRO LADO,
+
+
+QUER DIZER QUE __ TODOS OS BITS QUE NÃO SÃO ''FIXED''
+
+
+SÃO FLEXÍVEIS,
+
+
+O QUE QUER DIZER QUE PODEM MUDAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO QUER DIZER QUE 
+
+
+
+
+
+172.31.0.0/16 
+
+
+
+
+DEFINE UMA _ _RANGE...
+
+
+
+
+
+
+
+
+
+
+16 bits são __FIXED, SIM...
+
+
+
+
+
+
+isso quer dizer que 
+
+
+
+
+
+
+
+172 E 31 SÃO ___ FIXED..
+
+
+
+
+
+
+ISSO QUER DIZER QUE 
+
+
+
+
+
+
+
+TEMOS, DENTRO DESSA RANGE,
+
+COISAS COMO 
+
+
+
+
+
+172.31.0.0 
+
+
+
+
+e 
+
+
+172.31.255.255...
+
+
+
+
+
+
+
+
+
+
+
+--> isso pq o fix de 16 bits,
+
+
+no final das contas,
+
+
+
+
+QUER DIZER QUE OS 2 GRUPOS 
+
+DE NÚMEROS,
+
+
+
+
+
+
+172 E 31,
+
+
+
+NÃO PODEM SER CHANGED...
+
+
+
+
+
+
+
+
+MAS O RESTO PODE SER CHANGED...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COMO APENAS PODEMOS TER OS 2 ÚLTIMOS GROUPS COMO ""VARIABLE",
+
+
+
+ISSO 
+
+
+
+
+NOS DÁ APROXIMADAMENTE 
+
+
+65.536 
+
+AVAILABLE ADDRESSES (
+
+    que podem ser assignados,
+
+    ips que podem ser assignados...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK, MAS O QUE ISSO SIGNIFICA?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SIGNIFICA QUE QUANDO ASSIGNAMOS 1 RANGE DESSAS 
+
+EM 
+
+1 
+VPC,
+
+
+TODAS 
+
+AS INSTANCES LAUNCHED NESSE VPC 
+
+
+
+__RECEBERÃO __ """"INTERNAL, PRIVATE, IP ADDRESSES""""",
+
+
+
+extraídos dessa range...
+
+
+
+
+
+
+
+
+
+
+ou seja,
+
+coisas como 
+
+
+
+172.31.120.100
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... E O PROFESSOR DESTACA 
+
+que 
+
+
+"""172.31.xxx.xxx" É UM FORMATO DE 
+
+IP 
+
+
+
+RESERVADO __ PARA _ PRIVATE __ NETWORKS...
+
+
+
+
+
+
+
+
+
+
+
+A MAIOR PARTE DOS IP ADDRESSES QUE COMEÇAM COM ESSES NÚMEROS 
+
+
+__ NÃO SÃO USADAS POR OUTROS DEVICES CONECTADOS A INTERNET (
+
+    quer dizer que 
+
+
+    ESSE TIPO DE FORMATO GERALEMNTE É USADO INTERNAMENTE EM NETWORKS, 
+
+
+    E NÃO É ATINGIDO POR OUTSIDE REQUESTS....
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK...
+
+
+
+
+
+
+
+
+SE TEMOS ISTO:"
+
+
+
+
+
+
+
+172.31.0.0/16 --> OS CAMPOS 172 e 31 serão fixed... (65.536 available addresses)..
+
+
+
+
+
+
+172.31.0.0/24 --> OS CAMPOS 172, 31 e 0 (o primeiro zero) SERÃO FIXED... 
+
+
+
+
+--> no caso de /24, 
+
+
+FICAMOS COM APENAS 
+
+
+256 available addresses (0-255)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> POR FIM, 
+
+TAMBÉM TEMOS ESTE IDENTIFIER:
+
+
+
+
+
+
+
+
+
+
+0.0.0.0/0 ---------> ISSO SIGNIFICA """"NENHUM GROUP DE NUMBER É FIXED, MAS __ TODOS
+                        OS AVAILABLE IP ADDRESSES, NA SUA NETWORK, SERÃO AFETADOS"""...
+
+
+
+
+
+
+
+pq "/0"
+
+
+
+
+
+SIGNIFICA QUE NENHUMA PARTE É FIXED..
+
+
+
+
+
+
+
+
+
+
+
+
+
+0.0.0.0/0 -------> TIPICAMENTE USAMOS ISSO 
+
+QUANDO QUEREMOS DIZER 
+
+""ESSA COISA DEVERÁ SER ACESSÍVEL PELO MUNDO TODO"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.. QUER DIZER QUE 
+
+O QUÃO MAIOR 
+FOR O NÚMERO DEPOIS DO ``/```,
+
+
+
+
+
+
+MENOR SERÁ A QUANTIDADE DE IP ADDRESSES 
+
+
+
+QUE FICAM DENTRO DA RANGE....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- NÃO PRECISAMOS CALCULAR ESSAS RANGES,
+
+NÃO PRECISAMOS CALCULAR ESSAS RANGES POR CONTA PRÓPRIA...
+
+
+
+
+
+
+
+
+
+O QUE TEMOS QUE SABER É:
+
+
+
+
+1) ESSA NOTATION É SOBRE O CONSTRUCT DE RANGES...
+
+
+
+
+
+
+2) O /0 significa """"TODOS OS ADDRESSES NO MUNDO""", se for 
+acompanhado 
+
+de 
+"0.0.0.0"...
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... VC TAMBÉM DEVE SABER QUE 
+
+EXISTE 1 DIFERENCA ENTRE PRIVATE E PUBLIC IP ADDRESSES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+----> NÓS TEMOS ESSAS RANGES PARA PRIVATE IP ADDRESSES 
+
+
+
+__ JUSTAMENTE __ PARA __ QUE MÚLTIPLAS INSTANCES (no caso do EC2),
+
+
+
+OU MÚLTIPLOS PCS EM GERAL (em 1 mesma network) CONSIGAM __ 
+
+
+
+
+SE COMUNICAR-SE ENTRE SI,
+
+
+
+COM A AJUDA DESSAS PRIVATE INSTANTES... -> TUDO PARA QUE 
+
+
+NÃO TENHAMOS DE USAR 
+
+IPs PÚBLICOS RAROS E VÁLIDOS 
+
+
+
+PARA ___ REALIZAR A INTERNAL COMMUNICATION (o que seria um desperdício)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENTRETANTO,
+FALANDO SOBRE PUBLIC IP ADDRESSES,
+
+HÁ UM CONCEITO RELACIONADO, QUE DEVEMOS EXPLORAR....
