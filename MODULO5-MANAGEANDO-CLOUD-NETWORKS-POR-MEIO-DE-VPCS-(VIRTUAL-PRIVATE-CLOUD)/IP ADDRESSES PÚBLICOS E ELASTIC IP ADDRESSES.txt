@@ -1,0 +1,1048 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+VC TALVEZ CONSIGA SE LEMBRAR DE QUE __ QUANDO FAZEMOS LAUNCH DE 
+
+ EC2 INSTANCES,
+
+
+
+
+ESSAS __ EC2 __ INSTANCES 
+
+TIPICAMENTE 
+
+RECEBEM 1 PUBLIC IP ADDRESS ASSIGNADO 
+
+
+A SI MESMAS... --> A NÃO SER QUE VC DESABILITE 
+
+ESSA FEATURE LÁ 
+
+
+
+NOS NETWORK SETTINGS, COMO O PROFESSOR NOS MOSTROU...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> LÁ NAS INSTANCES,
+
+
+TAMBÉM ENCONTRAMOS 
+
+
+a info de 
+
+
+
+""PRIVATE IPv4 addresses"",
+
+
+QUE 
+
+
+É JUSTAMENTE 
+
+
+DAQUELA RANGE QUE __ VC DEFINIU PARA O VPC
+
+EM QUE 
+
+ESSA INSTANCE É LAUNCHED (
+
+CIDR BLOCKS, DENTRO DO SEU VPC... DEFINEM RANGES DE 
+
+IP ADDRESSES, MEIO LIMITADAS, QUE 
+DEVEM 
+
+
+SER USADAS NO CONTEXTO DE SUA VIRTUAL PRIVATE CLOUD, e que são 
+
+usadas pelos seus ec2 instances...
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... e os private IPv4 ADDRESSES APENAS 
+
+
+
+__ PODEM SER USADOS __ PARA COMMUNICATION INSTANCE-TO-INSTANCE,
+
+
+DENTRO 
+
+DO VPC...
+
+
+
+
+
+
+
+
+-> MAS ESSA LECTURE É SOBRE O __ PUBLIC ___ IP ADDRESS...
+
+
+
+
+
+
+
+
+
+
+
+--> O PUBLIC IPV4 ADDRESS  
+
+
+
+É O ADDRESS QUE PODE ACTUALLY SER ALCANÇADO NA INTERNET,
+
+
+
+ISSO ___ SE __ SUA INSTANCE 
+
+ESTIVER EM 1 
+
+PUBLIC 
+
+
+SUBNET (
+
+
+E ESSA NOSSA INSTANCE ESTÁ...
+
+)
+
+
+
+
+
+
+
+
+
+--> O public IPv4 address é um daqueles 
+
+
+
+RARE IP ADDRESSES,
+
+
+
+
+AQUELES QUE ESTÃO FICANDO CADA VEZ MAIS ESCASSOS NO NOSSO MUNDo...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> APENAS TEMOS 1 QUANTIDADE LIMITADA,
+ 
+ PARA O MUNDO TODO...
+
+
+
+
+
+
+
+
+-> ESSE IP ADDRESS PÚBLICO É TAKEN AWAY DE NÓS 
+
+SEMPRE QUE 
+
+
+
+
+FAZEMOS 
+
+TERMINATE OU STOP DE NOSSA INSTANCE... --> ISSO QUER DIZER QUE 
+
+
+ESSE IP NÃO É __eSTÁVEL__...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ISSO PODE PARECER UM GRANDE PROBLEMA... --> PQ SE VC 
+
+ESTÁ RODANDO 1 WEBSITE  
+
+
+NESSE SERVER,
+
+VC 
+VAI QUERER 
+
+
+1 STABLE ADDRESS,
+
+
+TUDO PARA QUE 
+
+
+SEUS CUSTOMERS 
+
+CONSIGAM 
+
+
+acessar esse site não só hoje, mas amanhã também...
+
+
+
+
+
+
+--> VC NAO QUER IP ADDRESSES PÚBLICOS QUE MUDAM O TEMPO TODO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS COM AQUELES AUTO-ASSIGNED IP ADDRESSES,
+
+
+ELES REALMENTE MUDAM O TEMPO TODO... E, COMO CUSTOMER,
+
+
+VC 
+NÃO PODE 
+
+
+CONTROLAR QUAL PUBLIC IP ADDRESS 
+
+VAI SER ASSIGNADO 
+A SUA 
+
+INSTANCE 
+
+
+quando vc 
+
+
+
+A RESTARTAR 
+
+
+OU 
+
+
+
+
+STARTAR UMA NOVA INSTANCE...
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE O AWS TE FORNECE 
+
+
+
+
+___ OUTRO __ TIPO DE __ IP ADDRESS,
+
+
+
+QUE 
+
+VC 
+
+PODE 
+
+
+GET/ALLOCATE A SUA 
+
+
+
+CONTA,
+
+E QUE 
+
+
+VC 
+
+PODE ENTÃO ASSIGNAR MANUALMENTE 
+
+
+
+
+
+NAS SUAS INSTANCES,
+
+E QUE 
+
+
+__ NAO VAO MUDAR (CHANGE)...
+
+
+
+
+
+
+
+
+
+
+ESSES IP ADDRESSES AÍ, QUE NÃO MUDAM,
+
+
+
+SÃO CHAMADOS DE 
+
+
+""""ELASTIC IP ADDRESSES""""....
+
+
+
+
+
+ESSES IP ADDRESSES SÃO MANAGEADOS POR NÓS...
+
+
+
+
+
+
+
+
+PODEMOS PEDI-LOS À AWS,
+
+
+
+E AÍ PODEMOS OS ASSGINAR A INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ELASTIC IP ADDRESSES -->  ___ELES NÃO MUDAM___, 
+
+
+E VC DEFINE QUAL INSTANCE RECEBE QUAL 
+
+ELASTIC 
+
+IP ADDRESS. .. ->  ISSO É __PERFEITO__ PARA CONSEGUIR 
+
+
+1 
+
+IP ADDRESS ESTÁVEL,
+
+E PARA 
+
+ASSIGÁ-LO EXATAMENTE NA INSTANCE 
+
+
+
+EM QUE 
+
+SERÁ ÚTIL...
+
+
+
+
+
+
+
+
+
+
+
+--> E VC PODE CONSEGUIR ESSES ELASTIC IP ADDRESSES 
+
+
+
+LÁ 
+
+DA PÁGINA DE EC2....
+
+
+
+
+
+
+
+--> BASTA ABRIR A OPTION DE ""ELASTIC IPs""....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR NAO CRIOU NENHUM 
+
+
+ELASTIC IP ,
+
+
+
+MAS 
+
+
+
+VC PODE CLICAR EM 
+
+
+""ALLOCATE ELASTIC IP ADDRESS",
+
+
+
+
+PARA 
+
+
+ALOCAR 
+
+1 
+
+NOVO 
+
+
+
+IP ADDRESS...
+
+
+
+
+
+
+
+
+
+--> SE VC ESCOLHE ISSO,
+
+VC 
+
+
+
+OPTA DE 1 POOL DE ADDRESSES DA AMAZON...
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE TRAZER SEU PRÓPRIO IP ADDRESS,
+
+SE VC 
+
+JÁ TEM 1... se já tem 1 ip address,
+
+
+
+DE OUTRO PROVIDER, POR EXEMPLO...
+
+
+
+
+
+
+
+
+
+
+
+-> ASSIM QUE VC 
+
+ALOCOU ESSE ELASTIC IP ADDRESS,
+
+
+VC 
+
+PODE 
+
+o 
+
+ASSIGNAR 
+
+A 
+
+
+1 INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ISSO PODE PARECER ""A GREAT THING"",
+
+
+PQ 
+
+VC 
+VAI QUERER 
+
+
+TER 
+
+
+
+STABLE IP ADDRESSES,
+
+
+ESPECIALMENTE QUANDO RODAMOS WEB SERVERS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> BEM,
+
+ELA É UMA ""GREAT THING""",
+
+
+
+MAS 
+
+
+NÃO DEVE SER SUA STANDARD SOLUTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> APESAR DE SEREM MT BONS,
+
+
+ELES DEVEM SER USADOS COM CUIDADO...
+
+
+
+
+
+
+
+
+
+
+--> PQ IP ADDRESSES AINDA SÃO 1 RECURSO 
+
+
+ESCASSO... -->  E VC __ PODE __ TER APENAS _ 
+
+
+1 PUNHADO DE ELASTIC IP ADDRESSES 
+
+
+
+POR REGION E ACCOUNT...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO QUER DIZER QUE O AWS TE LIMITA,
+
+
+VC NAO PODE REQUISITAR 1 DEZENA DE ELASTIC 
+
+
+IP ADDRESSES 
+
+
+EM 
+
+1 MESMA CONTA E REGION...
+
+
+
+
+
+
+
+
+
+
+--> ALÉM DISSO,
+
+
+
+__VC PAGA__ 
+
+
+POR ELASTIC IP ADDRESSES QUE NÃO ESTÃO SENDO USADOS....
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO PQ _ o AWS __ QUER __ GARANTIR QUE 
+
+VC 
+
+ESTÁ USANDO 
+
+ESSES IP ADDRESSES ELÁSTICOS,
+
+
+
+
+E QUE __ VC NÃO ESTÁ OS UTILIZANDO APENAS ""FOR FUN""
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TUDO ISSO ACONTECE PQ __ OS ELASTIC IP ADDRESSES 
+
+
+SÃO RAROS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS A BOA NOTÍCIA É QUE 
+
+
+_FREQUENTEMENTE EXISTEM 
+
+SOLUÇÕES MELHORES,
+
+
+
+
+ALTERNATIVAS MAIS VIÁVEIS DO QUE O USO 
+
+PESADO 
+
+DE 
+
+
+
+
+
+ELASTIC IP ADDRESSES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO,
+
+
+
+PARA COMEÇARMOS A ENTENDER ESSAS OPTIONS,
+
+
+PENSE NOS MOMENTOS EM QUE VC 
+
+ENTRA 
+
+
+EM 
+
+1 SITE...
+
+
+
+
+
+
+
+
+
+
+
+
+QUANDO VC ENTRA EM 1 SITE,
+
+VC 
+
+TIPICAMENTE NAO INPUTTA 1 IP ADDRESS...
+
+
+
+
+
+
+
+
+E SIM VC ESCREVE ALGO COMO ""amazon.com""...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ESSES """domain names""" PODEM ACTUALLY 
+
+SER REQUISITADOS POR NÓS,
+
+
+DE MANEIRA 
+
+ILIMITADA (desde que ele já não esteja comprado )...
+
+
+
+
+
+
+
+
+
+
+--> AÍ PODEMOS ASSIGNAR ESSES DOMAIN NAMES A EC2 INSTANCES,
+
+
+
+DE FORMA __ INDEPENDENTE __ 
+
+
+
+
+DOS IP ADDRESSES QUE 
+
+
+
+CADA INSTANCE PODE TER...
+
+
+
+
+(OU SEJA, ""USE DNS - DOMAIN NAME SYSTEM - PARA EXPOR 
+
+APLICATIVOS/WEBSITES AO MUNDO"" )
+
+
+
+
+
+
+
+
+
+
+
+
+MAIS TARDE VEREMOS DOMAIN NAMES E DOMAIN NAME SYSTEMS NESSE CURSO,
+
+
+QUANDO 
+
+
+FALARMOS SOBRE 
+
+
+
+
+
+O ___ AWS __ SERVICE __ 
+
+
+QUE NOS AJUDA COM ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... PORTANTO,
+
+COMO 
+
+AWS CUSTOMER,
+
+E PARA O EXAME,
+
+
+
+
+VC 
+
+DEVE 
+
+SABER SOBRE 
+
+
+ELASTIC 
+
+IP ADDRESSES --> VC DEVE SABER QUE 
+
+
+
+
+É ESSE IP ADDRESS QUE É ESTÁVEL,
+
+
+E QUE 
+
+DEVE SER REQUISITADO POR VOCE,
+
+
+MAS 
+QUE 
+DEVE 
+
+
+SER PAGO POR NÓS,
+
+SE NÃO ESTIVER SENDO UTILIZADO...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS TAMBÉM DEVEMOS SABER QUE EXISTEM ALTERNATIVAS A ELE....
+
+
+
+
+
+
+
+
+
+
+
+ALTERNATIVAS MELHORES...
+
+
+
+
+
+
+
+
+
+
+AS ALTERNATIVAS SÃO:
+
+
+
+
+1) O USO DE DNS (domain name system) PARA  _wEBSITES..
+
+
+
+
+
+
+
+
+2) O USO DE DIVERSOS OUTROS SERVICES PROVIDENCIADOS PELO AWS,
+
+
+
+USADOS PARA CONECTAR 
+
+MÚLTIPLOS APPS, APPS RODANDO EM MÚLTIPLAS INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VEREMOS TUDO ISSO AO LONGO DO CURSO...
