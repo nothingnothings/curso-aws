@@ -1,0 +1,673 @@
+
+
+
+
+
+
+
+NA CONTA AWS,
+
+
+
+VOCE PODE IR ATÉ A PAGINA DE VPCS,
+
+
+VPC SERVICE,
+
+
+
+PARA 
+
+CRIAR NOVOS VPCs...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> voce, no caso,
+ 
+ começa com 1 vpc default por regiao...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> ok....
+
+
+
+
+
+
+
+
+ --> mas podemos criar mais vpcs..
+
+
+
+
+
+
+
+
+
+
+ -> se vc precisar, vc pode criar 1 novo vpc...
+
+
+
+
+
+
+
+
+ --> temos 1 wizard interativo para isso..
+
+
+
+
+
+
+
+
+
+
+
+ --> MAS O PROFESSOR DESTACA 1 PONTO:
+
+
+
+
+
+ """VPCS SÃO REGIONAL CONSTRUCTS""" --> ISSO QUER DIZER QUE VPC 
+
+
+
+ SAO REGIONAL SERVICES --> A REGION QUE VC ESCOLHE, ALI EM CIMA,
+
+
+ IMPORTA.... 
+
+
+
+
+
+
+
+
+
+
+ --> VPC ---> PQ CONFORME MENCIONADO,
+
+ VC TEM 
+
+ 1 DEFAULT VPC PARA CADA REGION DE SUA CONTA...
+
+
+
+
+
+
+
+
+ E É CLARO QUE VC PODE CRIAR MÚLTIPLOS VPCs,
+
+
+
+
+
+ MAS CADA VPC PERTENCE A 1 REGIAO...
+
+
+
+
+
+
+
+
+ --> SE VC, POR EXEMPLO, FIZER LAUNCH DE 1 EC2 INSTANCE EM 1 CERTA REGION,
+
+ VC 
+
+
+ PODERÁ RODAR ESSA INSTANCE APENAS NOS VPCs QUE FAÇAM PARTE DESSA REGION...
+
+
+
+
+
+
+
+
+
+ E APESAR DE O USE-CASE MAIS COMUM DE VPCS 
+
+
+ SER EC2 INSTANCES (
+
+    que exigem O USO ___ DE VPCs PARA SEREM LAUNCHED
+ ),
+
+
+
+
+
+
+
+ VPCs nao sao limitados apenas a ec2 instances..
+
+
+
+
+
+ PQ EXISTEM OUTROS SERVICES 
+
+
+
+ QUE UTILIZAM VPCs....
+
+
+
+
+
+
+
+
+
+
+
+
+ -_> OK... ISSO QUER DIZER QUE QUANDO O ASSUNTO É O CREATE 
+
+ DE 
+
+ VPCS,
+
+
+
+ REGIOES IMPORTAM...
+
+
+
+
+
+
+
+ E, EM GERAL,
+
+
+
+
+ NO AWS,
+
+
+
+ PARA QUALQUER SERVICE,
+
+
+
+
+
+
+ QUASE TODO SERVICE,
+
+
+
+ SE VC 
+
+
+ PUDER 
+
+ SELECIONAR 
+
+
+ 1 
+ REGION 
+
+
+
+ NO CANTO SUPERIOR DIREITO,
+
+
+
+
+
+
+ ISSO IMPORTA, PARA AQUELE SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ MAS SE VC ENTRA EM 1 SERVICE COMO O ''IAM'',
+
+
+
+ EM QUE APARECE '"GLOBAL"" EM VEZ DE 1 REGION,
+
+
+ ISSO SIGNIFICA QUE ESSE SERVICE É GLOBAL,
+
+ NAO PRECISAMOS SELECIONAR NENHUMA REGION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> OK...
+
+
+
+
+
+
+
+
+
+ COM ISSO, VOLTAMOS AO WIZARD DOS VPC...
+
+
+
+
+
+
+
+
+
+
+
+ --> PODEMOS SETTAR ALGUMAS SETTINGS...
+
+
+
+
+
+
+ 1) podemos definir QUANTAS AVAILABILITY ZONES 
+
+ DEVERÃO SER INCLUÍDAS NO VPC...
+
+
+
+
+ -> O PROFESSOR MENCIONOU QUE VC assigna subnets 
+
+
+ a availability zones --> e vc define quantas 
+
+ subnets vc vai querer, em cada AZ...
+
+
+
+
+
+
+
+
+
+
+ --> VC PODE ESCOLHER QUAIS AZs vc quer usar, dentro de 1 region,
+
+
+ com suas subnets...
+
+
+
+
+ --> e aí vc escolhe QUANTAS PUBLIC E PRIVATE SUBNETS VC QUER TER...
+
+
+
+
+
+
+
+
+ --> AÍ VC GANHA 1 PREVIEW 
+
+ DA NETWORK QUE VAI SER CRIADA, ALI NA DIREITA...
+
+
+
+
+
+
+ NO EXEMPLO DO PROFESSOR, ELE FICARIA COM 2 PUBLIC SUBNETS,
+
+ E 2 PRIVATE SUBNETS... 
+
+
+
+
+
+
+
+
+
+
+
+
+ --> OK.... JÁ OS DETALHES PARA OS NETWORK 
+
+ REQUESTS 
+
+
+ DENTRO DE 1 VPC E __ FORA __dE 1 VPC _ 
+
+
+
+
+SÃO CONTROLADOS PELAS "ROUTE TABLES",
+
+
+
+que são SETTADAS AUTOMATICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSAS TABLES, NO FINAL DAS CONTAS,
+
+
+APENAS DIZEM AO AWS COMO 
+
+ 
+ DEVE SER FEITO O FORWARD DE INCOMING NETWORK REQUESTS...
+
+
+
+
+
+
+
+
+
+
+ --> NAO INTERESSA SE SEUS NETWORK REQUESTS SAO ENVIADOS DE 1 INSTANCE A OUTRA INSTANCE,
+
+ OU SE ESTÃO VINDO DA INTERNET...
+
+
+
+
+
+
+
+
+ ----> LA NA DIREITA, POR FIM,
+
+ TEMOS 
+
+
+
+
+ ""network connections"",
+
+
+
+
+ COM 
+
+
+ 1) project-igw --> ESSE É UM INTERNET GATEWAY --> ELE SE CONECTA AOS PUBLIC 
+
+ SUBNETS, POR MEIO DAQUELAS ROUTE TABLES -> ele faz isso para que 
+ INSTANCES 
+
+NAQUELAS PUBLIC SUBNETS TENHAM INTERNET ACCESS --> PQ É ISSO QUE 
+
+DEIXA 
+
+1 SUBNET SER PUBLIC, NO FINAL DAS CONTAS...
+
+
+
+
+
+
+
+
+
+
+
+
+-_> OK.... VC PODE CONTROLAR MAIS COISAS... 
+
+
+
+
+
+
+
+
+--> VOCE TEM A OPÇAO DE ""NAT GATEWAY'' -----> 
+
+
+
+
+
+
+ENTRETANTO,
+
+AO CONTRÁRIO 
+
+DAS OUTRAS FEATURES,
+
+
+ISSO CUSTA 
+
+
+DINHEIRO EXTRA...
+
+
+
+
+
+
+
+
+--> MAS VC PODERIA ADICIONAR ESSE NAT GATEWAY 
+
+PARA GARANTIR QUE 
+
+
+SUAS PRIVATE SUBNETS TENHAM 
+
+OUTGOING CONNECTIVITY,
+
+SEM TER INGOING CONNECTIVITY...
+
+
+
+
+
+
+
+
+
+
+
+--> POR FIM, 
+
+VC PODE DEFINIR ""VPC ENDPOINTS"" --> TEMOS S3 GATEWAY,
+
+QUE É UMA 
+
+FEATURE QUE EXPLORAREMOS MAIS TARDE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+POR FIM, 
+
+TEMOS AS OPTIONS DE 
+
+
+
+""ENABLE DNS HOSTNAMES""
+
+
+
+e 
+
+
+""ENABLE DNS RESOLUTION"" --> ISSO GARANTE QUE 
+
+
+AS INSTANCES 
+
+ADICIONADAS ÀS SUBNETS 
+
+RECEBAM DOMAIN NAMES ASSIGNADOS A SI..... --> É CLARO QUE VC 
+
+TAMBÉM 
+
+TEM A OPÇAO 
+
+DE USAR 
+
+SEUS PRÓPRIOS DOMAIN NAMES (
+
+    algo que exploraremos mais tarde...
+)
+
+
+
+
+
+
+
+
+
+
+-> MAS COM ESSAS OPTIONS,
+
+VC PODE GARANTIR QUE 
+
+
+
+PELO MENOS ALGUNS DEFAULT DOMAIN NAMES FICARAO ASSIGNADOS,
+
+QUE 
+
+PODERAO 
+
+SER USADOS 
+PARA 
+
+ENVIAR REQUESTS INTERNAMENTE,
+
+
+DENTRO 
+
+DO VPC,
+
+
+
+OU ENTAO 
+PARA 
+
+TESTAR,
+
+
+PARA 
+
+
+TENTAR 
+
+
+ACESSAR 
+
+SUAS VPC INSTANCES 
+
+EXTERNAMENTE,
+
+PELO BROWSER,
+
+COMO 
+
+
+FIZEMOS 
+
+NA SECTION ANTERIOR...
+
+
+
+
+
+
+
+
+
+
+-> É ASSIM QUE PODEMOS CRIAR VPCS,
+
+
+
+COM SUBNETS 
+
+DEFINIDAS EXATAMENTE 
+
+
+QUE QUISERMOS,
+
+
+
+
+TANTO PRIVATE COMO PUBLIC (subnets),
+
+OU ENTAO AMBAS...
