@@ -1,0 +1,409 @@
+ 
+
+
+
+
+
+
+
+
+
+ --> OK...
+
+
+
+
+
+--> QUANDO RODAMOS WORKLOADS NA CLOUD,
+
+COM O AWS,
+
+
+
+
+
+NÓS FREQUENTEMENTE 
+
+TEMOS 
+
+
+
+1 GRANDE NECESSIDADE DE FLEXIBILIDADE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIGAMOS QUE VC ESTÁ RODANDO 1 WEB SERVER NA CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC QUER GARANTIR QUE 
+
+ESSE 
+
+WEB SERVER 
+
+
+CONSIGA 
+
+HANDLE __ TODOS OS INCOMING REQUESTS,
+
+
+NAO IMPORTA 
+
+
+SE 
+
+
+VC TEM 
+
+APENAS 
+
+ALGUNS USERS 
+
+
+
+OU 
+
+
+SE 
+
+VC 
+
+
+ESTÁ FAZENDO ALGUMA SALE 
+
+E 
+
+VC 
+
+
+ESTÁ 
+
+RECEBENDO 
+
+
+
+MILHOES DE USERS 
+
+DO NADA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+NOSSO TRAFFIC PATTERN PODERIA SE PARECER ASSIM:
+
+
+
+
+
+
+
+
+""
+""""""""
+"""""""""""""""""
+""""""
+"""
+"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E SE VC ESTIVER USANDO HARDWARE PRÓPRIO, SEUS PRÓPRIOS DATA CENTERS,
+
+VC 
+
+TERÁ 
+
+
+1 MAX CAPACITY,
+
+
+DITADA 
+
+PELA QUANTIDADE MÁXIMA DE MÁQUINAS QUE VC TEM NO SEU DATA CENTER...
+
+
+
+
+
+
+
+
+
+
+-> EM CASOS DE HARDWARE PRÓPRIO,
+
+
+SE VC 
+
+TIVER SPIKES,
+
+
+
+
+SUA CAPACITY SERIA EXCEDIDA --> ISSO SIGNIFICA,
+
+EM CASOS 
+DE 
+
+WEB SERVERS,
+
+
+
+QUE 
+VC 
+
+
+NAO CONSEGUIRIA 
+
+
+FAZER SERVE DE TODOS SEUS VISITORS...
+
+
+
+
+
+
+
+
+
+
+
+--> SUAS MACHINES ATÉ MESMO PODEM ""GO DOWN"",
+
+
+
+PQ 
+
+ELAS PODEM FICAR OVERWHELMED... 
+
+
+
+
+
+
+
+
+
+
+--> VC TALVEZ NAO CONSIGA FAZER SERVE DE NENHUM VISITOR,
+
+
+
+POR CERTO PERÍODO DE TEMPO... O QUE NAO É NADA BOM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAX CAPACITY --> ISSO SIGNIFICA QUE VC TEM 1 CAPACIDADE 
+
+MÁXIMA, FIXA, O QUE PODE SER RUIM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PQ SE VC TIVER PERÍODOS SEM USO,
+
+
+
+VC ESTARÁ PAGANDO POR __IDLE _ RESOURCES....
+
+
+
+
+
+
+
+
+
+
+--> VC ESTÁ PAGANDO POR TODA PARTE DE SEU APP QUE NÃO ESTÁ 
+
+SENDO USADA...
+
+
+
+
+
+
+
+
+
+
+
+-> VC PAGA MT SE VC N TEM TRAFFIC,
+
+E 
+
+
+VC PODE PERDER BUSINESS SE TIVER 
+
+
+MT TRAFFIC 
+
+E N TIVER A CAPACIDADE...
+
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE 1 SOLUCAO, QUANDO VC 
+
+
+TEM 
+
+1 
+
+PRÓPRIO DATA CENTER,
+
+
+É ADICIONAR MAIOR CAPACIDADE --> MAS ISSO É RUIM,
+
+
+
+PQ VC VAI ESTAR PAGANDO AINDA MAIS POR IDLE RESOURCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A BOA NOTÍCIA É QUE COM O AWS, TUDO ISSO MUDA....
+
+
+
+
+
+
+
+
+
+
+
+--> VC PODE AJUSTAR A CAPACIDADE DINAMICAMENTE,
+
+A PARTIR DO TRÁFEGO QUE VC RECEBE...
+
+
+
+
+
+
+
+
+--> SE VC SABE QUE VC TERÁ 1 CAMPANHA DE SALES,
+
+VC 
+
+PODE 
+
+
+
+AUMENTAR SEU NÚMERO DE INSTANCES AUTOMATICAMENTE..
+
+
+
+
+
+
+
+
+
+
+
+--> E ESSA É UMA DAS VANTAGENS DO AWS E DO CLOUD COMPUTING,
+
+
+VC TEM ESSA ESCALABILIDADE,
+
+ESSA ELASTICIDADE (vc pode remover/adicionar instances automaticamente),
+
+e vc 
+
+fica 
+
+com alta disponibilidade de seu site,
+pq 
+
+vc nunca ficará overwhelmed...
+
+
