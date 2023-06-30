@@ -1,0 +1,261 @@
+
+
+
+
+
+
+
+
+OK.... ATÉ AGORA,
+
+JÁ SABEMOS COMO PODEMOS _GET WORKLOADS_ 
+
+NA CLOUD,
+
+
+
+E 
+
+SOBRE 
+
+COMO 
+
+
+
+PODEMOS 
+
+
+
+
+FAZER ""SCALE"" DELES,
+
+DINAMICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO É LEGAL..
+
+
+
+
+
+
+
+
+MAS MTOS WORKLOADS,
+
+
+TALVEZ TODOS OS WORKLOADS,
+
+
+
+
+
+
+
+
+
+
+
+TAMBÉM PRECISAM __ ARMAZENAR DATA A CERTO PONTO...
+
+
+
+
+
+
+
+E MT DA DATA QUE 
+
+PRECISA 
+
+SER 
+
+ARMAZENADA 
+
+
+
+
+PRECISA SER ARMAZENADA EM ARQUIVOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É POR ISSO QUE 
+
+
+NESSE MÓDULO 
+
+
+
+
+__ VEREMOS ___ 
+
+
+
+ALGUNS DOS KEY SERVICES 
+
+
+OFERECIDOS 
+
+PELO 
+
+AWS,
+
+
+EM CONJUNTO COM O _ FILE STORAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> VEREMOS O EBS,
+
+O EFS 
+
+E 
+
+UM POUCO DO S3...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> OK... TAMBÉM VEREMOS A DIFERENÇA ENTRE ESSES 
+
+
+SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+VEREMOS TAMBÉM COMO O EC2 
+
+E AS INSTANCES 
+
+
+LAUNCHED PELO EC2 
+
+
+
+PODEM 
+
+
+__sER CONECTADAS __ 
+
+AOS SERVICES 
+
+DE 
+
+
+EFS 
+
+E 
+
+
+EBS,
+
+
+
+
+PARA O STORE DE FILES (
+
+
+    no caso 
+
+    de seus 
+    workloads 
+
+    estarem
+
+    GERANDO FILES...
+     
+)
+
+
+
+
+
+
+
+
+
+
+EX: VC ESTÁ RODANDO 1 WEBSITE,
+
+E SEUS 
+
+USERS ESTÃO UPLOADANDO IMAGES --> SUAS IMAGES PRECISAM FICAR 
+
+ARMAZENADAS EM ALGUM LUGAR...
+
+
+
+
+
+
+
+
+
+
+
+
+-> VEREMOS TAMBÉM ALGUMAS CONFIG OPTIONS E SETTINGS --> 
+
+
+TUDO PARA TERMOS 1 MELHOR UNDERSTANDING DESSES KEY-SERVICES,
+
+
+E
+ AS DIFERENCAS ENTRE ELES...
