@@ -1,0 +1,352 @@
+
+
+
+
+
+
+
+
+
+
+
+
+-->> OK... CHEGA DE VPCS, SUBNETS, SECURITY GROUPS, Network access control lists,
+NAT GATEWAYS, INTERNET GATEWAYS...
+
+
+
+
+
+
+
+
+--> isso pq agora sabemos mais do que o necessário, para o exam...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> APENAS PRECISAMOS SABER QUAL É A IDEIA BÁSICA 
+
+POR TRÁS DE VPCs e SUBNETS...
+
+
+
+
+
+
+
+
+--> O PROFESSOR QUER 
+
+GARANTIR QUE 
+
+
+FIQUEMOS PREPARADOS COM O TRABALHO COM O AWS...
+
+
+
+
+
+
+
+
+
+
+
+--> DEVEMOS SABER COMO FUNCIONA O NETWORKING COM O AWS...
+
+
+
+
+
+
+
+
+
+
+--> MAS AGORA É HORA DE CONTINUARMOS...
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR NOS MOSTRA 1 PROBLEMA QUE 
+
+PODEMOS ENCONTRAR QUANDO EXPANDIRMOS NOSSO USO DO AWS....
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC TEM 1 VPC,
+
+COM SUAS SUBNETS (e dentro delas, suas instances)....
+
+
+
+
+
+
+
+
+
+
+--> mas vc PODERIA TER 1 SEGUNDO VPC...
+
+
+
+
+ 
+ --> E VC PODE PRECISAR DE __ CONECTIVIDADE 
+
+ ENTRE ESSES 
+
+
+ 2 VPCs...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> quando isso acontecer, o que podemos fazer?
+
+
+
+
+
+
+
+ TALVEZ ASSIGNAR __ ROLES...
+
+
+
+
+
+
+
+
+
+ --> OK, MAS PQ DIABOS NAO USAR APENAS 1 ÚNICO VPC,
+
+ E COLOCAR TODAS NOSSAS INSTANCES EM APENAS 1 VPC? 
+
+
+
+
+
+
+
+
+
+
+
+ BEM, PODERÍAMOS TER VÁRIAS RAZÕES:
+
+
+
+
+
+ 1) VC COMPROU OUTRA CONTA E MIGROU A CONTA DELES NA SUA 
+
+
+ 2) RAZOES HISTÓRICAS, ETC....
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> AINDA BEM QUE 
+
+
+ O AWS TE DÁ FERRAMENTAS PARA LIDAR COM ISSO...
+
+
+
+
+
+
+
+
+
+
+
+ --> VC DEVERÁ USAR O RECURSO DE 
+
+
+
+
+""""VPC PEERING""""
+
+
+
+
+
+ESSE RECURSO É ALGO QUE VC PODE SETTAR 
+
+
+DENTRO DO CONSOLE DE 
+
+VPCs..
+
+
+
+
+
+
+
+
+
+
+
+
+É A OPTION DE ""VEERING CONNECTIONS""
+
+
+
+
+
+
+COM VPC PEERING,
+
+VC PODE 
+
+
+
+CONECTAR 1 VPC COM OUTRO...
+
+
+
+
+
+
+
+
+
+
+
+--> E O VPC PEERING É UMA FEATURE 
+
+DO AWS,
+
+
+OFERECIDA PELO AWS,
+
+PARA 
+
+CONECTAR 
+
+2 VPCs...
+
+
+
+
+
+
+
+
+
+
+--> SE VC TIVER MAIS DE 1 ÚNICO VPC QUE VC QUER CONECTAR (pode acontecer),
+
+
+O 
+
+
+
+AWS TE 
+
+DÁ OUTRA FEATURE,
+
+
+OUTRO SERVICE,
+
+
+CHAMADO 
+DE 
+
+
+""TRANSIT GATEWAYS""...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC NÃO TEM QUE SABER USAR ESSAS FEATURES EM DETALHE...
+
+
+
+
+
+
+
+--> VC NÃO PRECISA SABER COMO 
+
+SETTAR ESSAS CONNECTIONS...
+
+
+
+
+
+
+
+
+SÃO FEATURES MAIS COMPLEXAS,
+
+MAS VC DEVE AS CONHECER...
+
+
+
+
+
+
+
+SÃO TOOLS USADAS PARA CONECTAR DIFERENTES VPCs...
