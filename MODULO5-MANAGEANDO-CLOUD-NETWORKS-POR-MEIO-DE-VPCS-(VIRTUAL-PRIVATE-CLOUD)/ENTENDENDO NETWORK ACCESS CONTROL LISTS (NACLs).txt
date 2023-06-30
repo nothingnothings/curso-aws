@@ -1,0 +1,307 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... QUANDO TRABALHAMOS COM VPCs,
+
+
+veremos outra feature...
+
+
+
+
+
+
+
+
+
+é uma feature que tem 1 pouco de relaçao com esse tópico...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> são os NACLs (network access control lists)..
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS O QUE SÃO ESSAS COISAS?
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> TAMBÉM SÃO ALL ABOUT O CONTROL DE REQUESTS...
+
+
+
+
+
+
+
+
+
+--> ENTRETANTO,
+
+
+AQUI VC N CONTROLA REQUESTS QUE ALCANÇAM 1 INSTANCE SINGULAR (como SECURITY GROUPS),
+
+
+E SIM CONTROLA REQUESTS QUE ATINGEM 
+
+
+SUBNETS INTEIRAS -> ISSO QUER DIZER QUE 
+
+SÃO APLICADAS 
+
+
+
+A TODAS AS INSTANCES DENTRO DE 1 SUBNET...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ASSIM COMO SECURITY GROUPS,
+
+
+
+AS NETWORK ACCESS CONTROL LISTS 
+
+
+
+POSSUEM REGRAS PARA OUTBOUND E INBOUND TRAFFIC...
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> O DEFAULT DE NACLs 
+
+
+
+É SEMPRE PERMITIR __ TODO OUTBOUND TRAFFIC 
+
+E 
+
+
+TODO __ INBOUND __ TRAFFIC (
+
+    é diferente dos security groups,
+
+    que permitem TODO OUTBOUND,
+
+    MAS POUCO/NADA DE INBOUND, POR DEFAULT...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NACLs podem parecer mais úteis do que 
+
+
+SECURITY GROUPS,
+
+
+PQ __ ELAS JUSTAMENTE __ CONTROLAM 
+
+
+
+1 MONTE DE INSTANCES (em uma subnet) AO MESMO TEMPO,
+
+AO CONTRÁRIO DOS SECURITY GROUPS,
+
+
+
+QUE CONTROLAM/ALTERAM APENAS 1 INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ENTRETANTO, SECURITY GROUPS 
+
+SÃO TÃO USADOS QUANTO NACLs,
+
+
+
+PQ SECURITY GROUPS PODEM ACTUALLY SER ADICIONADOS A MÚLTIPLAS 
+
+INSTANCES... (individualmente)....
+
+
+
+
+
+
+
+
+
+
+
+
+
+----> É POR ISSO QUE NACLs são apenas 
+
+
+1 MECANISMO DIFERENTE PARA CONTROLAR REQUESTS....
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E, HOJE EM DIA,
+
+SECURITY GROUPS SÃO TIPICAMENTE 
+
+
+A MANEIRA RECOMENDADA DE HANDLAR, CONTROLAR E BLOQUEAR REQUESTS....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMO AGORA TEMOS 1 MONTE DE TERMOS, É BOM REVISÁ-LOS:
+
+
+
+
+
+
+
+
+
+
+
+
+SECURITY GROUP 
+
+
+
+
+
+
+NETWORK ACL 
+
+
+
+
+
+
+PRIVATE/PUBLIC SUBNET 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC NAO TERÁ IN-DEPTH QUESTIONS,
+
+
+MAS O PROFESSOR ACHA QUE 
+
+FAZ SENTIDO ENTENDER A DIFERENÇA ENTRE ESSAS COISAS,
+
+SE VC PLANEJA TRABALHAR COM O AWS...
