@@ -1,0 +1,159 @@
+
+
+
+
+
+
+
+
+
+
+
+OK... JÁ EXPLORAMOS O IMPORTANTE SERVICE EC2..
+
+
+
+VIMOS TAMBÉM O CONCEITO DE VPCS (virtual private cloud) E CUSTOM 
+
+NETWORKS 
+
+NA CLOUD...
+
+
+
+
+
+
+
+
+
+
+--> E É CLARO QUE VPCS SÃO ESPECIALMENTE RELEVANTES 
+
+SE 
+VC 
+
+TIVER 
+
+MAIS 
+DE 
+1 
+RUNNING 
+
+
+EC2 INSTANCE...
+
+
+
+
+
+
+
+
+
+
+--> ISSO PQ VPCs TAMBÉM AGRUPAM E ESTRUTURAM INSTANCES..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NESSA COURSE SECTION,
+
+VAMOS BUILD UP NA IDEIA 
+
+DE 
+
+TERMOS 
+
+MÚLTIPLAS EC2 INSTANCES..
+
+
+
+
+
+
+
+
+
+
+
+
+--> PQ NESSA COURSE SECTION 
+VEREMOS 
+
+
+O CONCEITO DE 
+
+
+
+""DYNAMIC SCALING DE INSTANCES"" (como vi, de leve, no curso do docker)..
+
+
+
+
+
+--> TAMBÉM VEREMOS O CONCEITO DE LOAD BALANCING...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VEREMOS O QUE SÃO ESSES CONCEITOS,
+
+ANTES 
+
+DE 
+
+EXPLORARMOS ALGUMAS 
+
+FEATURES 
+
+E KEY-SERVICES 
+
+DO AWS,
+
+QUE 
+
+
+ 
+ VÃO NOS AJUDAR COM O AUTO-SCALE 
+
+
+
+ NOSSO NÚMERO DE EC2 INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+ --> TAMBÉM VEREMOS OS 
+
+
+ AWS ELASTIC LOAD BALANCERS...
+
+
+
+ 
