@@ -1,0 +1,686 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK....
+
+
+
+
+
+
+
+
+
+A ESSE PONTO, JÁ FALAMOS BASTANTE SOBRE EC2 INSTANCES,
+
+
+
+
+IP ADDRESSES, SUBNETS E VPCS..
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUANDO VC FAZ LAUNCH DE 1 VPC INSTANCE,
+
+
+VC 
+
+PODE 
+
+CONTROLAR 
+
+1 
+
+MONTE 
+
+
+DAS SUAS 
+
+
+NETWORK SETTINGS..
+
+
+
+
+
+
+
+VC PODE DEFINIR:
+
+
+
+
+1) A QUAL VPC DEVE PERTENCER 
+
+
+
+2) A QUAL SUBNET, NO VPC, DEVE PERTENCER...
+
+
+
+
+
+
+3) VC __ TAMBÉM __ CONTROLA/DEFINE O __ SECURITY __ GROUP _ 
+
+
+
+USADO NA SUA INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E É COM OS SECURITY GROUPS,
+
+NAS NOSSAS INSTANCES,
+
+QUE 
+
+
+
+CONTROLAMOS/DEFINIMOS SE __ dEVE __ sER PERMITIDO 
+
+
+
+""TRÁFEGO SSH, TRÁFEGO HTTP, etc""...
+
+
+
+
+
+
+
+
+
+TAMBÉM TEMOS OUTROS TIPOS DE TRÁFEGO QUE PODEM SER PERMITIDOS/BARRADOS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE VC ADICIONA 1 NOVA REGRA DE SECURITY GROUP 
+
+
+
+
+
+
+QUANDO VC CRIA 1 SECURITY GROUP 
+
+
+
+
+QUANDO CRIA 1 INSTANCE,
+
+
+VC PODE 
+
+CONTROLAR 
+
+
+1 
+
+
+AMPLA VARIEDADE 
+
+DE 
+
+
+
+TRAFFIC TYPES (além de http e ssh)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK...
+
+
+
+
+
+
+
+QUANDO O ASSUNTO É O CREATE DE 1 SECURITY GROUP 
+
+
+
+E  O DEFINE DE SUAS RULES,
+
+
+VC DEFINE:
+
+
+
+
+
+
+1) QUAL TIPO DE TRÁFEGO VC QUER CONTROLAR...
+
+
+
+
+
+
+
+
+2) A PARTIR DO TRÁFEGO QUE VC QUER CONTROLAR,
+VC 
+
+
+VAI _ DEFINIR _ A PORT QUE VC QUER CONTROLAR... 
+
+
+(
+    PQ DIFERENTES TIPOS DE NETWORK REQUESTS 
+
+    ALCANÇAM DIFERENTES PORTS... ex: SSH, TLS...
+
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> certo...
+
+
+
+
+
+3) ALÉM DISSO,
+
+
+
+VC _tAMBÉM CONTROLA QUAIS 
+
+
+IP ADDRESSES 
+
+
+VC _ QUER_ ALLOW _ OU BLOCk..
+
+
+
+
+--> POR EXEMPLO, SE VC QUER 
+
+PERMITIR SSH CONNECTIONS APENAS 
+
+
+
+
+DE 
+
+DENTRO DE SEU LOCAL DEVICE (origem),
+
+
+VC __ 
+
+
+DEVE ESCOLHER """MY IP"" 
+
+
+NO SOURCE TYPE,
+
+
+
+PARA QUE 
+
+
+
+O SOURCE DE ALLOWED SSH NETWORK REQUESTS (TRAFFIC) 
+
+
+
+
+PERMITIDO SERÁ APENAS O ""MY IP"" (a própria network),
+
+
+
+O QUE 
+
+
+
+QUER DIZER QUE 
+
+QUALQUER 
+
+
+
+OUTRO IP ADDRESS TERÁ PERMISSÃO PARA ENVIAR ESSE 
+
+TIPO DE REQUEST...  (ssh request)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> APRENDEMOS SOBRE CIDR ANTES (RANGES DE IP ADDRESSES...)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FALANDO EM CIDR,
+
+
+
+encontramos um ip address de 
+
+
+84.169.231.94/32 
+
+
+
+
+
+
+
+
+
+
+
+COMO TEMOS /32,
+
+
+
+SIGNIFICA QUE TODOS OS 32 BITS ESTARÃO LOCKED.... --> o que quer dizer que 
+
+
+esse ip address INTEIRO É FIXED... -> ISSO QUER DIZER QUE 
+
+
+
+NOSSO IP ADDRESS nÃO É UMA RANGE (como /16 ou /8),
+
+
+
+E SIM 
+
+
+É _UM _ _SINGLE IP ADDRESS (pq todos os dígitos estão ``LOCKED``)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK.... TEMOS 1 MONTE DE CONTROLE, AQUI,
+
+
+COM A AJUDA DOS SECURITY GROUPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS __ TAMBÉM VALE A PENA DESTACAR 
+
+QUE 
+
+
+VC 
+
+
+
+NEM SEMPRE PRECISA CRIAR NOVOS SECURITY GROUPS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PQ QUANDO ESTAMOS CRIANDO/LAUNCHING NOSSA INSTANCE,
+
+
+
+PODEMOS CLICAR EM 
+
+
+""SELECT EXISTING SECURITY GROUP"",
+
+
+
+
+
+
+PARA __ ESCOLHER OS SECURITY GROUPS DEFAULT 
+
+
+DA 
+
+AMAZON...
+
+
+
+
+
+
+
+
+
+
+
+--> 
+SE VC SCROLLAR PARA BAIXO E ESCOLHER A OPTION DE ""SECURITY GROUPS""<
+
+
+
+vc 
+
+
+verá uma TABELA COM TODOS OS SECURITY GROUPS ------> AÍ VC PODE 
+
+
+DELETAR OS SECURITY GROUPS 
+
+
+
+QUE SE TORNAM DESNECESSARIOS,
+
+
+OU ENTÃO,
+
+
+
+CRIAR 
+
+SECURITY GROUPS BRAND NEW,
+
+QUE 
+
+PDOERÃO SER USADOS 
+
+
+NO FUTURO,
+
+QUANDO VC FIZER LAUNCH DE EC2 INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... ISSO QUER DIZER QUE 
+
+
+OS SECURITY GROUPS 
+
+
+
+SÃO, CONFORME MENCIONADO,
+
+
+
+BAASICAMENTE 1 FIREWALL QUE CONTROLA INBOUND E OUTBOUND 
+
+TRAFFIC..
+
+
+
+
+
+
+
+
+
+-> OK... SE VC 
+
+
+OLHAR TODAS AS INTANCES,
+
+VC 
+
+VERÁ QUE, por default,
+
+
+
+TODO OUTGOING TRAFFIC 
+
+SERÁ 
+PERMITIDO...
+
+
+
+
+
+
+
+
+
+MAS VC NEM SEMPRE PRECISA CRIAR 1 SECURITY GROUP...
+
+
+
+
+
+
+VC PODE ESCOLHER SECURITY GROUPS JÁ EXISTENTES,
+
+
+OU CRIAR BRAND NEW SECURITY GROUPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECURITY GROUP ---> É O FIREWALL QUE CONTROLA OUTBOUND E INBOUND TRAFFIC...
+
+
+
+
+
+
+
+POR DEFAULT, SE VISUALIZAMOS 1 SECURITY GROUP,
+PERCEBEMOS QUE TODO OUTBOUND TRAFFIC É PERMITIDO (
+
+    a instance pode enviar qualquer tipo de http desejado..
+)
+
+
+
+
+
+
+
+--> MAS O __INBOUND __ TRAFFIC É OUTRA HISTÓRIA
+
+
+
+
+
+
+
+
+
+
+
+
+--> vc quer LIMITAR O INGOING TRAFFIC...
+
+
+
+
+ ---> O INBOUND É LIMITADO PQ VC QUER CONTROLAR ISSO, NÃO QUER QUE 
+
+ TODO TIPO DE REQUEST 
+
+
+ ATINJA SUA 
+
+ INSTANCE....
+
+
+
+
+
+
+
+
+
+
+
+ --> VC TBM TEM AQUELA TOOL DE ""REACHABILITY ANALYZER"",
+
+ QUE VC 
+ PODE USAR 
+
+
+ SE VC 
+
+ TIVER 
+
+
+
+ SECURITY GROUPS COM REGRAS MAIS COMPLEXAS,
+
+ PARA DESCOBRIR 
+
+
+ QUAIS TIPOS DE REQUESTS 
+
+
+ CONSEGUEM 
+
+
+
+ ALCANÇAR UMA INSTANCE QUE TIVER ESSE SECURITY GROUP ANEXADO....
+
+
+
+
+
+
+ --> CERTO... ESSES SÃO OS SECURITY GROUPS...
