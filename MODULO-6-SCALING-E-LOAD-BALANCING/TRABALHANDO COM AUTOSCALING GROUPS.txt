@@ -1,0 +1,587 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... AGORA DEVEMOS DAR 1 OLHADA BREVE NO EC2 AUTOSCALING..
+
+
+
+
+
+
+
+
+
+
+
+
+--> DIGITAMOS EC2 --> DEPOIS 
+
+
+
+CRIAMOS ALGUMAS INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE QUISERMOS SETTAR ALGUMAS INSTANCES __ 
+
+SETTADAS __ COM A AJUDA DO AUTOSCALING,
+
+
+
+
+PODEMOS FACILMENTE SETTAR ISSO COM A AJUDA DA PAGE 
+
+DE 
+
+EC2...
+
+
+
+
+
+
+
+
+
+
+
+NA PAGE DO EC2,
+
+LÁ EMBAIXO,
+
+TEMOS 
+
+
+
+""AUTO SCALING"",
+
+
+EM QUE PODEMOS CONFIGURAR ESSA FEATURE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> E A FEATURE QUE NOS INTERESSA É O 
+
+
+""""CREATE DE AUTO SCALING GROUP"""""
+
+
+
+
+
+
+
+
+QUANDO VC CRIA 1 AUTO-SCALING GROUP,
+
+VC 
+
+CRIA 
+
+1 
+
+GRUPO DE RULES QUE 
+
+VAI 
+
+
+GARANTIR QUE 
+
+
+
+1 CERTA QUANTIDADE DE EC2 INSTANCES 
+
+
+VAI 
+
+
+
+RODAR COM 
+
+BASE NAS CONDITIONS QUE VC SETTAR....
+
+
+
+
+
+
+
+VC VAI SETTAR:
+
+
+
+
+
+
+1) NAME --> UM NOME PARA IDENTIFICAR O GRUPO..
+
+
+
+
+
+
+
+2) 1 LAUNCH TEMPLATE --> O LAUNCH TEMPLATE É SIMPLESMENTE 1 
+
+FEATURE QUE DIZ AO AWS COMO SUAS EC2 INSTANCES 
+
+DEVERÃO SER CONFIGURADAS....
+
+
+
+
+
+
+
+
+
+
+
+
+--> COMO ASSIM???
+
+
+
+
+
+
+
+
+BEM, SE NÓS LANCAMOS EC2 INSTANCES MANUALMENTE,
+
+COMO ANTES,
+
+
+
+SE USAMOS O WIZARD,
+
+
+
+NÓS 
+
+
+
+ESCOLHEMOS TODAS AQUELAS BASE SETTINGS --> 
+
+
+
+
+
+ESCOLHEMOS TODAS AS BASE SETTINGS,
+
+
+COMO 
+
+O 
+
+IAM QUE QUEREMOS USAR,
+
+
+
+OU O INSTANCE TYPE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE USAMOS 
+
+O 
+
+
+EC2 AUTO-SCALING PARA O LAUNCH DE INSTANCES,
+
+
+ISSO 
+
+
+NAO SERÁ FEITO MANUALMENTE POR NÓS... --> E É POR ISSO QUE 
+
+DEVEMOS 
+
+DIZER AO 
+
+AWS QUAL 
+
+
+
+
+__ CONFIGURATION DEVE SER ESCOLHIDA,
+
+PARA 
+
+AS INSTANCES QUE SERAO LAUNCHED -->  E ISSO É FEITO POR MEIO 
+
+DE 
+
+1 
+
+LAUNCH TEMPLATE,
+
+QUE 
+
+VC 
+
+DEVE 
+
+
+CRIAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NA PÁGINA DE LAUNCH TEMPLATE,
+
+
+
+vc DEFINE BASICAMENTE AS MESMAS SETTINGS USADAS 
+
+
+NO 
+
+EC2 
+
+
+LAUNCH WIZARD....
+
+
+
+
+
+
+
+
+
+
+--> ESCOLHEMOS A AMI DE ""AMAZON LINUX"",
+
+
+O INSTANCE TYPE (t2.micro),
+
+ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> EM TODAS AS OPTIONS VC TEM A OPCAO DE ""NAO SETTAR NO LAUNCH TEMPLATE"" (
+    o que quer dizer que 
+    vc teria 
+
+    de settar essas coisas 
+
+    na parte de ""configure auto-scaling group""...
+)
+
+
+
+
+
+
+
+
+
+
+
+-> MAS É CLARO QUE ALGUMAS SETTINGS SAO MELHORES DE SEREM 
+SETTADAS NO LAUNCH TEMPLATE...
+
+
+
+
+
+
+
+
+
+
+--> COMO O SET DO SECURITY GROUP 
+
+
+E DO VPC...
+
+
+
+
+
+
+
+
+--> TAMBÉM É BOM ESCOLHER A SUBNET,
+
+DENTRO 
+
+DESSE LAUNCH TEMPLATE...
+
+
+
+
+
+
+
+
+
+
+-> e aí podemos adicionar nossas rules de security group....
+
+
+
+
+
+
+
+
+
+
+
+--> TODAS ESSAS COISAS PODEM SER SETTADAS AQUI...
+
+
+
+
+
+
+
+
+
+
+--> TODAS AS OPTIONS SÃO MT PARECIDAS 
+
+COM O LAUNCH WIZARD 
+DO 
+
+EC2 INSTANCE... (pq vc está essencialmente fazendo a mesma coisa,
+
+mas agora com scaling automático)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ASSIM QUE VC CRIAR 1 LAUNCH TEMPLATE,
+
+VC 
+
+
+NAO VAI LANCAR 1 INSTANCE,
+
+E SIM 
+
+VAI DEIXAR 
+
+ESSE TEMPLATE 
+SALVO,
+
+
+QUE NO FUTURO 
+
+SERÁ USADO PARA 
+
+
+FAZER LAUNCH DE INSTANCES (de forma automática, pelo aws)....
+
+
+COM BASE NELE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> COM O LAUNCH TEMPLATE CRIADO,
+
+
+
+O PROFESSOR ESCOLHE O TEMPLATE 
+
+
+LÁ 
+
+
+NO 
+
+
+
+CREATE DE AUTO SCALING GROUP,
+
+
+
+COM A OPTION DE ""CHOOSE LANCH TEMPLATE""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CHECAMOS AS SETTINGS, E AÍ CONTINUAMOS...
+
+
+
+
+
+
+
+DEPOIS DEVEMOS ESCOLHER PARA QUAL VPC 
+
+
+
+ESSE AUTO-SCALING DEVE SER COLOCADO..
+
+
+
+
+
+
+
+
+
+
+TAMBÉM DEVEMOS ESCOLHER QUAIS SUBNETS DEVEM SER USADAS 
+
+PARA FAZER LAUNCH DE NOSSAS INSTANCES.... (
+    PQ SE VC DEIXAR O AUTOSCALING DECIDIR EM QUE 
+
+    LUGAR AS INSTANCES DEVEM 
+
+    SER 
+    LAUNCHED,
+
+    VC PRECISA DIZER EM QUE 
+
+    SUBNETS 
+
+    AS INSTANCES EXTRAS DEVEM SER COLOCADAS/LAUNCHED...
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS OUTRAS SETTINGS, NO FINAL...
+
+
+
+
+
+
+
+
+
+
+->  LÁ NO FINAL,
+
+TEMOS A OPTION DE ""ADD A LOAD BALANCER"" -> ISSO PQ NAO É MT UTIL 
+
+TER 
+
+
+1 
+
+MONTE DE RUNNING INSTANCES 
+
+
+
+QUE NAO FAZEM NADA, QUE NAO RECEBEM O TRÁFEGO.. -> É POR ISSO QUE O IDEAL 
+
+É DISTRIBUIR O TRÁFEGO, POR MEIO DESSES LOAD BALANCERS (pagos)...
