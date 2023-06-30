@@ -1,0 +1,882 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- OK.... QUANDO O ASSUNTO É FILE STORAGE,
+
+
+HÁ DIFERENTES TIPOS DE FILE STORAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> NO MUNDO AWS,
+
+
+TEMOS 3 """"FILOSOFIAS"""""" DE FILE STORAGE,
+
+
+QUE RESULTAM EM 3 DIFERENTES SERVICES A SEREM UTILIZADOS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) BLOCK STORAGE 
+
+
+
+
+
+
+2) OBJECT STORAGE 
+
+
+
+
+
+
+
+
+3) FILE SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS BLOCK STORAGE --> ISSO SIMPLESMENTE 
+
+
+
+SIGNIFICA 1 
+
+""UNFORMATTED HARD DRIVE"" QUE VC ANEXA A UM SERVER,
+
+POR EXEMPLO...
+
+
+
+
+
+
+
+
+ASSIM QUE ESSE BLOCK STORAGE ESTIVER ATTACHEADO,
+
+VC TEM DE FORMATTÁ-LO 
+
+
+E 
+
+O ESTRUTURAR 
+
+
+ANTES DE O UTILIZAR...
+
+
+
+
+
+
+
+
+---> NO MUNDO DAS EC2 INSTANCES,
+
+
+
+
+ISSO SIGNIFICA QUE 
+VC 
+
+VAI __ ATTACH __ 
+
+1 DESSES BLOCK STORAGE DEVICES,
+
+
+1 DESSES HARD DRIVES,
+
+E, AÍ,
+
+DE DENTRO 
+
+DA INSTANCE,
+
+
+VC 
+VAI __ MOUNT__ 
+
+
+ESSE HARD 
+DRIVE 
+
+E ENTÃO
+ 
+ VAI O FORMATTAR --------> ISSO FEITO,
+
+ VC 
+
+ VAI 
+
+
+ CRIAR 1 CUSTOM STRUCTURE 
+
+
+ NESSE HARD DRIVE 
+
+ PARA O UTILIZAR COMO QUALQUER OUTRO HARD DRIVE... PARA 
+
+
+ CRIAR 1 FILE SYSTEM,
+
+ PARA _ CRIAR FOLDERS E ARMAZENAR FILES NELE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> É POR ISSO QUE, QUANDO FALAMOS SOBRE BLOCK STORAGE,
+
+
+
+ TIPICAMENTE QUEREMOS DIZER QUE 
+ ___ANEXAMOS __ 
+
+
+
+
+
+ 1 (virtual)
+
+ HARD DRIVE A 1 SERVER..
+
+
+
+
+
+
+
+
+
+
+
+ --> E O AWS OFERECE 1 SERVICE QUE FAZ JUSTAMENTE ISSO,
+
+
+ O SERVICE 
+
+
+ ___EBS___ (elastic block STORE)..
+
+
+
+
+
+
+
+
+
+ --> ELASTIC BLOCK STORE --> É UM SERVICE QUE 
+
+
+ TE DEIXA 
+
+
+ ATTACH VIRTUAL HARD DRIVES 
+
+
+SOMENTE 
+
+ A EC2 INSTANCES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ EBS -->  IMPORTANTE ------> FUNCIONA __ APENAS __ 
+
+
+ COM EC2 INSTANCES....
+
+
+
+
+
+ É UM SERVICE QUE FOCA NO EC2... VC NÃO PODE USAR 
+
+ 
+ EBS 
+
+
+ COM OUTROS SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> PARA MTOS USE-CASES,
+
+ O EBS 
+
+ É GREAT,
+
+ PQ 
+
+ VC VAI QUERER ENHANCE 
+
+
+ SUA EC2 INSTANCE 
+
+ POR MEIO DO 
+
+
+ ADD DE 1 HARD DRIVE EXTRA.... --> PQ VC PRECISA 
+
+
+ DESSE ESPAÇO EXTRA PARA 
+
+ O WORKLOAD QUE VC 
+
+ ESTÁ RODANDO 
+
+
+ NESSA INSTANCE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> MAS TAMBÉM HÁ USE-CASES EM QUE 
+
+
+ VC ACABA __ COM __ ALGUMAS FILES __ 
+
+
+ QUE VC QUER ARMAZENAR... ALGUMAS FILES QUE 
+
+
+
+
+ __ VC __ QUER QUE SEJAM ARMAZENADAS PERMANENTEMENTE,
+
+
+
+
+ MAS FILES QUE 
+
+ VC 
+
+
+ QUER 
+
+ DEIXAR 
+
+ ARMAZENADAS 
+ DE FORMA _ INDEPENDENTE_ _
+
+
+
+ DE SUAS EC2 INSTANCES...
+
+
+
+
+
+
+
+
+ --> NESSE MESMO USE-CASE,
+
+ DIGAMOS QUE 
+ VC 
+
+
+ NAO QUER TER DE FORMATAR 1 HARD DRIVE,
+
+
+ VC NAO QUER TER DE LIDAR COM O UNDERLYING SYSTEM...
+
+
+
+
+
+
+
+
+
+
+ --> NO CASO, ESSE É O FILE STORAGE DE TIPO 
+
+ """"OBJECT STORAGE"""""...
+
+
+
+
+
+
+-- > É UM file storage 
+
+QUE 
+
+FOCA 
+
+NOS OBJECTS,
+
+
+NAS ACTUAL FILES,
+
+
+
+EM VEZ DO 
+
+SYSTEM QUE RODA POR BAIXO...
+
+
+
+
+
+
+--> EM USE-CASES COMO ESSES,
+
+
+VC NAO TEM NENHUMA INFO SOBRE O UNDERLYING SYSTEM...
+
+
+
+
+
+
+
+
+
+
+--> EM VEZ DISSO,
+
+
+VC PODE _ ARMAZENAR E RETRIEVAR 
+
+
+
+FILES _ DE QUALQUER TIPO 
+
+
+DE TAMANHO,
+
+DE QUALQUER TIPO,
+
+
+
+__ DO JEITO QUE VC QUISER... -> E, NESSE FILE STORAGE SYSTEM,
+
+
+
+VC ___ NAO CRIA NENHUM TIPO 
+
+
+DE CUSTOM STRUCTURE,
+
+
+
+PQ TUDO JÁ É CRIADO 
+
+ANTERIORMENTE...
+
+
+
+
+
+
+
+
+
+-> OU SEJA,
+
+
+APENAS FICAMOS COM ""A PLACE TO PUT YOUR FILES IN""..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO QUER DIZER QUE ARMAZENAMOS FILES SEM SE IMPORTAR 
+
+
+COM O UNDERLYING SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, ESSES USE-CASES,
+
+O AWS TAMBÉM TEM 1 SERVICE,
+
+1 
+
+DOS SERVICES 
+
+
+MAIS POPULARES E UTILIZADOS,
+
+
+
+
+QUE É 
+
+O 
+
+S3...
+
+
+
+
+
+
+
+
+--> E O S3 ___ FOI O PRIMEIRO SERVIÇO 
+
+
+OFERECIDO 
+
+PELO AWS,
+
+
+QUANDO COMEÇARAM...
+
+
+
+
+
+
+
+
+--> É O ___ SERVICE DE 
+
+
+S3,
+
+
+
+""""SIMPLE STORAGE SERVICE""""
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSE É UM SERVICE TAO IMPORTANTE QUE ,
+
+MAIS TARDE NO CURSO,
+
+
+TEREMOS 
+
+1 MODULE INTEIRO PARA ELE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> NESSA COURSE SECTION,
+
+
+ESTAMOS 
+
+MAIS INTERESSADOS 
+
+
+
+
+
+NO BLOCK STORAGE E NO EFS,
+
+
+NO ELASTIC FILE SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EFS -->  ELE TE DÁ 1 __ FILE SYSTEM... --> 
+
+
+
+
+TE DÁ UM (NETWORK) FILE SYSTEM...
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE QUANDO VC 
+
+USA O BLOCK STORAGE,
+
+
+
+VC __ TAMBÉM __ 
+
+
+
+SETTA 1  FILE SYSTEM EM CIMA DO HARD DRIVE QUE 
+
+VC ATTACHA...
+
+
+
+
+
+
+
+
+
+-->  MAS O EFS É PARA CASOS EM QUE 
+
+VC 
+
+
+NAO QUER LIDAR COM A PARTE DO HARD-DRIVE...
+
+
+
+
+
+
+
+
+
+--> nesses casos,
+
+VC 
+
+SÓ SE IMPORTA 
+
+
+
+COM O FILE SYSTEM --> E SERIA MELHOR 
+
+SE 
+
+FOSSE 
+
+1 
+
+NETWORK 
+
+
+FILE SYSTEM,
+
+
+
+EM QUE 
+
+FOSSE 
+
+POSSÍVEL
+
+
+CONECTAR 
+
+MÚLTIPLOS DEVICES,
+
+
+TALVEZ 
+
+
+MÚLTIPLAS EC2 INSTANCES,
+
+
+
+MAS TAMBÉM ALGUNS OUTROS SERVICES...
+
+
+
+
+
+
+
+
+
+
+--> E AÍ VC QUER __ SER CAPAZ DE INTERAGIR COM ESSE FILE SYSTEM 
+
+SEM SE IMPORTAR COM O UNDERLYING HARD DRIVE...
+
+
+
+
+
+
+
+
+
+--> OK... QUER DIZER QUE __ 
+
+
+
+SE IMPORTA COM MAIS DO QUE 
+
+AS FILES (object storage, que se importa só com as files/objects),
+
+
+
+
+PQ VC SE IMPORTA COM O FILE SYSTEM... SE IMPORTA COM 
+
+O FILE SYSTEM,
+
+
+MAS NAO 
+
+
+SE IMPORTA COM O SETUP DO HARD DRIVE...
+
+
+
+
+
+
+
+
+QUER DIZER QUE 
+VC 
+
+QUER 
+SETTAR APENAS 
+
+ALGUMAS BASIC CONFIGURATION OPTIONS,
+
+
+
+E ENTAO 
+
+
+FICAR COM 1 FILE SYSTEM PRÉ-FORMATTADO --> DENTRO DESSE FILE SYSTEM,
+
+
+VC PODE 
+
+
+ENTÃO FAZER COISAS ___ COMO _ CREATE YOUR OWN STRUCTURE,
+
+E 
+
+
+
+STORE YOUR OWN FILES...
+
+
+
+
+
+
+
+
+
+
+
+
+----> SE VC QUER CRIAR 1 VIRTUAL FILESYSTEM SEM 
+
+TER 
+
+
+MT MANUAL SETUP WORK,
+
+
+O 
+
+AWS 
+
+
+TAMBÉM 
+
+
+OFERECE SERVICES PARA ISSO,
+
+
+
+
+QUE 
+
+SÃO 
+
+
+
+O 
+
+
+
+EFS 
+
+
+E O 
+
+
+
+FSx...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+FSx Luster --> VEREMOS MAIS TARDE....
+
+
+
+
+
+
+
+
+
+
+
+
+OK... E ESSES SÃO OS SERVICES QUE TE DÃO 
+
+
+FILE STORAGES... E QUE
+
+
+QUE 
+
+
+VC 
+PODE ANEXAR
+ 
+ A DIFERENTES SERVICES....
