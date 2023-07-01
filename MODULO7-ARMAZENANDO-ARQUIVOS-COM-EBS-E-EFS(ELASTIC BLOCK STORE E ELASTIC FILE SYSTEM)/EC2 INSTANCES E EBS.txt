@@ -1,0 +1,578 @@
+
+
+
+
+
+
+
+
+
+OK... AGORA QUE TEMOS UM 
+
+ENTENDIMENTO GERAL DO 
+
+
+SERVICE DE EBS,
+
+
+DEVEMOS 
+
+
+
+
+DAR __ UMA __ INVESTIGADA NO 
+
+""EC2 STORAGE""...
+
+
+
+
+
+BEM, MAS JÁ ESTUDAMOS ISSO, NAO? 
+
+
+
+
+
+
+
+
+
+
+
+-> PQ O EBS É UM SERVICE QUE NOS DEIXA ADICIONAR 
+
+
+STORAGE A EC2 INSTANCES... --> E ISSO É VERDADE...
+
+
+
+
+
+
+
+
+
+
+MAS ""EC2 INSTANCE STORAGE'" É UM TERMO ESPECIAL,
+
+
+QUE SE REFERE A ALGO 
+
+
+
+1 POUQUINHO DIFERENTE -->  ISSO PQ __ TODAS 
+
+AS EC2 INSTANCES QUE 
+
+VC 
+
+STARTA/CRIA 
+
+
+
+__ POSSUEM, SIM, 
+
+1 BASIC STORAGE..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSA BASIC STORAGE É BASICAMENTE 
+
+A MÁQUINA,
+
+
+A BASE STORAGE 
+
+EM QUE 
+
+
+O OPERATING SYSTEM 
+
+E O BASE SOFTWARE DITADO PELA AMI (image amazon)
+
+
+
+É INSTALADO...
+
+
+
+
+
+
+
+
+
+
+--> CERTO... E QUANDO O ASSUNTO É EC2 INSTANCE STORAGE,
+
+VC 
+
+PODE USAR O EBS,
+
+
+SIM,
+
+
+
+
+
+MAS  ___ VC TAMBÉM PODE USAR OUTRA FEATURE,
+
+QUE É CHAMADA 
+
+
+
+
+DE EC2 INSTANCE STORE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+EC2 INSTANCE STORE VS EBS VOLUME ...
+
+
+
+
+
+
+
+
+
+PQ OS EC2 INSTANCE STORES SÃO ALTERNATIVAS 
+
+
+AO USO DE EBS VOLUMES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PQ PODE ADICIONAR EBS VOLUMES A TODAS AS EC2 INSTANCES,
+
+ 
+ PARA ARMAZENAR DATA EXTRA NELES,
+
+
+
+
+
+
+
+
+ MAS ESSE ""EC2 INSTANCE STORE"",
+
+
+
+ ASSIM __ COMO _ O OPERATING SYSTEM E  
+
+ O BASE SOFTWARE,
+
+
+ É 
+
+ TODO ARMAZENADO
+  
+
+
+  DENTRO DE 1 ___INTERNAL STORAGE,
+
+  POR ASSIM DIZER...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS ESSA NÃO É A PARTE IMPORTANTE... --> A PARTE IMPORTANTE 
+
+
+É QUE 
+
+
+
+__ESSE INTERNAL STORAGE PODE SER OU:
+
+
+
+
+
+1) 1 EBS VOLUME 
+
+
+
+
+
+
+
+2) OU PODE SER 1 STORAGE QUE É BASICAMENTE 
+
+
+
+EM 1 __ HARD__ DRIVE,
+
+QUE 
+
+FAZ 
+
+PARTE 
+DO SERVER/PHYSICAL MACHINE QUE 
+
+
+TAMBÉM TEM A CPU E TUDO MAIS( que é dedicada a sua instance)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO É O QUE FAZÍAMOS, NO FIDELIZOU.ME...
+
+
+
+
+
+
+
+
+
+
+É AQUILO QUE CHAMAMOS DE ""EC2 INSTANCE STORE""
+
+
+
+
+
+
+
+
+
+
+
+
+--> É A STORAGE QUE NÃO É BACKED PELO __ EBS... 
+
+
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+
+
+FICAMOS COM O HARD DRIVE QUE É PARTE DA MACHINE/RACK 
+
+
+NO DATA CENTER...
+
+
+
+
+
+
+
+
+
+
+JÁ COM O EBS, USAMOS 1 EBS VOLUME...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ESSE EBS-BACKED APPROACH 
+
+É __ DEFINITIVAMENTE __ O APPROACH DEFAULT, HOJE EM DIA...
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS O PROFESSOR SÓ MENCIONA ESSA ALTERNATIVA PQ ELA REALMENTE 
+
+EXISTE,
+
+PARA ALGUMAS AMIs...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PQ ESSA ""QUESTAO"" DE INSTANCE STORAGE 
+
+
+É DECIDIDA 
+
+
+NO NÍVEL DO AMI...
+
+
+
+
+
+
+PQ QUANDO VC ESCOLHE 1 AMI (como amazon linux),
+
+
+
+
+
+VC TAMBÉM __ESCOLHE __ O LOCAL EM QUE 
+
+ESSE BASE SOFTWARE SERÁ INSTALADO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ou seja,
+
+quando vc escolhe a image,
+
+
+vc 
+
+escolhe 
+
+
+
+
+SE VC 
+
+VAI QUERER 
+
+
+
+
+
+
+O ""EBS-BACKED"" 
+
+
+
+
+
+OU ENTÃO SE VAI USAR ESSA FEATURE DE ""INSTANCE""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESSE DETALHE É BEM PEQUENO... DIFÍCIL DE ENXERGAR..
+
+
+
+
+
+
+
+
+
+
+
+
+NA AMAZON MACHINE IMAGE,
+
+TEMOS ISTO:
+
+
+
+
+
+
+Virtualization: hvm 
+
+
+
+
+ENA enabled: true 
+
+
+
+
+
+Root device type: ebs...
+
+
+
+
+
+
+
+
+
+
+--> O DEFAULT É REALMENTE USAR EBS...
+
+
+
+
+
+
+MAS REALMENTE EXISTEM ALGUNS AMIs 
+
+
+
+QUE NAO USAM EBS,
+
+E SIM 
+
+
+
+OUTRAS COISAS (como instance store)...
+
+
+
+
+
+
+
+
+
+
+EBS-BACKED AMIs --> É O DEFAULT HOJE EM DIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS TAMBÉM EXISTEM AMIs que usam essa internal storage,
+
+que 
+
+não vem do EBS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO...
+
+
+
+
+tínhamos esse side note...
+
+
+
+
+
+
+
+
+
+
+-> MAS EBS É 
+
+REALMENTE O DEFAULT, HOJE EM DIA...
