@@ -1,0 +1,325 @@
+ 
+
+
+
+
+ OK.... ACABAMOS COM O EBS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ SAO BASICAMENTE HARD DRIVES CONECTADOS 
+
+
+ A EC2 INSTANCES....
+
+
+
+
+
+
+
+
+ O PROFESSOR TAMBEM TINHA FALADO SOBRE O EFS,
+
+
+ O SERVICE 
+ DE 
+
+ ELASTIC FILE SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> A IDEIA,
+
+ AQUI,
+
+ É QUE TAMBÉM 
+ FICAMOS COM 1 HARD DRIVE,
+
+
+
+ MAS 1 HARD DRIVE COM O QUAL NAO PRECISAMOS NOS IMPORTAR (
+
+
+    OU SEJA,
+
+    NAO ESCOLHEMOS 1 TAMANHO DE HARD-DRIVE,
+
+    E SIM 
+
+
+
+
+    FICAMOS __ COM 1 SCALABLE,
+
+    PRE-FORMATTED 
+
+    FILE SYSTEM,
+
+
+    O QUAL VAI USAR 
+
+
+    HARD DRIVES UNDER THE HOOD,
+
+
+
+
+    MAS É 1 SISTEMA EM QUE 
+
+    NAO PRECISAMOS NOS IMPORTAR 
+
+    COM O HARD DRIVE CONFIGURATION... diferente do EBS, no caso...
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> CERTO...
+
+
+
+
+
+
+
+
+
+ E, COM O EFS,
+
+ PODEMOS ESTRUTURAR O 
+
+ FILE SYSTEM DA MANEIRA QUE DESEJARMOS...
+
+
+
+
+
+-> PODEMOS ADICIONAR DIRECTORIES E SUB DIRECTORIES...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS FAZER ISSO  (add folders e sub directories)
+
+
+
+POR MEIO 
+
+
+
+DA CLI,
+
+
+
+
+OU POR MEIO DE CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS CRIAR FOLDERS NO FILE SYSTEM TAMBÉM DENTRO 
+
+
+DA EC2 INSTANCE CONECTADA
+ 
+
+
+
+AO EFS FILE SYSTEM..
+
+
+
+
+
+
+
+
+
+
+
+-> MAS NÃO PODEMOS FORMATAR O UNDERLYING HARD DRIVE 
+
+DO EFS,
+
+
+NO ENTANTO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E QUANDO CRIAMOS 1 FILE SYSTEM COM O EFS,
+
+
+PODEMOS O ACESSAR/ATTACHEAR 
+
+
+
+A MÚLTIPLOS SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PODEMOS ANEXAR NOSSO EFS 
+
+
+ÀS INSTANCES 
+
+EC2, SIM,
+
+
+MAS TAMBÉM 
+
+A OUTROS TIPOS DE SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE O EFS NÃO É FOCADO APENAS 
+NO EC2...
+
+
+
+
+
+
+
+
+
+
+
+RESUMO:
+
+
+
+
+
+
+
+
+
+
+
+1) EBS 
+
+
+a) GANHAMOS 1 VOLUME UNFORMATTED ...
+
+
+b) MENOS AUTOMATIC SCALING,
+E MAIS MANUAL WORK...
+
+c) suporta MULTI-ATTACH,
+
+É POSSÍVEL,
+
+MAS NÃO É SEU FOCO...
+
+
+d) É EXCLUSIVO AO EC2...
+
+
+
+
+2) EFS 
+
+a) GANHAMOS 1 PRE-FORMATTED FILE SYSTEM...
+
+
+b) SCALE AUTOMATICALLY,
+
+
+NÃO TEMOS QUE NOS IMPORTAR COM O RUN OUT DE SPACE... (ele escala automaticamente, se vc quiser)...
+
+c) MULTI-ATTACH --> É UMA 
+
+
+
+CORE FEATURE,
+
+
+É OPTIMIZADO PARA SER ACESSADO POR MÚLTIPLAS MÁQUINAS AO MESMO TEMPO...
+
+
+
+
+d) NÃO É EXCLUSIVO AO EC2.... pode ser usado com coisas como AWS LAMBDA...
