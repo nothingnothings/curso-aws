@@ -1,0 +1,376 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... 
+
+
+
+
+ACABAMOS COM FILE STORAGE, POR ENQUANTO..
+
+
+
+
+
+
+
+APRENDEMOS:
+
+
+
+
+
+
+
+
+
+1) QUE EXISTEM MÚLTIPLOS TIPOS DE FILE STORAGE SERVICES....
+
+
+
+
+
+
+2) NOS AJUDAM A ARMAZENAR 
+
+APP FILES,
+ USER FILES,
+ BUSINESS FILES,
+
+ PERSONAL FILES....
+
+
+
+
+
+
+
+
+
+
+
+3) DIFERENTES TIPOS DE STORAGE SYSTEMS...
+
+
+
+
+
+
+
+
+4) DIFERENTES TIPOS DE STORAGE -> HARD DRIVES,
+
+FILE SYSTEMS,
+
+OBJECTS...
+
+
+
+
+
+
+
+
+
+5) APRENDEMOS QUE EXISTE 
+
+
+EBS (VOLUME que precisa ser 
+formatado, maior controle, mas funciona apenas com EC2), EFS (file system sem 
+ter de formatar nada; funciona com 
+todos tipos de service ), FSx Lustre (EFS avançado/de rico) e S3 (objetos)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---->CERTO...
+
+
+
+
+
+
+O PROFESSOR MENCIONA QUE EBS, EFS e FSx Lustre
+
+
+
+__ SAO FOCADOS NO CONNECT A APPLICATIONS ... -> VC 
+
+
+NAO USARIA 
+
+O 
+
+EBS 
+
+PARA 
+
+
+ARMAZENAR SUAS PRÓPRIAS VACATION IMAGES -->  PQ __ SERIA 
+
+
+
+BASTANTE CUMBERSOME 
+
+
+CRIAR 1 SETUP QUE TE DEIXASSE FAZER ISSO (
+    S3 É UM SERVICE MELHOR PARA ISSO,
+
+
+    E O VEREMOS MAIS TARDE....
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EBS --> TE DÁ 1 RAW UNFORMATTED HARD DRIVE,
+
+QUE 
+
+VC 
+ANEXA A EC2 INSTANCES (
+
+    só a ec2 instances,
+
+    outros services nao funcionam...
+
+
+)
+
+
+
+
+
+
+
+
+
+
+E VOLUMES EBS PRECISAM SER FORMATADOS E ESTRUTURADOS MANUALMENTE,
+
+
+DENTRO 
+
+
+DAS EC2 INSTANCES, COM SSH....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OS EBS VOLUMES TAMBÉM TE DÃO EXTRA FEATURES,
+
+
+COMO  
+
+SNAPSHOTS (seguranca, restore),
+
+
+ELASTIC VOLUMES 
+
+
+
+E 
+_ MULTI-ATTACH...
+
+
+
+
+
+
+
+
+
+
+-> O EBS É PERFEITO SE VC PRECISA DE 1 HARD DRIVE,
+
+E É RELATIVAMENTE AFFORDABLE...
+
+
+
+
+
+
+
+
+MAS SE VC NAO QUER TER DE LIDAR COM O FORMAT DE 1 HARD DRIVE,
+
+
+OU 
+
+SE 
+
+VC 
+NAO QUER 
+
+TER 
+
+DE 
+DECIDIR 
+QUANTO 
+ESPAÇO SERÁ NECESSÁRIO,
+
+
+SEM SE IMPORTAR COM O SCALING,
+
+
+
+
+
+
+
+VC _PODE __ 
+OPTAR __ PELO 
+
+
+EFS..
+
+
+
+
+
+
+
+
+
+
+EFS --> COM ELE,
+
+VC FICA COM 1 FILE SYSTEM PRÉ-CONFIGURADO,
+
+QUE 
+VC 
+
+PODE 
+
+ANEXAR 
+
+A SUAS 
+
+EC2 INSTANCES (e a outros services, contrariamente aos EBS volumes)...
+
+
+
+
+
+
+
+
+
+
+
+O EFS É DIFERENTE -> ELE __ É OPTIMIZADO 
+
+PARA SCALABILITY E MULTI-ACCESS,
+
+O QUE 
+
+QUER DIZER QUE 
+
+PODEMOS O ACESSAR 
+
+DE MÚLTIPLOS SERVICES DIFERENTES AO MESMO TEMPO,
+
+E 
+DE 
+
+MÚLTIPLAS EC2 INSTANCES AO MESMO TEMPO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TAMBÉM TEMOS O SERVICE DE FSx Lustre,
+
+QUE É USADO 
+
+PARA 
+
+HIGH-PERFORMANCE FILE ACCESS TASKS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> O PRICING ENTRE ESSES SERVICES DIFERE,
+
+E A QUANTIDADE DE MANUAL WORK TBM...
