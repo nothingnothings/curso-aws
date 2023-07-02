@@ -1,0 +1,195 @@
+
+
+
+
+
+
+
+
+
+NA COURSE SECTION ANTERIOR,
+
+
+DISCUTIMOS 
+
+
+SOBRE 
+
+O 
+
+FILE STORAGE COM EBS 
+
+E 
+
+EFS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NESSE MÓDULO,
+
+
+
+CONTINUAREMOS FALANDO 
+
+SOBRE 
+
+
+
+FILE STORAGE,
+
+
+MAS 
+
+AGORA 
+
+
+
+
+DAREMOS 
+
+
+1 
+OLHADA 
+MAIS 
+
+PRÓXIMA 
+
+
+NO OBJECT STORAGE,
+
+COM  
+
+
+O 
+
+S3...
+
+
+
+
+
+
+
+
+
+
+
+
+S3 --> STORING AND ACCESSING FILES FROM ANYWHERE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> s3 --> É OUTRO KEY SERVICE OFERECIDO PELO AWS...
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ISSO, NESSA COURSE SECTION,
+
+
+ENTENDEREMOS:
+
+
+
+1) O QUE É O S3,
+
+E COMO PODEMOS O UTILIZAR...
+
+
+
+
+
+
+
+
+
+2) ENTENDEREMOS CONCEITOS KEY, COMO:
+
+
+
+3) BUCKETS 
+
+
+
+
+
+4) SETTINGS 
+
+
+
+
+
+5) COMO ACESSAR FILES....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS VEREMOS MAIS DO QUE ISSO....
+
+
+
+
+
+
+
+
+APRENDEREMOS ALGUMAS 
+
+ADVANCED FEATURES --> VEREMOS QUE O S3 
+
+
+PODE NOS AJUDAR COM:
+
+
+
+
+
+1) FILE ARCHIVAL 
+
+
+
+
+
+2) COM O HOST __DE STATIC WEBSITES...
+
+
