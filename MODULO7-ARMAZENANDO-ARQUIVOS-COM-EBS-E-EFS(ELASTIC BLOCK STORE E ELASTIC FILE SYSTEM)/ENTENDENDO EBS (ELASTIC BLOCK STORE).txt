@@ -995,3 +995,9 @@ MAS NÃO SÃO INFINITOS.
 
 
 ->  VC SEMPRE DEVE CHECAR SE OS SERVICES SÃO PAGOS...
+
+
+
+
+
+se forem free, deve checar quais são os seus limites

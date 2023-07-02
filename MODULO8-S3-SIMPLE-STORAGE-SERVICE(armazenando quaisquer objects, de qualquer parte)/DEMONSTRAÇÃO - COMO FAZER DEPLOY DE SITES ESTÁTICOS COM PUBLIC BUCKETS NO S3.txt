@@ -1,0 +1,895 @@
+
+
+
+
+
+
+
+
+
+ANTES, O PROFESSOR JÁ HAVIA NOS MOSTRADO COMO PODEMOS CRIAR 1 BUCKET,
+
+
+COMO UPLOADAR 
+
+
+FILES A ELE, ETC..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS 1 COISA INTERESSANTE SERIA VER COMO __ CRIAR 1 PUBLIC BUCKET,
+
+1 
+
+BUCKET QUE REALMENTE EXPÕE SEU CONTEÚDO... ---> E, AÍ, COMO PODEMOS 
+
+
+
+SETTAR 1 BUCKET COMO ""WEBSITE SERVING""...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR CRIA 1 NOVO BUCKET,
+
+
+
+
+
+E AÍ 
+
+DEIXA OS ACLs disabled (recomendado) 
+
+
+
+
+
+
+
+,
+
+
+E AÍ 
+
+
+
+
+
+
+
+DESABILITA A CAIXA DE ""BLOCK ALL PUBLIC ACCESS"" ---> PQ O PROFESSOR 
+
+
+NAO QUER BLOQUEAR ACESSO PÚBLICO,
+
+E SIM __QUER CRIAR_ 1 BUCKET QUE É PUBLICAMENTE 
+
+ACESSÍVEL..
+
+
+
+
+
+
+
+
+
+
+
+
+--> CONFIRMAMOS QUE NAO QUEREMOS BLOCK PUBLIC ACCESS..
+
+
+
+
+
+
+
+
+
+
+--> AÍ O BUCKET É CRIADO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ PODEMOS 
+
+SOLTAR FILES NO BUCKET,
+FILES QUE 
+
+DEVERAO
+ 
+ SER DISPONÍVEIS PUBLICAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> ARRASTAMOS E LARGAMOS 1 IMAGE DENTRO DA BUCKET...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> ESSA IMAGE SERÁ UPLOADADA, E AÍ DEVE FICAR DISPONÍVEL A 
+
+
+ TODAS AS PESSOAS NO MUNDO...
+
+
+
+
+
+
+
+
+
+
+
+ --> SE COPIAMOS E COLAMOS 
+
+
+ A URL DA IMAGE 
+
+
+ NO BROWSER,
+
+
+
+
+
+
+ AINDA NAO CONSEGUIMOS A ACESSAR...
+
+
+
+
+
+
+
+
+
+
+
+ -> ISSO ACONTECE PQ... 
+
+
+
+
+
+
+
+ PQ QUANDO 
+
+
+ DESABILITAMOS A CAIXA DE ""BLOCK PUBLIC ACCESS"",
+
+
+
+ NÓS 
+
+
+
+ """""NAO PERMITIMOS PUBLIC ACCESS,
+
+
+ APENAS _ _PARAMOS __ DE O __ BLOQUEAR___""""...
+
+
+
+
+
+
+
+
+
+
+
+ --> OU SEJA,
+
+
+ ISSO, NO FINAL DAS CONTAS,
+
+
+ NOS DEIXA __MUDAR __ AS SETTINGS DO BUCKET DE MODO QUE _ PUBLIC 
+
+ ACCESS REALMENTE É GARANTIDO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> OU SEJA,
+
+
+ O UNCHECK DESSA BOX É O BARE MINIMUM,
+
+ PQ 
+
+ SE 
+
+ ISSO 
+
+
+ NAO FOR 
+ UNCHECKED,
+
+ O BUCKET 
+
+ NEM MESMO SERIA 
+
+
+ CAPAZ DE SER EXPOSTO AO MUNDO...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> OK.... AGORA PODEMOS MUDAR ALGUMAS 
+
+
+ OUTRAS SETTINGS, ADICIONAR CERTAS OUTRAS PERMISSIONS,
+
+ PARA DEIXAR 
+ 
+
+
+ ESSE BUCKET PUBLICLY AVAILABLE...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> QUER DIZER QUE AS 2 COISAS IMPORTAM:
+
+
+
+ 1) UNCHECK THE BOX 
+
+
+
+
+
+
+
+
+
+
+
+ 2) MUDAR ALGUMAS PERMISSIONS, 
+
+ LÁ NO PRÓPRIO BUCKET... É ISSO QUE DEIXARÁ O BUCKET 
+
+ __ACESSÍVEL AO PÚBLICO (pq eles terão permissão)...
+
+
+
+
+
+
+
+
+ --> certo...
+
+
+
+
+
+
+
+
+
+
+ -> AGORA QUE UNCHECKAMOS A BOX,
+ PODEMOS 
+
+ COLOCAR OUTRAS SETTINGS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> CLICAMOS NAS PERMISSIONS DO BUCKET,
+
+
+ E AÍ 
+
+
+
+
+ TEMOS 
+
+
+ """"BUCKET POLICY"""" --> É ISSO QUE GARANTE PUBLIC ACCESS 
+
+ AOS OBJECTS 
+
+
+
+ DENTRO DO BUCKET...
+
+
+
+
+
+
+
+
+
+
+
+
+ -> SE CLICAMOS EM LEARN MORE,
+
+
+ ENCONTRAMOS ALGUNS EXAMPLE PERMISSIONS -> MAIS SOBRE BUCKET POLICY 
+
+
+
+
+ E SOBRE 
+
+
+ COMO FUNCIONA...
+
+
+
+
+
+
+
+
+
+
+ -> MAS EM BUCKET POLICIES,
+
+
+
+ TEMOS ALGUNS EXEMPLOS..
+
+
+
+
+
+
+
+
+
+ EX:
+
+
+
+"""GRANT READ-ONLY PERMISSION TO AN ANON USER"" --> É EXATAMENTE ISSO QUE 
+
+
+QUEREMOS...
+
+
+
+
+
+
+
+
+
+
+-> QUEREMOS DEIXAR OS OBJECTS DISPONÍVEIS AO OUTSIDE WORLD,
+
+
+MAS NAO QUEREMOS QUE ELES SEJAM CAPAZES DE __ CHANGE__ OS OBJECTS,
+
+E SIM 
+
+APENAS 
+
+
+"""""VIEW"""" OS CONTEÚDOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A BUCKET POLICY FICA TIPO ASSIM:
+
+
+
+
+
+
+
+{
+
+    "Version": "2012-10-17",
+    "Statement": [
+
+        {
+            "$id": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": [
+                "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+COPIAMOS E COLAMOS ESSE NEGÓCIO,
+
+
+
+
+
+
+
+MAS PRECISAMOS SUBSTITUIR 
+
+
+                "arn:aws:s3:::DOC-EXAMPLE-BUCKET/*"
+
+
+
+PELO NOME DO NOSSO BUCKET...
+
+
+
+
+
+
+
+
+
+
+TIPO ASSIM: 
+
+
+
+{
+
+    "Version": "2012-10-17",
+    "Statement": [
+
+        {
+            "$id": "PublicRead",
+            "Effect": "Allow",
+            "Principal": "*",
+            "Action": [
+
+                "s3:GetObject",
+                "s3:GetObjectVersion"
+            ],
+            "Resource": [
+                "arn:aws:s3:::EXEMPLO-EXEMPLO/*"
+            ]
+        }
+    ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------> SALVAMOS ESSAS CHANGES...
+
+
+
+
+
+
+
+
+
+--> A BUCKET POLICY ESTARÁ ATIVA..
+
+
+
+
+
+
+
+
+--> E, AGORA,
+
+SE VOLTAMOS 
+
+E TENTAMOS 
+
+ACESSAR ESSA URL,
+
+
+
+
+AGORA 
+
+CONSEGUIMOS... --> É ASSIM QUE PODEMOS ACESSAR 
+
+
+CONTEÚDO PUBLICAMNETE,
+
+
+COM 
+
+OS BUCKET.S..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... AGORA A PRÓXIMA COISA QUE PODEMOS FAZER É __ O SERVE__ _ 
+
+DE WEBSITES ESTÁTICOS...
+
+
+
+
+
+
+
+
+
+
+
+
+--> E O EXPOSE DE OBJECTS PUBLICAMNETE É A PRIMEIRA ETAPA...
+
+
+
+
+
+
+
+
+
+
+-> A PRÓXIMA ETAPA É GARANTIR QUE 
+
+HTTP REQUESTS SEJAM 
+
+
+HANDLADOS 
+
+POR 
+
+
+1 SERVER, BEHIND THE SCENES,
+
+E QUE 
+
+O 
+
+SERVER 
+
+FAÇA SERVE 
+
+
+DE NOSSOS STATIC ASSETS COMO SE FOSSE 1 WEBSITE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ENABLAR ISSO, DEVEMOS IR ATÉ AS __ PROPERTIES__ 
+
+DE NOSSO BUCKET...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NAS PROPERTIES,
+
+TEMOS A OPTION DE 
+
+
+
+"""STATIC WEBSITE HOSTING"""" ---> NO FINAL DA PÁGINA..
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE EDITAMOS ISSO, PODEMOS ENABLAR 
+
+STATIC WEBSITE HOSTING -->  
+
+
+COLOQUE 
+
+
+""HOST A STATIC WEBSITE""...
+
+
+
+
+
+
+
+
+-> AÍ PRECISAMOS __ TER O NOME DE NOSSA MAIN ENTRY FILE.. -> QUE SERÁ INDEX.HTML...
+
+
+
+
+
+
+
+
+
+
+--> E NAO PRECISAMOS DE NENHUMA OUTRA SETTING..
+
+
+
+
+
+
+
+
+
+--> COM ISSO SALVO,
+
+NOSSO BUCKET 
+
+ESTARÁ FAZENDO SERVE 
+
+DE 
+
+1 
+
+HTML,
+
+
+
+
+
+
+
+
+
+VAI ESTAR FAZENDO HOST DE 1 WEBSITE --> AGORA SÓ FALTA O CSS 
+
+E O JAVASCRIPT...
+
+
+
+
+
+
+
+
+
+--> COLOCAMOS ISSO NO ROOT DO BUCKET (só existe root),
+
+
+
+
+
+E AÍ 
+
+
+
+
+O SITE É REALMENTE 
+
+SERVED...
+
+
+
+
+
+
+
+
+--> CERTO.. MAS AGORA, PARA 
+
+TER A URL,
+
+VC 
+
+NAO VAI COMPARTILHAR 
+A 
+
+URL DE 
+
+1 
+
+
+ÚNICO OBJECT,
+
+
+E SIM 
+
+
+
+VAI COMPARTILHAR A URL VISTA LÁ EM PROPERTIES,
+
+EM 
+
+
+""STATIC WEBSITE HOSTING""
+
+
+
+
+
+
+
+
+
+--> BUCKET WEBSITE ENDPOINT --> ESSA URL VAI NOS LEVAR AO STATIC 
+
+WEBSITE...
+
+
+
+
+
+
+
+
+
+--> ESSA URL É GERADA PELO AWS... --> SE VC QUER 
+
+
+CUSTOMIZAR ESSA URL,
+
+COLOCAR SEU PRÓPRIO DOMAIN,
+
+ISSO É POSSÍVEL,
+
+
+E É ALGO QUE VEREMOS MAIS TARDE NO CURSO...
