@@ -1,0 +1,1156 @@
+
+
+
+
+
+
+
+
+
+
+
+PARA COMPREENDERMOS O SERVICE DE S3,
+
+
+
+
+
+
+
+ANTES DEVEMOS ENTENDER A NOCAO 
+
+
+DE 
+
+
+""oBJECT STORAGE""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+vimos isso BREVEMENTE NA SECTION ANTERIOR..
+
+
+
+
+
+
+
+
+
+
+
+
+A IDEIA POR TRÁS DE OBJECT STORAGE É QUE VC 
+
+
+NAO FOCA 
+
+NO HARD DRIVE/FILE SYSTEM 
+
+
+
+
+EM QUE 
+
+1 
+
+DETERMINADA COISA É ARMAZENADA,
+
+E SIM 
+
+
+FOCA 
+
+
+
+NA __ FILE EM SI... (nao se importa com o underlying system 
+
+
+em que essa file é armazenada)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> FOCUS ON THE FILE..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NÓS __ sABEMOS __ QUE VAMOS TER 1 FILE, 1 MOVIE, 
+
+
+1 PDF,
+
+IMAGE,
+
+OU QUALQUER OUTRA COISA....
+
+
+
+
+
+
+
+
+
+
+
+-> TALVEZ ESSA FILE TENHA SIDO PRODUZIDA POR 
+
+
+1 APP,
+
+
+OU TALVEZ 
+
+
+
+
+
+É 1 ARQUIVO PESSOAL....
+
+
+
+
+
+
+
+
+
+
+-> TALVEZ VC QUEIRA ARMAZENAR SUAS BUSINESS FILE
+
+
+
+EM 1 BUCKET,
+
+PARA A PROTEGER 
+
+
+DA PERDA 
+
+DE DADOS.. ( 
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... O CONCEITO DE OBJECT STORAGE É 
+
+
+__ O _FOCO NAS INDIVIDUAL FILES -> OU SEJA,
+
+
+
+QUALQUER TIPO DE FILE,
+
+
+
+COM QUASE QUALQUER TIPO DE SIZE....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O LIMITE PARA O SERVICE DE S3 
+
+É _ _ 4TB POR ARQUIVO...
+
+
+
+
+
+
+
+
+
+
+
+--> E NAO HÁ  _ LIMITE__ NO NÚMERO DE FILES QUE VC 
+
+
+
+PODE TER... -> É BASICAMENTE 1 LIMITLESS 
+
+STORAGE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+S3 --> SIMPLE STORAGE SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> KEY FEATURES-->
+
+
+
+
+
+
+
+1) É ALL ABOUT O STORE DE FILES...
+
+
+
+
+
+
+
+
+
+
+2) E QUANDO O ASSUNTO É O STORE DE FILES,
+
+
+E O 
+
+
+UPLOAD 
+
+DESSAS FILES AO S3,
+
+
+
+HÁ UMA IMPORTANTE DIFERENÇA (em relacao ao ebs e efs)....
+
+
+
+
+
+
+
+
+
+
+3) UMA KEY DIFFERENCE É QUE 
+
+
+
+__ARQUIVOS PODEM SER UPLOADADOS,
+
+AOS SEUS BUCKETS,
+
+
+
+
+POR MEIO DE DIVERSOS METHODS..
+
+
+
+
+
+
+
+METHODS:
+
+
+
+1) CONSOLE 
+
+
+2) CLI 
+
+
+3) HTTP 
+
+
+4) API 
+
+
+
+5) SDK...
+
+
+
+
+
+
+
+
+
+
+OU SEJA,
+
+
+
+
+A CONTRÁRIO 
+
+
+
+DE SERVICES COMO O EFS E EBS,
+
+
+O 
+
+SERVICE 
+
+DE 
+
+
+
+S3 
+
+NÃO PRECISA SER ANEXADO A OUTRO SERVICE ANTERIORMENTE...
+
+
+
+
+
+
+
+
+
+
+-> PQ O EBS/EFS PRECISAM 
+
+SER 
+
+ANEXADOS A 1 
+
+EC2 INSTANCE/SERVICE 
+
+
+ANTES 
+
+DE 
+
+SEREM UTILIZADOS...
+
+
+
+
+
+
+
+
+
+
+
+
+JÁ O S3,
+
+
+SIMPLE STORAGE SERVICE,
+
+
+
+NÃO PRECISA 
+
+DESSE ATTACH PRÉVIO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+EM VEZ DISSO,
+
+O SERVICE 
+
+DE 
+
+
+S3 
+
+
+PODE 
+
+SER 
+USADO,
+
+
+SIM,
+
+
+POR 
+
+WORKLOADS 
+
+RODANDO 
+
+EM CIMA 
+
+DE OUTROS 
+
+SERVICES,
+
+
+ 
+
+
+
+
+
+
+
+__ MAS VC TAMBÉM PODE USAR O SERVICE S3 
+
+
+
+
+__ LÁ DE SEU LOCAL DEVICE,
+
+LÁ DA WEB,
+
+
+COM A AJUDA 
+
+
+DO 
+
+CLI,
+
+
+
+
+TUDO SEM USAR OUTROS AWS SERVICES (
+
+PODEMOS PEGAR FILES 
+
+
+E OUTRAS COISAS, E UPLOADAR, SEM 
+
+USAR QUAISQUER OUTROS SERVICES AMAZON...
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+E ISSO NÃO É POSSÍVEL COM O EFS E EBS....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> E ISSO TAMBÉM SE APLICA PARA O  DELETE E READ DE FILES --> 
+
+nÃO PRECISAMOS DE OUTROS 
+
+SERVICES....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... MAS QUANDO O ASSUNTO É O STORE DE FILES,
+
+
+É CLARO QUE __ EXISTIRÁ 1 GRAU DE 
+
+ORGANIZAÇAO, MESMO NAO EXISTINDO 1 FILE SYSTEM FORMAL...
+
+
+
+
+
+
+
+
+
+
+
+
+-->  VC PODE ORGANIZAR SUAS FILES,
+SIM....
+
+
+
+
+
+
+
+
+
+
+
+-> VC PODE __ E DEVE__ CRIAR 
+
+
+AS COISAS CHAMADAS """BUCKETS'"
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> BUCKETS SÃO ESSENCIALMENTE FOLDERS,
+
+MAS 
+
+
+FOLDERS __ QUE NAO PODEM TER NESTING (ficar 1 dentro do outro)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> EM VEZ DISSO,
+
+CRIAMOS MÚLTIPLOS SIBLING BUCKETS,
+
+
+
+
+E __ AÍ CADA __ BUCKET __ PODE 
+
+ARMAZENAR 1 NÚMERO INFINITO DE ARQUIVOS...
+
+
+
+
+
+
+
+
+
+
+
+-> VC NAO PRECISA 
+
+ESCOLHER 1 BUCKET SIZE 
+
+ANTERIORMENTE -->  EM VEZ DISSO,
+
+
+
+OS BUCKETS ACEITAM QUALQUER QUANTIDADE DE FILES,
+
+DE 
+
+QUAISQUER TAMANHOS --> NAO PRECISAMOS 
+
+
+NOS IMPORTAR COM SCALING...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... E OS BUCKETS SAO REGIONAL --> É VC QUE 
+
+DECIDE __ A QUAL __ REGION 1 BUCKET VAI PERTENCER..
+
+
+
+
+
+e vc, É CLARO,
+
+PODE 
+
+
+DISTRIBUIR MÚLTIPLOS BUCKETS 
+
+
+A MÚLTIPLAS REGIONS --> É UP TO YOU 
+
+
+
+O LOCAL EM QUE VC QUER 
+
+
+ARMAZENAR SUAS FILES --> ISSO É IMPORTANTE POR 
+
+LEGAL REASONS (
+    nao podemos armazenar essa file nos eua,
+    MAS PODEMOS NO MÉXICO..
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> certo.... MAS OUTRA COISA QUE DEVEMOS SABER SOBRE BUCKETS É QUE 
+
+__eLES _ PRECISAM TER __ UNIQUE NAMES ---> 
+
+
+
+UNIQUE EM GERAL,
+NÃO SÓ NA SUA  CONTA/REGION,
+
+
+E SIM 
+
+
+UNIQUE EM GERAL (para TODAS AS AWS ACCOUNTS DO MUNDO TODO)...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO PODE PARECER 
+
+
+1 CHALLENGE GRANDE,
+
+MAS APENAS SIGNIFICA QUE 
+
+
+
+
+_VC NAO PODE USAR NOMES GENÉRICOS,
+
+E SIM 
+
+USAR 
+
+
+
+
+NOMES ESPECÍFICOS (COM SUA COMPANY NAME, POR EXEMPLO)..
+
+
+
+
+
+
+
+
+
+
+-> MAS É IMPORTANTE APONTAR QUE 
+
+
+
+"""NAO TEMOS 1 FILE SYSTEM, AQUI"""...
+
+
+
+
+
+
+
+
+
+pq o S3 NAO É UM HARD DRIVE,
+
+E NAO É 1 FILE SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+É CLARO QUE TEMOS 
+
+TUDO ISSO UNDER THE HOOD,
+
+
+PQ O AWS OBVIAMENTE DEVE TER ALGO 
+
+
+PARECIDO 
+
+
+
+COM HARD DRIVES,
+
+PARA ARMAZENAR ESSAS FILES... MAS NÓS NAO SABEMOS SOBRE ISSO....
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> NAO MANAGEAMOS NENHUM FILE SYSTEM -> DENTRO 
+DE 
+CADA 
+BUCKET ,
+
+
+
+TEMOS 
+
+
+FLAT STRUCTURE,
+
+SEM QUAISQUER DIRECTORIES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NA VERDADE,
+
+ISSO NÃO É TOTALMENTE CORRETO --> VC NAO TEM 
+
+DIRECTORIES,
+SIM,
+
+
+
+
+
+MAS O AWS NOS DÁ UMA KINDA ALTERNATIVA,
+
+
+
+QUE É 
+
+O __ aSSIGN__ DE PREFIXES,
+
+QUE SAO 
+USADOS 
+
+PARA ORGANIZAR FILES...
+
+
+
+
+
+
+
+
+
+
+-> VC ENTAO PODE ORGANIZAR SUAS FILES 
+
+
+POR PREFIXES (para 
+
+VC TECNICAMENTE 
+ACABAR 
+
+COM 1 FOLDER-FILE STRUCTURE,
+
+
+
+
+
+APESAR DE ISSO SER RUDIMENTAR... PQ TECNICAMENTE, É UMA ESTRUTURA 
+
+
+FLAT....
+)
+
+
+
+
+
+
+
+
+
+
+--> TODAS AS FILES SIT NEXT EACH OTHER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS ISSO TUDO É MAIS DO QUE APENAS 
+
+O 
+
+
+STORE  DE FILES 
+
+
+
+E O GET DE FILES DE LÁ,
+
+
+
+
+
+
+
+
+
+PQ 
+
+TAMBÉM 
+
+
+
+
+
+TEMOS QUE CUIDAR PARA QUE 
+
+
+
+
+
+""APENAS __AS PESSOAS CERTAS POSSAM ACESSAR ESSAS FILES"""....
+
+
+
+
+
+
+
+
+
+
+
+
+É POR ISSO QUE O S3 
+
+
+POSSUI 1 DETAILED PERMISSIONS SYSTEM,
+
+
+EM QUE 
+
+O 
+
+
+
+BUCKET OWNER/DONO DA CONTA 
+
+
+
+
+
+PODE __ CONTROLAR,
+
+
+EM 1 NÍVEL DE BUCKET OU NÍVEL DE FILE,
+
+
+
+QUEM TEM ACESSO A QUAL FILE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS USAR 
+"""bucket policies""" para isso,
+
+ou 
+
+
+entao 
+
+
+
+ACCESS CONTROL LISTS (NACLs) -->  ESSE É O APPROACH MENOS RECOMENDADO,
+
+
+MAS QUE 
+PODE 
+
+SER 
+
+MAIS DETALHADO... ( é melhor usar bucket policies para acessar permissions)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> E BUCKET POLICIES SE PARECEM ASSIM:
+
+
+
+
+{"VERSION": "2012-10-17"}
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- ESSAS POLICIES SÃO ANEXADAS AOS BUCKETS,
+
+E NAO 
+
+A 
+
+USERS/ROLES...
+
+
+
+
+
+
+
+
+
+
+
+--> E ESSES BUCKET POLICY 
+
+
+TE PERMITEM:
+
+
+
+
+
+1) CONTROLAR QUEM PODE ACESSAR 
+
+
+1 GIVEN BUCKET. ....
+
+
+
+
+
+
+
+2) QUAIS ACTIONS SAO PERMITIDAS NESSE GIVEN BUCKET....
+
+
+
+
+
+
+
+
+
+
+
+
+
+EXATAMENTE COMO AS IAM POLICIES NA SECTION DE SECURITY,
+
+
+MAIS CEDO NO CURSO... -> devemos saber que 
+
+essa feature de bucket policy existe,
+e que 
+
+manageia 
+
+o 
+
+acesso a buckets...
