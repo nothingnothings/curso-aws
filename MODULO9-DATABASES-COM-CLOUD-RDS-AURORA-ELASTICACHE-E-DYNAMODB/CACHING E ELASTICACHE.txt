@@ -1,0 +1,922 @@
+
+
+
+
+
+
+
+
+ACABAMOS COM O TÓPICO DE 
+
+
+RELATIONAL DATABASES... (RDS----> MYSQL, POSTGRESQL, AURORA, ETC)...
+
+
+
+
+
+
+
+
+
+
+
+-> MAS É CLARO QUE EXISTEM OUTROS TIPOS DE DATABASES...
+
+
+
+
+OUTRO TIPO DE 
+
+DATABASE 
+
+
+
+É 
+
+
+
+
+"""CACHING DATABASES"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+PARA CACHING DATABASES,
+
+
+O 
+
+AWS 
+
+POSSUI 
+
+O 
+
+""ELASTICACHE""...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESSE SERVICE,
+
+MANAGED SERVICE 
+
+DE 
+
+""ELASTICACHE"",
+
+
+
+
+É 
+
+UMA 
+
+
+
+
+
+
+"""""FULLY MANAGED, IN-MEMORY CACHING DATABASE""""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CACHING DATABASE --> O QUE É ISSO --> BEM,
+
+
+CACHING
+
+
+
+É 
+
+
+__ ALL ABOUT 
+
+O 
+STORE 
+
+
+
+DE 
+
+DATA,
+
+DATA 
+FREQUENTEMENTE REQUISITADA,
+
+
+DENTRO 
+
+
+
+_ DA MEMÓRIA DE ALGUMA COISA... -> TUDO PARA QUE 
+
+
+
+ELA _ CONSIGA SER RETRIEVADA 
+
+
+RAPIDAMENTE,
+
+MAIS RAPIDAMENTE DO QUE 
+
+TIPICAMENTE SERIA RETRIEVADA DE 1 DATABASE COMUM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+FLUXO NORMAL:
+
+
+
+
+
+
+
+CLIENT (web server) -----------> WRITES ARE SENT DIRECTLY TO THE MAIN DATABASE --> MAIN DATABASE (RDS, MySQL)..
+
+
+
+
+
+
+
+
+
+
+
+
+FLUXO COM 
+
+CACHING DATABASE:
+
+
+
+
+                                                                        (cached data é updatada FREQUENTEMENTE)                                                                            
+CLIENT (web server) --> STORES TEMPORARY, FREQUENTLY ACCESSED DATA --->  CACHING DATABASE (ex: ELASTICACHE FOR __REDIS__) ------------> MAIN DATABASE (RDS, MYSql)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS PQ ISSO É MAIS RÁPIDO?
+
+
+
+
+
+
+
+
+
+-> É PQ __ AS DATABASES MYSQL ( e qualquer database comum)
+
+PRECISAM 
+
+
+PROCURAR A DATA DENTRO 
+
+DE FILES,
+
+PQ DEPENDEM DO FILE SYSTEM (under the hood)...
+
+
+
+
+
+
+
+
+
+MAS AS CACHING DATABASES NAO DEPENDEM DISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O REDIS --> COMECOU COMO UMA __CACHING DATABASE_...
+
+
+
+
+
+-> ENTRETANTO, HOJE É UMA __ PRIMARY DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> EX: PODEMOS TER PRODUCT DATA, PARA 1 
+
+ONLINE SHOP,
+
+
+
+QUE __ DEVE SER __ CACHEADA.... DEVE SER CACHEADA 
+
+PARA QUE _ MÚLTIPLOS 
+
+USERS,
+
+
+OLHANDO PARA 1 MESMO PRODUCT,
+
+
+CONSIGAM 
+
+
+__RECEBER__ ESSA DATA __ LÁ 
+
+
+DAQUELA 
+
+SUPER-FAST CACHING DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> EX2: SE A PRODUCT DATA, DESSE PRODUCT, FOR UPDATADA,
+
+POR TRÁS DAS CENAS (o que nao acontece com tanta frequencia, mas mesmo assim...),
+
+
+
+AÍ O __CACHE__ PRECISARIA SER UPDATADO,
+
+
+
+
+TUDO PARA QUE 
+OS USERS 
+
+CONSEGUISSEM 
+
+
+OBTER  A FRESHEST E LATEST DATA 
+
+
+MAIS UMA VEZ..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CACHING É UM MECANISMO BEM COMUM... E 1 CACHING DATABASE É SIMPLESMENTE
+
+
+UMA DATABASE QUE TE __ AJUDA __ 
+
+
+
+A __ ARMAZENAR ESSA CACHING DATA NA MEMÓRIA... ---> PQ ESSA DATA 
+PRECISA 
+
+
+SER ARMAZEANDA EM ALGUM LUGAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E, COM O SERVICE ELASTICACHE,
+
+VC 
+
+PODE 
+
+FACILMENTE 
+
+CRIAR 
+
+1 DESSAS CACHING DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+QUANDO CRIAMOS 1 CACHING DATABASE, COM 
+
+O ELASTICACHE,
+
+
+SOMOS OBRIGADOS A ESCOLHER 1 TYPE/ENGINE 
+
+DE CACHING...
+
+
+
+
+
+
+
+
+
+
+
+
+--> AS OPTIONS SAO 2:
+
+
+
+
+1) REDIS 
+
+
+
+
+
+2) MEMCACHED...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DEPOIS DISSO,
+
+PODEMOS, SE QUISERMOS,
+
+
+
+ATIVAR 
+
+
+
+A FEATURE 
+
+DE 
+
+
+
+"""CLUSTER MODE"",
+
+
+
+QUE É 
+USADA 
+
+
+PARA FACILITAR O SCALING DE SEU APP...
+
+
+
+
+
+
+
+
+
+-> CLUSTER MODE --> É USADO 
+
+
+
+
+SE VC QUISER __ TER MULTIPLE CONNECTED DATABASE 
+
+SHARDS,
+
+
+
+SHARDS QUE VAO ENTAO SPLITTAR A DATA 
+
+ACROSS EACH OTHER (aumenta a availability e performance)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE ESCOLHER A VERSION DE SUA DATABASE...
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+ DEPOIS DISSO,
+
+ VC ESCOLHE O HARDWARE 
+
+ E 
+ a
+  NETWORK CONFIGURATION DE SUA CACHING DATABASE...
+
+
+
+
+
+
+
+  -> O HARDWARE PROFILE 
+
+  QUE VC 
+
+  ESCOLHERÁ 
+
+
+
+
+  TEM 1 NOME,
+
+
+  ""NODE TYPE""
+
+
+
+
+
+
+
+  NODE TYPE --> SETTA O HARDWARE PROFILE DA DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO FEITO,
+
+VC 
+
+
+DEFINE 
+
+O VPC,
+
+A SUBNET 
+E O 
+
+SECURITY 
+
+GROUP EM QUE 
+
+
+SUA CACHING DATABASE,
+
+CRIADA COM O ELASTICACHE,
+
+
+DEVERÁ 
+
+
+
+SER POSICIONADA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM __ PODE CONFIGURAR _ O DATABASE 
+
+SERVER... -> VC PODE CONFIGURAR 
+
+O CACHING 
+DATABASE 
+SERVER QUE 
+
+VC ESTÁ CRIADNO --> PODE SETTAR:
+
+
+
+
+
+
+1) ENCRYPTION E BACKUP SETTINGS 
+
+
+
+
+
+2) MAINTENANCE SETTINGS 
+
+
+
+
+
+3) MONITORING SETTINGS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> BASTA ENCONTRAR ELASTICACHE NO AWS CONSOLE..
+
+
+
+
+
+
+
+--> DEVEMOS TER 1 VPC PARA CRIAR 1 ELASTICACHE --> PQ 
+
+
+
+
+ESSAS DATABASES SAO CRIADAS 
+
+
+EM 
+
+VPCS...
+
+
+
+
+
+
+
+
+
+
+OK... AÍ PODEMOS CRIAR OU 1 CLUSTER 
+
+REDIS 
+
+OU 
+
+MEMCACHED...
+
+
+
+
+
+
+
+
+
+
+
+
+---> ESCOLHEMOS AS OPTIONS DE ANTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLUSTER MODE --> ENABLE OU DISABLED...
+
+
+
+
+
+
+
+
+
+
+
+--> DAR 1 NOME AO SEU DATABASE CLUSTER...
+
+
+
+
+
+
+
+
+
+
+-> AÍ DEPOIS PODEMOS OPTAR __ ENTRE 
+
+""CRIAR NOSSA CACHING DATABASE 
+
+NA CLOUD""
+
+
+
+OU 
+
+""CRIAR NOSSA CACHING DATABASE EM LOCAL PREMISES"" --------> VEREMOS ISSO 
+
+MAIS TARDE,
+
+O RUN 
+
+DE 
+
+
+
+AWS SERVICES 
+
+
+
+
+EM 
+
+
+INFRAESTRUTURA LOCAL,
+
+
+
+MAIS TARDE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS TIPICAMENTE ESCOLHEREMOS AWS CLOUD...
+
+
+
+
+
+
+
+
+
+
+--> DEPOIS DISSO, PODEMOS 
+
+
+ESCOLHER 
+
+SE 
+ESSA DATABASE 
+DEVERÁ 
+
+COMPREENDER 
+
+MÚLTIPLAS AZs...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESCOLHEMOS A VERSION DA ENGINE,
+
+O PORT A SER EXPOSTO...
+
+
+
+
+
+
+
+--> O NODE TYPE --> É O HARDWARE PROFILE... ->  TEMOS ALGUMAS FREE TIER,
+
+
+
+
+
+PQ __ ESSA COISA VAI CUSTAR DINHEIRO...
+
+
+
+
+
+
+
+
+
+PODEMOS ESCOLHER O NÚMERO DE REPLICAS... PARA MAIOR DISPONIBILIDADE E PERFORMANCE...
+
+
+
+
+
+
+
+
+
+
+
+--> ESCOLHEMOS OS VPCs e as SUBNETS...
+
+
+
+
+
+
+
+
+
+
+
+NAS PRÓXIMAS ETAPAS,
+
+VC 
+DEFINE 
+COISAS COMOO 
+
+BACKUP E ENCRYPTION...
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE 
+O AWS NOS AJUDA COM 
+
+CACHING DATABASES...
