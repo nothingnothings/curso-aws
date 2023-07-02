@@ -1,0 +1,614 @@
+
+
+
+
+
+
+
+
+
+
+
+É CLARO QUE O DYNAMODB FICA BEM MAIS SIMPLES DE ENTENDER 
+SE 
+VC 
+
+
+O VE EM ACAO....
+
+
+
+
+
+
+
+
+
+
+
+
+--> BASTA COMEÇAR PELO CREATE DE 1 TABLE COM O DYNAMODB...
+
+
+
+
+
+
+
+=-> NAO CRIAMOS A DATABASE,
+
+E SIM CRIAMOS A TABLE, PRIMEIRAMNTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO PQ, CONFORME MENCIONADO,
+
+AO CONTRÁRIO DE ELASTICACHE E RDS,
+
+
+VC 
+
+
+NAO 
+
+VAI 
+
+CRIAR 
+
+
+CLUSTERS/INSTANCES DE DATABASES,
+
+
+E SIM 
+
+
+VAI SIMPLESMENTE 
+
+COMEÇAR 
+
+
+PELO LEVEL 
+
+DAS TABLES...
+
+
+
+
+
+
+
+VC DEVE __ COLOCAR 1 TABLE NAME,
+
+E ENTAO 
+
+
+
+
+
+DEFINIR 1 __""PARTITION KEY""""...
+
+
+
+
+PARTITION KEY É BASICAMENTE 
+
+
+
+
+
+__ A MAIN IDENTIFICATION DE __ 1 ROW DE DATA...
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE VC TERÁ MÚLTIPLOS ROWS DE 
+
+DATA EM 1 MESMA  TABLE...
+
+
+
+
+
+
+
+
+-> E SE VC QUISER ENCONTRAR 1 RECORD ESPECÍFICO,
+
+VC 
+
+
+TERÁ 
+
+DE PROCURAR POR 1 VALUE ESPECÍFICO,
+
+EM 
+
+1 FIELD ESPECÍFICO..
+
+
+
+
+
+
+
+
+
+
+
+--> E ESSE IDENTIFICATION FIELD NAME É 
+
+ESPECIFICADO AQUI...
+
+
+
+
+
+
+
+ex: 
+
+
+
+SE 
+
+
+ESTIVÉSSEMOS CRIANDO 
+1 
+TABLE 
+
+DE PRODUCTS,
+
+
+PODERÍAMOS 
+
+
+DEFINIR 
+
+
+
+
+
+
+
+A PRIMARY KEY DESSE NEGÓCIO COMO SENDO de nome 
+
+""ProductId""...
+
+
+
+
+
+DEPOIS DISSO,
+
+
+
+DEVEMOS ESCOLHER O TIPO DE DATA... (binary, number, string)...
+
+
+
+
+ 
+
+
+
+ ESSA KEY AÍ SERÁ USADA __ PARA __ IDENTIFICAR SEUS RECORDS, LEMBRE-SE DISSO (é o _id, basicamente)...
+
+
+
+
+
+
+
+
+
+
+
+ ISSO FEITO,
+
+ VC PODE DEFINIR TAMBÉM 1 SORT KEY (
+     
+     É 1 SEGUNDA KEY,
+
+
+     PQ VC PODE QUERER USAR A COMBINATION DA partition key + sort key 
+
+     COMO 
+
+     IDENTIFICADOR DE SEUS RECORDS...
+
+ )
+
+
+
+
+
+
+
+
+
+
+ --> EX: SE VC TIVER 1 BLOG,
+
+
+ VC PODE TER 1 BLOG POST ID como primary key,
+
+ e 
+
+ 1 
+
+ RELEASE DATE 
+
+ COMO SORT KEY (
+
+    e a combinacao entre os 2 seria o identificador de cada blog post...
+ )
+
+
+
+
+
+
+
+
+ --> CERTO...
+
+
+
+
+
+
+
+ --> DEPOIS DISSO,
+
+ TEMOS OUTRAS SETTINGS...
+
+
+
+
+
+
+
+ --> PODEMOS 
+
+
+ DEFINIR A FREQUENCIA DE 
+
+ ACCESS DE NOSSA DATA -->  SE VC ESCOLHER A VERSAO INFREQUENT,
+
+ E NAO 
+
+
+
+ ACESSAR COM MT FREQUENCIA,
+
+ VC PODE SALVAR 
+
+ 1 POUCO DE DINHEIRO...
+
+
+
+
+
+
+
+
+
+ --> DEPOIS DISSO,
+
+ VC 
+
+ PODE ESTIMAR _O QUAO GRANDE 
+ SERÁ CADA 
+
+
+ DATA ENTRY... 
+
+
+
+ --> TAMBÉM 
+ 
+
+ QUANTOS READS E WRITES 
+
+ VC TERÁ POR SEGUNDO...
+
+
+
+
+
+
+ --> POR FIM,
+
+ COM BASE NISSO,
+
+
+ VC PODE PROVISIONAR SUAS CAPACITY UNITS,
+
+ LÁ EM BAIXO...
+
+
+
+
+
+
+
+ -> CERTO.. MAS SE VC ESTIVER PROVISIONANDO CAPACITY,
+
+
+ VC VAI PAGAR POR ISSO... ( nao interessa se estiver usando ou nao)...
+
+
+
+
+
+
+ ALTERNATIVAMENTE,
+
+ VC PODE ESCOLHER ^^oN-DEMAND^^,
+
+
+
+
+
+
+ PARA ENTAO PAGAR APENAS PELO READ-WRITE QUE 
+
+ VC TIVER...
+
+
+
+
+
+
+ PODE SER BARATO OU MAIS CARO --> PQ SE VC 
+
+ TIVER 1 
+
+ QUANTIDADE 
+ FIXA 
+ DE ACESSOS 
+
+ DURANTE O MES, 
+
+ USAR 
+
+
+
+
+ AQUELA VERSAO PROVISIONED É MAIS BARATO DO QUE O __ ON-DEMAND...
+
+
+
+
+
+
+
+
+
+
+ - ASSIM COMO OUTROS SERVICES,
+
+
+
+
+
+ HÁ 1 VERSAO FREE PARA O DYNAMODB --> BASTA CONFIGURAR 
+
+
+
+
+ A SUA TABLE _ DA MANEIRA ESTIPULADA 
+
+ NO FREE TIER...
+
+
+
+
+
+
+
+
+
+
+ se vc configurar sua database como estipulado na page de free tier 
+
+ do aws,
+
+ vc pode 
+
+ comecar com o 
+
+ DYNAMODB DE GRACA..
+
+
+
+
+
+
+
+
+VC TAMBEM PODE ESCOLHER SE QUER ENCRYPTIONS E ASSIM POR DIANTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASSIM QUE VC TIVER FEITO TUDO ISSO E CRIADO SUA TABLE... 
+
+
+E SUA TABLE FICAR DISPONÍVEL,
+
+
+VC PODE 
+
+COMECAR A INSERT DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E O INSERT DE DATA EM TABLES 
+
+DYNAMODB 
+É 
+
+MAIS FÁCIL DO QUE 
+
+COM O RDS..
+
+
+
+
+
+
+-> PQ COM O DYNAMODB 
+
+PODEMOS 
+
+
+
+
+
+
+FAZER READ E WRITE 
+
+
+
+ DE DATA 
+
+ DIRETAMENTE DO CONSOLE AWS... 
+
+
+
+
+
+
+
+
+
+ --> BASTA SELECIONAR NOSSAS TABLES DENTRO 
+
+ DA NOSSA DATABASE 
+
+ DYNAMODB ->  
+
+
+
+
+
+
+ PODEMOS __ FAZER MAIS DO QUE VIEW DE NOSSOS ITEMS... -> PODEMOS CRIAR 
+
+ 1 NOVO ITEM.... -> PODEMOS 
+
+ CRIAR 
+
+
+ 1 NOVO PRODUCT,
+
+
+
+
+ com 
+
+ tipo 
+
+
+
+ productId  --> value: abc 
+
+
+ Title: A Carpet...
+
+
+
+
+
+
+
+
+
+ E VC PODE ADICIONAR DIFERENTES ENTRIES,
+
+
+
+ COM DIFERENTES ESTRUTURAS EM 1 MESMA TABLE,
+ PQ 
+ ESSA 
+ É 
+ EXATAMENTE 
+ A
+  IDEIA 
+
+  POR TRÁS 
+  DE UMA 
+
+  NOSQL DATABASE...
+
+
+
+
+
+
+
+  VC NAO PRECISA TER 1 FIXED SCHEMA,
+
+
+
+
+
+
+EM VEZ DISSO VC PODE TER MIXED E DIFFERENT DATA 
+
+
+
+EM 
+
+1 MESMA TABLE,
+
+
+
+BASTA 
+
+QUE 
+
+OS RECORDS 
+
+
+TENHAM 
+
+
+
+PARTITION KEYS DIFERENTES...
