@@ -1,0 +1,417 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... ACABAMOS COM O S3...
+
+
+
+
+
+
+
+
+
+--> É O OBJECT STORAGE SERVICE DA AWS.. -> COM ELE,
+
+FOCAMOS NOS 
+ACTUAL OBJECTS E FILES,
+
+E NAO O UNDERLYING SYSTEM...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC ORGANIZA ESSAS FILES EM BUCKETS... -> VC NAO TEM 1 FILE SYSTEM 
+
+
+
+COM ELE,
+
+
+MAS VC __ PODE _ USAR __ PREFIXES__ PARA TER CERTA ORGANIZACAO PARA SUAS FILES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS 1 KEY FEATURE DO S3 É QUE VC 
+
+PODE ACESSAR,
+
+
+
+
+FAZER UPLOAD, DELETE, RETRIEVE, ALTER, 
+
+DE FILES  
+
+
+
+POR MEIO DE SERVICES, SIM... MAS VC TAMBÉM PODE FAZER 
+
+
+ISSO POR 
+
+MEIO DE OUTROS MEIOS,
+
+
+
+
+COMO __ O CLI,
+
+
+MANAGEMENT CONSOLE,
+
+
+OU HTTP API... OU 1 DAS SDKs--> QUER DIZER QUE 
+
+TEMOS 
+
+
+MT FLEXIBILIDADE,
+
+
+QUANDO O ASSUNTO É O ACCESS DE FILES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ASSIM QUE 
+
+AS FILES ESTAO NO BUCKET,
+
+
+
+PODEMOS MANAGEAR ESSAS FILES,
+
+
+E O BUCKET COMO 
+
+1 TODO...
+
+
+
+
+
+
+
+-> PODEMOS ESCOLHER DIFERENTES STORAGE CLASSES,
+
+PARA _ DIFERENTES ACCESS PATTERNS (FREQUENTE OU INFREQUENTE)...
+
+
+
+
+
+
+--> VC PODE DEFINIR TAMBÉM LIFECYCLE MANAGEMNT,
+
+
+
+
+PARA AUTOMATICAMENTE 
+
+
+TRANSICIONAR FILES ENTRE ESSAS STORAGE CLASSES (
+
+    access frequente por 1 mes, depois infrequente... isso automatico...
+)
+
+
+
+
+
+
+
+
+
+--> E VC __ TEM FINE-GRAIN 
+
+PERMISSION MANAGEMENT TOOLS,
+
+
+
+QUE SAO USADAS 
+
+PARA 
+
+DEIXAR 
+
+AS 
+FILES 
+ACESSÍVEIS 
+
+EXATAMENTE 
+
+DA MANEIRA QUE VC QUISER... (read e write access, etc)...
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE LIGAR ENCRYPTION 
+
+
+EM 1 OBJECT-LEVEL OU __ NO BUCKET LEVEL__... (garante que 
+
+suas files, em 1 given bucket, sao encryptadas)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ALÉM DISSO, TEMOS OUTRAS ADVANCED FEATURES --> PODEMOS 
+
+
+TER INSIGHT ADICIONAL DETALHADO SOBRE 
+
+O INVENTÁRIO
+DE 
+
+1
+ 
+ BUCKET (1 overview),
+
+
+
+
+ OU RODAR ANALYTICS 
+
+
+
+
+ NESSAS FILES,
+
+ PARA 
+
+ REALIZAR 
+
+
+
+ ALGUMAS TASKS QUE VC QUISER..
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE USAR 1 S3 BUCKET PARA STATIC WEBSITE HOSTING,
+
+CONFORME MENCIONADO...
+
+
+
+
+
+
+
+
+
+--> PQ VC PODE __ ARMAZENAR FILES ESTÁTICAS EM 1 BUCKET,
+
+E, SE ELAS FOREM ESTÁTICAS,
+
+VC 
+
+PODE 
+LIGAR 
+
+STATIC WEB HOSTING 
+
+
+E __ USAR_ __
+
+
+ESSE S3 
+
+BUCKET 
+
+COMO 
+
+1 
+SIMPLES SERVER..
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM TEM FEATURES 
+
+DE _ _vERSIONING __ E OBJECT LOCK -->  COM VERSIONING,
+
+
+VC 
+
+PODE GARANTIR QUE 
+
+FILES NAO SAO DELETADAS,
+
+
+E SIM QUE 
+
+MÚLTIPLAS VERSIONS DE 1 FILE SAO SALVAS (podemos as restaurar quando desejado)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COM OBJECT LOCK,
+
+VC 
+
+PODE 
+
+
+
+GARANTIR, ÀS AUTORIDADES,
+
+QUE 
+
+1 
+CERTA 
+FILE 
+
+NAO PODERIA TER SIDO APAGADA (
+
+    bloqueia o delete/alter de 1 file...
+)
+
+
+
+
+
+
+
+
+
+
+POR FIM, 
+
+
+O PROFESSOR MENCIONA 
+
+
+AS CAPACIDADES DE REPLICATION DO 
+
+S3,
+
+
+
+QUE TE DEIXA 
+BACKUPAR 
+
+ A DATA 
+
+ EM SEUS BUCKETS 
+
+ _ ACROSS MULTIPLE REGIONS ( OU EM 1 MESMA REGION),
+
+
+
+
+EM OUTROS BUCKETS....
+
+
+
+
+
+
+
+--> E O AWS FAZ TUDO ISSO PARA VOCE, AUTOMATICAMENTE...
+
+
+
+
+
+
+
+
+
+-> EM VEZ DISSO,
+
+
+O AWS FAZ ISSO PARA VOCE,
+
+COM A AJUDA 
+
+
+DAS FEATURES DE REPLICATION.... automaticamente... (se vc pagar)..
+
+
+
+
+
+
+
+
+
+
