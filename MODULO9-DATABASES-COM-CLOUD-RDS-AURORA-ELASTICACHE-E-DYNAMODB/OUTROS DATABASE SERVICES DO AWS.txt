@@ -1,0 +1,543 @@
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+
+
+
+
+-> O RDS (inclusive o AURORA), ELASTICACHE E 
+
+
+
+DYNAMODB 
+
+
+
+
+SAO 
+
+OS 
+
+
+
+DATABASE 
+
+SERVICES 
+
+MAIS IMPORTANTES QUE 
+
+DEVEMOS CONHECER QUANDO 
+
+COMEÇAMOS 
+
+COM 
+
+O AWS 
+
+E QUANDO 
+
+ESTUDAMOS PARA O EXAME...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS É CLARO QUE O AWS 
+
+
+OFERECE 
+
+MAIS DATABASE SERVICES..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O AWS TEM OUTRO _ DATABASE SERVICE,
+
+
+QUE É O MEMORYDB....
+
+
+
+
+
+
+
+
+
+
+
+
+MEMORYDB --> É UM __ """PERSISTENT IN-MEMORY STORAGE"" DATABASE...
+
+
+
+
+
+
+
+
+
+
+É UM POUCO PARECIDO COM OS REDIS E MEMCACHED 
+
+
+
+LÁ DO ELASTICACHE,
+
+
+
+
+
+
+QUE TAMBÉM ERA UM IN-MEMORY DATABASE...
+
+
+
+
+
+
+
+
+
+MAS A DIFERENÇA ENTRE O ELASTICACHE 
+
+
+E O MEMORYDB
+
+É QUE 
+
+
+
+
+
+
+
+
+
+
+
+
+O ELASTICACHE --> É USADO COMO _ CACHING DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+MEMORYDB --> É USADO COMO _UM _ PERSISTENT IN-MEMORY DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+-> OU SEJA,
+
+NAO É APENAS 1 EXTRA LAYER 
+
+EM CIMA 
+DE 
+
+1 RDS INSTANCE ANTERIOR (
+
+    COMO O ELASTICACHE TIPICAMENTE SERIA/É... VC TIPICAMENTE 
+    O COMBINA 
+    COM OUTRA DATABASE,
+
+    COMO UMA DATABASE RDS...
+)....
+
+
+
+
+
+
+
+O MEMORYDB --> É USADO STANDALONE,
+
+
+AINDA PODE ARMAZENAR 
+
+DATA NA SUA MEMÓRIA,
+
+
+
+MAS NÃO É DEPENDENTE DE OUTRAS DATABASES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OUTRO DATABASE TYPE OFERECIDO PELA AWS:
+
+
+
+
+
+
+
+
+""DOCUMENTDB"" --> ISSO TE DEIXA 
+
+
+ARMAZENAR DOCUMENTS EM 1 DATABASE...
+
+
+
+
+
+
+
+
+
+""DOCUMENTS"" ------> documents SAO SIMPLESMENTE 
+
+NESTED DATA STRUCTURES --> OU SEJA,
+
+COMPLEX/NESTED
+
+DATA 
+STRUCTURES 
+
+
+QUE PRECISAM SER ARMAZENADAS 
+
+EM 
+
+
+1 
+DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+--> O MONGODB --> O DOCUMENTDB É A ALTERNATIVA A ISSO... -----> 
+
+
+
+
+E O DOCUMENTDB É REALMENTE COMPATÍVEL COM O MONGODB,
+
+
+É UMA DAS RAZOES DE SUA EXISTENCIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+TEMOS KEYSPACES ------> É UMA WIDE COLUMN DATABASE,
+
+
+O QUE QUER DIZER QUE 
+
+É UMA 
+
+
+__DATABASE __ 
+
+
+COM FLEXIBLE COLUMN FORMATS (
+
+
+    DIFERENTE DO RDS,
+
+    EM QUE 
+
+    VC 
+    TIPICAMENTE 
+
+
+    TEM 
+
+    FIXED COLUMN FORMATS,
+    COM 1 FIXED SCHEMA...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TAMBÉM TEMOS O SERVICE DE """NEPTUNE"'""
+
+
+
+
+
+
+
+
+
+
+
+
+NEPTUNE --> É UMA DATABASE __ GRAPH DATABASE__ --> É USADA PARA ARMAZENAR 
+DATA RELATIONS COMPLEXAS...
+
+
+
+
+
+
+
+
+
+
+
+
+TIMESTREAM ----> OUTRA DATABASE --> É USADA 
+                                        PARA ARMAZENAR 
+                                        TIME SERIES DATA...
+
+                                        EX: ""UM DEVICE QUE GERA NOVA DATA A CADA SEGUNDO...
+                                        VC ARMAZENA O TIMESTAMP COM ESSA DATA QUE É GERADA"" --> vc pode considerar usar o timestream para armazenar isso, em vez de RDS....
+
+
+
+
+
+
+
+
+
+-> O AWS TEM OUTRO DATABASE TYPE,
+
+CHAMADO 
+
+DE 
+
+
+
+Quantum Ledger Database -->  QLDB -->  É UMA DATABASE USADA 
+
+PARA ARMAZENAR 
+
+
+
+__ '"""IMMUTABLE LOGS OF DATA CHANGES"""" --> isso, no final das contas,
+
+
+É __ WHAT BLOCKCHAIN IS ALL ABOUT...
+
+
+
+
+
+
+
+
+
+
+É UMA DATABASE QUE PODE SER USADA PARA _ ARMAZENAR 
+
+DATA _ QUE __ DEPENDE _ DE PREVIOUSLY STORED DATA,
+
+
+E EM QUE 
+
+A DATA 
+
+NAO PODE SER MANIPULADA 
+
+DEPOIS... TUDO PARA QUE VC TENHA 
+
+1 CLEAR __ CHAIN _ OF DATA,
+
+QUE 
+
+DEPENDE 
+
+
+1 DA OUTRA...
+
+
+
+
+
+
+
+
+
+
+
+
+-> ISSO TUDO PODE PARECER CRYPTIC,
+
+
+
+
+MAS É ASSIM MESMO...
+
+
+
+
+
+
+
+--> MAS DEVEMOS SABER QUE ELAS EXISTEM...
+
+
+
+
+
+
+
+
+-> E SE VC 
+
+
+MERGULHAR MAIS FUNDO 
+
+NO AWS,
+
+
+
+
+
+VC 
+PODERÁ 
+
+
+REESTUDAR 
+
+ESSAS 
+DATABASE TYPES...
+
+
+
+
+
+
+
+
+-> OK...
+
+
+
+
+
+
+
+
+
+
+
+BASTA CONHECER ESSES DATABASE TYPES...
+
+
+
+
+
+
+
+
+
+-> aws databases -> TEMOS OS OFFICIAL DOCS ,
+
+OVERVIEW 
+
+
+DA AWS,
+
+
+EM QUE
+
+TEMOS OS DIFERENTES 
+
+
+DATABASE TYPES E USE-CASES ESPECÍFICOS..
+
+
+
+
+
+
+
+
+
+https://aws.amazon.com/pt/products/databases/
+
+
+
+
+AQUI TAMBÉM TEMOS A OPTION DE ""AMAZON REDSHIFT"", QUE VEREMOS MAIS TARDE NO CURSO...
