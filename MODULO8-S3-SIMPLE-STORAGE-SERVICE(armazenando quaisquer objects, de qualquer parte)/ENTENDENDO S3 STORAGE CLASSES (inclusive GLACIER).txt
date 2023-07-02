@@ -809,3 +809,24 @@ O
    FIZESSE ISSO MANUALMENTE,
 
    MAS É CLARO QUE ISSO É MELHOR DO QUE NAO FAZER NADA...
+
+
+
+
+
+
+
+
+
+In the previous lecture, S3 storage classes were introduced.
+
+As part of that introduction, I also showed you the three Glacier classes offered by AWS:
+
+S3 Glacier Instant Retrieval
+
+S3 Glacier Flexible Retrieval (formerly just "S3 Glacier")
+
+Amazon S3 Glacier Deep Archive
+
+Especially for the exam, it's worth noting that "Glacier" is sometimes referenced as a standalone service. It's always S3 Glacier that's meant though - it's always these three storage classes which are optimized for long-term file storage with low-frequency file access patterns.
+
