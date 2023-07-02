@@ -1,0 +1,881 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+
+
+--> RELATIONAL DATABASES E CACHING DATABASES SAO TODAS GREAT...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS ÀS VEZES VC NAO TERÁ CACHING DATA,
+
+
+NEM RELATIONAL DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NORMAL DATABASE DATA,
+
+MAS VC NAO QUER A ARMAZENAR EM RELATIONAL DATABASES..
+
+
+
+
+
+
+
+
+
+
+VC NAO QUER TER 1 STRICT SCHEMA,
+
+
+E NAO QUER SPLITTAR SUA DATA 
+
+AO LONGO DE MÚLTIPLAS TABLES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> VC TALVEZ QUEIRA 1 DATABASE NOSQL...
+
+
+
+
+
+
+
+-> KEY: VALUE DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É UMA DATABASE EM QUE VC SIMPLESMENTE TEM __ KEYS, pelas quais 
+vc identifica sua data,
+
+e aí 
+MÚLTIPLOS FIELDS,
+
+
+
+
+EM QUE __ A ACTUAL DATA É ARMAZENADA...
+
+
+
+
+
+
+
+
+
+-> E 1 MESMA DATABASE TABLE 
+
+
+
+PODE TER RECORDS TOTALMENTE DIFERENTES,
+
+COM FORMATOS TOTALMENTE DIFERENTES,....
+
+
+
+
+
+
+
+
+
+
+
+PODE PARECER CAÓTICO,
+
+
+
+
+
+MAS __ É UMA COMMON DATA STORAGE PHILOSOPHY,
+
+
+E PODE 
+
+ENABLAR 
+
+
+
+GREAT PERFORMANCE,
+
+SE USADA CORRETAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+CONCEITO --> 
+
+
+
+NO ENFORCED SCHEMA,
+
+NO CROSS-TABLE RELATIONS...
+
+
+
+
+
+
+
+
+
+
+-> INSTEAD --> VALUES STORED BY KEY IN A SINGLE TABLE...
+
+
+
+
+
+
+
+
+-> WITH THE RIGHT KEY E STRATEGY,
+
+THIS CAN OFFER 
+HUGE PERFORMANCE BENEFITS...
+
+
+
+
+
+
+
+pb1 {
+    title: Product1,
+    price: 49
+}
+
+
+
+ala {
+        title: Product1,
+    tags: ["free"]
+}
+
+bca {
+        title: Product1,
+    price: 49
+}
+
+
+
+
+
+
+
+
+
+--> e o aws oferece 
+
+1 
+DATABASE 
+SERVICE 
+
+
+
+
+QUE EMBRACES ESSA FILOSOFIA,
+
+E QUE 
+TE DEIXA 
+
+
+ARMAZENAR KEY-VALUE DATA NOSQL...
+
+
+
+
+
+
+
+
+
+
+
+É O SERVICE 
+
+DE DYNAMODB...
+
+
+
+
+
+
+
+
+É 1 FULLY MANAGED NOSQL KEY-VALUE DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+-> DYNAMODB,
+
+
+
+COMO O 
+
+
+AMAZON AURORA,
+
+
+É UMA 
+DATABASE 
+
+ENGINE 
+
+
+_CONSTRUÍDA 
+
+
+PELA AMAZON,
+PARA A AWS CLOUD...
+
+
+
+
+
+
+
+
+
+E  COM O DYNAMODB,
+
+VC CRIA TABLES... -> E NAO CRIA 
+
+MÚLTIPLAS TABLES,
+
+
+
+E SIM 
+
+
+
+
+__POUCAS TABLES...
+
+
+
+
+
+
+
+
+
+
+--> POUCAS TABLES, EM QUE CADA TABLE ARMAZENA 1 MONTE DE DATA/FIELDS 
+
+PARA CADA ENTRY...
+
+
+
+
+
+
+
+
+
+
+-> E A COISA IMPORTANTE 
+
+
+
+SOBRE O DYNAMODB
+
+
+É QUE 
+
+
+
+
+__ VC NAO CRIA TABLES 
+
+POR MEIO 
+
+
+DA 
+QUERY 
+LANGUAGE QUE 
+
+VC 
+
+USA PARA 
+
+CONVERSAR COM A DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE NAO PRECISAMOS NOS CONECTAR 
+
+A UMA DATABASE
+
+
+
+_ PARA _ ENTAO CRIAR TABLES DENTRO DELA... -> EM VEZ DISSO,
+
+
+COM O DYNAMODB,
+
+
+VC NUNCA 
+
+
+CRIA 1 DATABASE,
+
+E SIM 
+
+APENAS 
+
+
+
+__cRIA _ TABLES__ DIRETAMENTE...
+
+
+
+
+
+
+
+
+
+
+E, SE VC QUISER PENSAR 
+
+
+SOBRE ISSO,
+
+
+
+
+
+
+O __ AWS__ MANAGEIA _DATABASES BEHIND THE SCENES PARA VOCE,
+
+MAS 
+VC 
+
+NUNCA 
+VE ESSAS DATABASES,
+
+NUNCA 
+
+CONFIGURA 
+ESSAS DATABASES,
+
+
+
+E SIM _ 
+
+APENAS 
+
+TRABALHA COM AS TABLES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ___ VC __ PODE CRIAR QUANTAS TABLES QUE VC 
+
+QUISER,
+
+DENTRO 
+
+DE 
+
+1 MESMA 
+CONTA AWS,
+
+
+MAS _ VC 
+
+NAO 
+
+
+AS ESTRUTURA 
+
+
+EM DATABASES...
+
+
+
+
+
+
+
+
+
+
+-> ISSO PODE PARECER CONFUSO PRIMEIRAMENTE,
+
+
+MAS 
+QUER  DIZER QUE 
+
+VC 
+
+NAO PRECISA SE PREOCUPAR 
+
+COM A CONFIG 
+
+ 
+DA DATABASE,
+
+
+
+COM O HARDWARE DA DATABASE,
+
+
+COM OS BACKUPS,
+
+
+PQ 
+
+
+O 
+
+
+
+AWS 
+
+
+CUIDA DE TUDO ISSO PARA NÓS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO... COM O DYNAMODB,
+
+QUANDO 
+
+CRIAMOS 1 TABLE,
+
+DEVEMOS:
+
+
+
+
+1) SETTAR O NOME DA TABLE 
+
+
+2) SETTAR _ AS KEY-IDENTIFICATION KEYS 
+
+
+PARA SUAS _ENTRIES...
+
+
+
+
+
+
+3) DEFINIR A CAPACIDADE DE READ-WRITE 
+
+
+DE SUA TABLE...
+
+
+
+
+
+
+4) OU, ENTAO,
+
+
+USAR A OPTION """"oN-DEMAND""",
+
+
+
+
+PARA DEFINIR __ ""o QUANTO VC ESTÁ DISPOSTO A __ PAGAR _ PARA 
+ESSA TABLE QUE VC RECÉM CRIOU""...
+
+
+
+
+
+
+
+
+
+-> ISSO PQ O __ AWS 
+
+
+NAO 
+
+
+VAI CRIAR INSTANCES AQUI... (nao é como o RDS, em que as instances 
+
+das databases SQL eram criadas e ficavam up and running o tempo todo)...
+
+
+
+
+
+
+
+
+EM VEZ DISSO,
+
+
+O AWS _ MANAGEIA ESSAS TABLES NOSQL PARA NÓS,
+
+
+E AÍ 
+
+
+VC APENAS 
+PAGA _ 
+
+
+
+
+
+
+___ PELA __ CAPACIDADE DE READ/WRITE QUE 
+
+VC 
+
+
+EXPECTED OU PROVISIONOU.....
+
+
+
+
+
+
+
+
+
+
+
+OU, SE VC 
+ESCOLHEU 
+""ON-DEMAND"",
+
+
+
+
+VC SÓ VAI PAGAR __ PELO ACTUAL READS AND WRITES 
+
+QUE 
+
+
+OCORREREM...
+
+
+
+
+
+
+
+
+
+
+
+
+MAS SE VC SETTAR PELO PLANO NAO ""ON-DEMAND"",
+
+
+
+E SE VC 
+
+
+TIVER SETTADO 
+
+1 CAPACIDADE MÁXIMA,
+
+
+
+
+VC PODE SALVAR 
+
+
+
+1 POUCO DE DINHEIRO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS TAMBÉM TEMOS ESSA OPTION DO ON-DEMAND,
+
+PARA QUE 
+
+VC 
+
+NAO PAGUE 
+
+
+SE NAO ESTIVER USANDO A DATABASE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ASSIM COMO O RDS,
+
+VC PODE ESCOLHER ENCRYPTION SETTINGS 
+
+
+
+""" ON A TABLE-BASIS"" --> PQ, COM O DYNAMODB,
+
+
+
+VC 
+
+
+NAO 
+
+
+
+TEM DATABASE CLUSTERS/INSTANCES,
+
+E SIM 
+
+APENAS 
+INDIVIDUAL TABLES..
+
+
+
+
+
+
+
+
+
+
+
+-> ASSIM QUE 1 TABLE ESTIVER CRIADA E CONFIGURADA,
+
+
+
+VC __ PODE __ COMEÇAR A MANAGEAR DATA 
+
+COM A AJUDA DAQUELA TABLE...
+
+
+
+
+
+
+
+
+VC PODE FAZER WRITE E READ DE DATA... -> E VC VAI FAZER ISSO 
+
+NAO 
+
+COM 1 GENERAL QUERY LANGUAGE COMO O SQL,
+
+
+E SIM 
+
+
+COM 
+
+
+A AWS 
+API/SDK/CLI...
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE VC VAI USAR 
+
+AWS COMMANDS PARA INSERIR OU FETCHEAR DATA... -> E ESSA É UMA GRANDE DIFERENCA 
+
+
+EM RELACAO 
+
+AS SQL E ELASTICACHE (caching) DATABASES,
+
+
+
+
+
+QUE 
+
+
+NAO 
+
+ERAM CONCEITOS EXCLUSIVOS AWS (
+
+    e em que tinhamos linguagens gerais de query,
+
+    que sao usadas do lado de fora do aws...
+)
+
+
+
+
+
+
+
+
+
+
+
+-> MAS COM O DYNAMODB, NAO TEMOS 1 QUERY LANGUAGE GERAL DESSAS,
+
+O QUE 
+
+QUER DIZER QUE 
+
+SOMOS FORÇADOS
+
+
+A USAR AWS TOOLS 
+
+PARA INTERAGIR COM ESSA DATABASE E SUA DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS É CLARO QUE 
+
+PODEMOS 
+
+FAZER MAIS DO QUE O READ E WRITE DE DATA --> PODEMOS TAMBÉM BACKUPAR ESSA 
+
+DATA,
+
+E USAR 
+
+OUTRAS FEATURES MAIS AVANÇADAS DO DYNAMODB...
