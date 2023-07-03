@@ -1,0 +1,1280 @@
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... ENTENDENDO A ROUTE 53...
+
+
+
+
+
+
+
+
+
+
+--> ESSE SERVICE DE ROUTE 53,
+
+
+OFERECIDO 
+PELO 
+
+
+
+AWS,
+
+É UM 
+
+
+
+
+
+
+"""""MANAGED DNS SERVICE"""' --> QUER DIZER QUE 
+
+É UM 
+
+
+
+SERVICE 
+USADO 
+
+PARA 
+
+
+
+
+MANAGEAR E REGISTRAR 
+
+
+DOMAINS...
+
+
+
+
+
+
+
+
+
+--> COMO MANAGEAR DOMAINS...
+
+
+
+
+
+
+DEVEMOS:
+
+
+
+
+1) OU COMPRAR DOMAINS...
+
+
+
+
+
+2) OU PELO TRANSFER DE DOMAINS PARA O AWS... (isso é possível)...
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO FEITO (comprar ou transferir domains),
+
+VC PODE CRIAR AS CHAMADAS 
+
+""HOSTED ZONES"",
+
+
+
+
+
+
+QUE __ SAO BASICAMENTE CONFIGURATION CONTAINERS 
+
+
+PARA SEUS 
+
+DOMAINS... 
+
+
+(""CONFIG CONTAINERS"")..
+
+
+
+
+
+
+
+
+
+--> NESSES CONFIG CONTAINERS VC  __ARMAZENA 
+
+TODAS 
+
+AS RULES __ VINCULADAS A 1 DOMAIN...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PQ ESSA É A OUTRA PARTE IMPORTANTE --> VC MANAGEIA SUAS 
+
+DNS ENTRIES,
+
+SEUS RECORDS, 
+
+
+
+SEUS ROUTING RECORDS,
+
+
+PARA AÍ 
+
+
+""cONTROLAR QUE TIPO DE REQUEST DEVE SER FORWARDADO 
+
+
+
+A QUAL SERVICE, NO FINAL DAS CONTAS""....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> mas é claro que o aws SUPORTA ALGUNS USE-CASES 
+
+
+MAIS COMPLEXOS,
+
+
+
+COMO 
+
+
+
+
+
+O  """"MANAGE DE FAILOVER"" (
+
+    FAILOVER === SE 1 SERVICE 
+
+    NAO ESTÁ REACHABLE,
+
+
+    OS REQUESTS SAO FORWARDADOS A _ 1 OUTRO SERVICE... TUDO PARA 
+
+    1 MESMO DOMAIN... 
+)
+
+
+
+
+
+
+
+
+
+
+
+--> TAMBÉM PODEMOS DEFINIR ROUTING RULES MAIS COMPLEXAS...
+
+POR EXEMPLO,
+
+
+PODEMOS _ FAZER COM QUE __ 
+
+VISITORS DE 1 GIVEN PAÍS SEJAM
+
+FORWARDADOS 
+
+A 
+1 SITE DIFERENTE, EM RELACAO
+ 
+
+ A CUSTOMERS DE OUTRO PAÍS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ESSAS SAO TODAS COISAS QUE PODEMOS FAZER COM O ROUTE 53...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.. -> PARA MOSTRAR 1 EXEMPLO CONCRETO,
+
+
+O PROFESSOR 
+
+
+
+FICA COM 1 SITE UP AND RUNNING 
+
+EM 1 
+
+
+EC2 INSTANCE...
+
+
+
+
+
+É UM SIMPLES NODEJ SERVER QUE 
+
+O PROFESSOR 
+
+CRIOU...
+
+
+
+
+
+
+
+
+
+
+-> COM ESSE SERVER STARTADO,
+ELE FICA 
+
+
+LISTENING EM 1 PORT ESPECÍFICA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ALÉM DESSA EC2 INSTANCE,
+
+O PROFESSOR TEM 1 LOAD BALANCER UP AND RUNNING...
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA MOSTRAR O LOAD BALANCER,
+
+ELE VAI 
+
+
+NA PARTE _ DOS __ LOAD BALANCERS,
+
+NO DASHBOARD DO EC2...
+
+
+
+
+
+
+
+
+
+
+
+-> DENTRO DESSA PARTE,
+
+
+ELE 
+
+
+NOS MOSTRA QUE 
+
+ESSE LOAD BALANCER 
+
+TEM 1 TARGET GROUP QUE 
+
+
+_ CONTÉM AQUELA EC2 INSTANCE STARTADA PELO PROFESSOR -->  E ESSE LOAD BALANCER 
+
+
+ENTAO 
+
+
+NOS 
+
+DÁ AQUELA 
+
+URL 
+
+FIXA 
+DE 
+
+
+
+Demo1-123214421.us-east-1.elb-amazonaws.com
+
+
+
+
+
+
+
+
+
+--> OU SEJA,
+
+
+O LOAD BALANCER NOS DÁ ESSE DOMAIN,
+
+FORNECIDO 
+PELO AWS,
+
+
+QUE PODE SER USADO 
+
+
+PARA 
+VISITAR 
+
+ESSE SITE...
+
+
+
+
+
+
+
+
+
+
+
+
+ -> O SITE DEMORA 1 POUCO PARA CARREGAR,
+
+ PQ 
+ O PROFESSOR 
+
+ PEGOU 
+
+
+
+ 1 VERSAO BARATA DE SERVIDOR..
+
+
+
+
+
+
+
+
+
+
+ --> MAS O QUE INTERESSA É QUE O SITE FUNCIONA--> O SITE N É MT FANCY,
+
+ MAS 
+
+ ESSE É UM APP 
+
+ 
+
+
+ HOSTEADO PELO EC2,
+ COM A AJUDA 
+ DE 
+
+ UM 
+
+ APP LOAD BALANCER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> O PROFESSOR NOS MOSTROU ISSO PARA APONTAR QUE 
+
+ FICAMOS COM UMA URL,
+
+ SIM...
+
+
+
+
+
+
+
+
+
+
+
+
+ ---> O PROFESSOR APONTA QUE 
+
+ 
+ TEMOS OUTRA URL 
+
+ _ LÁ NA INSTANCE EM SI... E ESSA URL PODERIA SER USADA,
+
+ SIM,
+
+
+ MAS APENAS 
+
+ SE O PROFESSOR FIZESSE 
+
+
+ EXPORT DA PORT ADEQUADA,
+
+ NESSA INSTANCE (
+
+
+
+    com isso, o domain seria 
+
+    de 
+
+    ec2-3-80-75-189.compute-1.amazonaws.com
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+ BEM... MAS O QUE INTERESSA É QUE AMBOS 
+
+ DOMAIN NAMES SAO PROVIDENCIADOS PELO AWS...  (
+
+    TANTO O DOMAIN NAME 
+
+
+    DA EC2 INSTANCE 
+
+    COMO O DOMAIN 
+
+    NAME 
+
+    DO APPLICATION LOAD BALANCER...
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+ -->  NÓS TAMBÉM TEMOS O PUBLIC IP,
+
+ SIM,
+
+
+ MAS 
+ CONFORME APRENDEMOS,
+ ESSE IP 
+
+ MUDA O TEMPO TODO -->  PARA CONTRABALANCEAR ISSO,
+
+
+
+ PODERÍAMOS USAR 1 ELASTIC IP... --> MAS ISSO AINDA É MT RUIM,
+
+
+
+ PQ 
+
+
+
+ """QUEM DIABOS USA IPS PARA VISITAR WEBSITES????"""(ninguém)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> OK..
+
+
+
+
+
+
+
+ É POR ISSO QUE TIPICAMENTE QUEREMOS USAR DOMAIN NAMES--> E É AÍ QUE 
+
+ O ROUTE 
+
+
+ 53 
+
+ ENTRA NO JOGO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ E ESSE SERVICE NOS DEIXA REGISTER E MANAGE 
+
+
+ DOMAINS...
+
+
+
+
+ E O PROFESSOR QUER NOS MOSTRAR AMBOS CAMINHOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> se vc quer REGISTRAR DOMAINS,
+
+
+BASTA CLICAR NA OPTION DE ""REGISTER DOMAINS"",
+
+
+
+
+
+
+
+
+
+OU EM ""REGISTERED DOMAINS"" -> REGISTER A NEW DOMAIN --> CERTO....
+
+
+
+
+
+
+
+
+
+
+
+
+MAS ISSO É IMPORTANTE -->  ESSA ACAO VAI TE CUSTAR DINHEIRO,
+
+ISSO 
+
+
+PQ 
+
+
+
+VC __ VAI __ COMPRAR __ O DOMAIN...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE EXISTEM DIFERENTES DOMAINS,
+
+A DIFERENTES 
+PRECOS...
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+--> MAS PARA MOSTRAR 1 EXEMPLO,
+
+O PROFESSOR 
+
+
+COMPRA 1 
+
+DOMAIN...
+
+
+
+
+
+
+
+
+
+
+
+
+--> o domain de 
+
+
+aws-course-demo-1.com...
+
+
+
+
+
+ESSE DOMAIN ESTÁ DISPONÍVEL -> O PROFESSOR REGISTRA ESSE DOMAIN POR 1 ANO...
+
+
+
+
+
+
+
+
+
+
+--> DÁ 12 DOLARES...
+
+
+
+
+
+
+
+
+
+
+DEPOIS DE ACEITAR OS TERMOS,
+
+
+SEU 
+
+
+
+DOMAIN FICA PURCHASED...
+
+
+
+
+
+
+
+E ELE 
+É 
+
+REGISTRADO EM ATÉ 3 DIAS...
+
+
+
+
+
+
+3 DIAS PARA ACONTECER A DOMAIN REGISTRATION...
+
+
+
+
+
+
+
+
+ASSIM QUE O DOMAIN 
+
+TIVER SIDO REGISTRADO,
+
+
+
+
+
+
+
+ASSIM QUE 
+
+
+
+__ ESSE PROCESSO ACABAR,
+
+
+1 
+
+HOSTED ZONE TERÁ SIDO CRIADA PELO AWS,
+
+AUTOMATICAMENTE --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+____HOSTED ZONE____ ----->  ISSO É SIMPLESMENTE 
+
+1 
+CONFIGURATION CONTAINER --> VC PODE ACESSAR 
+
+
+ESSA HOSTED ZONE,
+
+PARA 
+
+
+
+AÍ, DENTRO DELA,
+
+CONFIGURAR 
+
+ESSE DOMAIN... 
+
+
+
+
+
+
+
+
+
+
+
+-> É CLARO QUE NAO PRECISAMOS SABER DETALHES SOBRE DNS 
+
+E DOMAIN CONFIGURATIONS...
+
+
+
+
+
+
+
+
+
+-> VC NAO DEVE MESS COM AS DEFAULT ENTRIES ->  EM VEZ DISSO,
+
+
+VC 
+
+DEVE 
+CLICAR EM 
+
+
+""cREATE NEW RECORD"",
+
+
+
+PARA 
+
+ENTAO 
+
+
+CONTROLAR/DEFINIR 
+
+
+
+
+COMO _ REQUESTS _ ENVIADOS A ESSE DOMAIN __ 
+
+
+DEVERAO SER FORWARDADOS/RE-ROUTED 
+
+
+
+
+
+A __ sERVICES ESPECÍFICOS QUE VC TEM, SERVICES qeu vc tenha up and running
+
+NO 
+
+SEU 
+
+
+
+AWS ENVIRONMENT,.
+
+
+
+
+
+
+
+
+
+
+
+POR EXEMPLO,
+
+
+VC 
+
+
+
+TALVEZ QUEIRA 
+
+REDIRECIONAR ESSES REQUESTS 
+
+_ AO SEU LOAD BALANCER,
+
+
+
+
+
+
+PARA ENTAO CARREGAR 
+
+NOSSA WEB PAGE,
+
+SERVIDA POR AQUELE APP NODEJS...
+
+
+
+
+
+
+
+
+
+
+-> PARA ISSO, 
+
+PARA 
+
+REDIRECIONARMOS NOSSOS REQUESTS, FEITOS A ESSE DOMAIN,
+
+
+AO NOSSO LOAD BALANCER,
+
+
+DEVEMOS:
+
+
+
+
+
+
+1) CLICAR EM "CREATE A NEW RECORD"
+
+
+
+
+
+2) SELECIONAR 1  RECORD DE TIPO "A" --> TIPO A --> """ROUTES TRAFFIC TO AN IPV4 ADDRESS AND SOME AWS RESOURCES""
+
+
+
+
+-----> ""SOME AWS RESOURCES"" -> OS LOAD BALANCERS SAO 1 DESSES RESOURCES...
+
+
+
+
+
+
+
+
+
+
+--> CERTO... 
+
+
+
+
+
+3) OPCIONAL ---> PODEMOS ADICIONAR 1 SUBDOMAIN,
+
+SE VC 
+
+QUISER --> o professor define 
+
+"""demo1""""...
+
+
+
+
+
+
+
+
+
+significa que nosso domain/url vai ficar 
+
+
+
+
+
+demo1.aws.course-demo-1.com,
+
+
+
+EM VEZ 
+
+DE 
+
+
+
+aws.course-demo-1.com....
+
+
+
+
+
+
+
+
+
+
+
+
+O QUE VC PRECISA FAZER, DEPOIS DISSO,
+
+
+
+
+
+
+PARA _ CONECTAR _ SEU DOMAIN AO LOAD BALANCER,
+
+
+É 
+
+
+
+
+OU:
+
+
+
+
+
+
+
+1) INSERIR O IP A QUE O REQUEST DEVE SER FORWARDADO (no field de ""VALUE"") --> MAS 
+ISSO SÓ FAZ SENTIDO SE VC JÁ TIVER 1 FIXED IP...
+
+
+
+
+
+2) OU, ENTAO, USAR ""ALIAS"" --> ISSO TE DEIXA 
+USAR 
+
+
+1 DOS __ AWS SERVICES,
+
+ESCOLHER A QUAL AWS 
+
+SERVICE 
+
+ESPECÍFICO 
+
+
+ESSE REQUEST AO SEU DOMAIN DEVE SER FORWARDADO...
+
+
+
+
+
+
+
+
+
+
+-> o professor escolhe o approach 2 -> AÍ ELE ESCOLHE A REGION EM QUE 
+TEMOS O LOAD BALANCER,
+E ENTAO 
+
+SELECIONA 
+
+O SERVICE DE LOAD BALANCER,
+PQ 
+VAMOS QUERER 
+
+REDIRECIONAR A ELE...
+
+
+
+
+
+
+
+
+""alias to application and CLASSIC LOAD BALANCER""
+
+
+
+
+
+
+
+""US EAST 1""
+
+
+
+""NOME DO LAOD BALANCER"" ->  ''dualstack.Demo1-1241124124.us-east-1.elb.amazonaws.com""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... SE AGORA CRIAMOS ESSE RECORD,
+
+
+
+
+
+
+ISSO VAI NOS 
+
+
+DEIXAR COM ESSE DOMAIN CUSTOM AÍ...
+
+
+
+
+
+esse domain de 
+
+
+
+
+demo1.aws-course-demo-1.com...
+
+
+
+
+
+
+
+
+
+(PARECE QUE TODOS DOMAINS DO AWS POSSUEM ""AWS"" ANTES DO NOME DA COISA QUE VC 
+
+COLOCA... isso é meio ruim)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK... É ASSIM QUE PODEMOS COMPRAR DOMÍNIOS,
+
+COM O AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS RECEBER 1 ERRO INICIALMENTE,
+PQ 
+TODAS ESSAS CHANGES 
+
+DEVEM SER APLICADAS... -> MAS DAQUI A PCO VC VERÁ SEU SITE..
+
+
+
+
+
+
+
+
+
+
+É ASSIM QUE PODEMOS USAR 
+
+
+
+NOSSO PRÓPRIO DOMAIN __ PARA _ TARGETTAR 
+
+
+
+SERVICES, WORKLOADS,
+
+WEBSITES _ QUE _ ESTAMOS RODANDO EM CIMA DO AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS É CLARO QUE NAO ESTAMOS LIMITADOS AO USO/FORWARD 
+A 
+
+1 
+
+LOAD BALANCER --> ISSO 
+
+PQ 
+
+
+PODEMOS 
+
+
+
+__ FAZER FORWARD A OUTROS 
+
+SERVICES...
+ 
+
+
+
+
+
+
+ --> PODEMOS TARGETTAR WEBSITES QUE 
+
+HOSTEAMOS COM O S3,
+POR EXEMPLO (
+
+    como vimos na última course section...
+)
