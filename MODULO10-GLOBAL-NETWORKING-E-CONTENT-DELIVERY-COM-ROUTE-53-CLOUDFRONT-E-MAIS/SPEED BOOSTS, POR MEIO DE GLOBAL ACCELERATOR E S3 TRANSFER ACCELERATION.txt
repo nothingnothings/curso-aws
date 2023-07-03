@@ -1,0 +1,348 @@
+ 
+
+
+
+
+
+
+
+ LOCAL ZONES, OUTPOSTS E WAVELENGTH ZONES..
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> BEM, ALGUMAS DESSAS ZONES SAO ALL ABOUT O SPEED UP 
+
+
+
+DO DELIVERY DE CONTENT/PRODUCTS A CUSTOMERS OU RELATED PARTIES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS SE FICAMOS NESSE MUNDO DE ""SPEED UP"",
+
+
+O AWS 
+
+
+
+TEM OUTROS 2 SERVICES IMPORTANTES...
+
+
+
+
+
+
+
+
+SAO ELES:
+
+
+
+
+
+
+
+1) GLOBAL ACCELERATOR 
+
+
+
+
+
+
+
+
+
+
+
+2) S3 TRANSFER ACCELERATION,....
+
+
+
+
+
+
+
+--> ESSES SAO SERVICES QUE VC PODE __ COMBINAR__ COM OUTROS 
+
+SERVICES __ PARA __ SPEED__ UP __ NETWORK REQUESTS 
+
+
+
+OU NETWORK TRAFFIC, EM GERAL...
+
+
+
+
+
+
+
+
+
+
+----> COM GLOBAL ACCELERATOR,
+
+
+VC PODE __ MELHORAR USER PERFORMANCE 
+
+
+POR MEIO DO LEVERAGE DA AWS NETWORK
+
+
+
+PARA __ CONSEGUIR __ 
+
+
+__ TRAFFIC __ A SEUS WORKLOADS OU SERVICES....
+
+
+
+
+
+
+
+--> QUER DIZER QUE SE VC 
+
+ESTIVER HOSTEANDO 1 WEBSITE,
+VC 
+
+PODE 
+
+
+ENABLAR O GLOBAL ACCELERATOR E O CONECTAR 
+
+AO 
+
+SEU WEBSITE (ao load balancer que faz serve do seu website),
+
+
+
+
+E ISSO 
+
+FARIA COM QUE 
+
+
+__ INCOMING REQUESTS 
+
+SEJAM 
+
+ROTEADOS 
+
+AO SEU 
+
+LOAD BALANCER E AO SEU WEBSITE 
+
+DA MANEIRA MAIS EFICIENTE POSSÍVEL, DENTRO 
+
+
+
+DA NETWORK AWS...
+
+
+
+
+
+
+
+
+
+
+
+--> E VC CONSEGUE 2 UNIQUE IP addresses 
+
+
+COMO PARTE DESSE DEAL...
+
+
+
+
+
+
+--> E VC PODE USAR O GLOBAL ACCELERATOR 
+
+PARA BALANCEAR TRÁFEGO 
+
+
+MULTI-REGION...
+
+
+
+
+
+
+
+
+--> PQ SE VC RODA UM WORKLOAD EM DIFERENTES REGIONS,
+
+VC 
+
+PODE GARANTIR QUE 
+
+
+REQUESTS SEMPRE ALCANCEM O GLOBAL ACCELERATOR,
+
+
+E QUE ENTAO SEJAM FORWARDADOS 
+
+A 
+
+
+ESSAS DIFERENTES REGIONS, QUE RODARAO O WORKLOAD,
+
+
+DA MANEIRA MAIS EFICIENTE POSSÍVEL...
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE 
+
+É UM SERVICE QUE ACELERA NETWORK TRAFFIC 
+
+
+__ DE SEUS CUSTOMERS/OUTROS SERVICES 
+
+
+CONVERSANDO 
+
+
+
+
+COM SEUS SERVICES/COISAS QUE VC ESTÁ RODANDO NA CLOUD..
+
+
+
+
+
+
+
+
+
+
+
+--> CUSTA MAIS, MAS PODE TE DAR 1 BOM BOOST...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> S3 TRANSFER ACCELERATION -> FOCA NA FILE TRANSFER SPEED 
+
+
+DAS FILES 
+
+
+
+ARMAZENADAS NO S3..
+
+
+
+
+
+
+
+
+-> VC PODE ENABLAR ESSA OPTION PARA __ AUMENTAR AS NETWORK FILE 
+
+TRANSFER SPEEDS 
+
+
+
+PARA UTILIZAR 
+
+AVAILABLE BANDWIDTH 
+
+
+
+
+__ DE FORMA MAIS ÓPTIMA... --> e, para entao,
+
+
+
+conseguir 
+
+
+enviar files mais rapidamente...
+
+
+
+
+
+
+(IMPROVE DATA TRANSFER SPEED VIA AWS EDGE NETWORK)...
+
+
+
+
+
+
+----------------------
+
+
+
+
+
+
+
+OK... SAO SERVICES QUE USAM OS CABLES DA AWS 
+PARA MELHORAR TRAFFIC SPEED...
+
+
+
+CUSTAM MAIS DINHEIRO,
+
+E NAO SAO SEMPRE NECESSÁRIOS... MAS SÃO ÚTEIS PARA CERTOS USE-CASES..
+
+
+
+
+
+
+
+
+
+
+
+As explained in the previous lecture, Global Accelerator is a service that can help improve request speed.
+
+In addition, Global Accelerator also monitors the application it should forward traffic to. If an application becomes unhealthy (i.e., doesn't respond anymore), Global Accelerator is capable of forwarding traffic to another (healthy) application.
+
+Therefore, Global Accelerator also helps with achieving high availability.
