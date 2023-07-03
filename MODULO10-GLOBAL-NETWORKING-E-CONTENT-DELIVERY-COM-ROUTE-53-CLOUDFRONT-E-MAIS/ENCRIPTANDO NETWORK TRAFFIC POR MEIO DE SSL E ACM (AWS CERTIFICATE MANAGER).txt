@@ -1,0 +1,260 @@
+
+
+
+
+
+
+
+
+
+
+--> OK....
+
+
+
+
+
+JÁ COBRIMOS MTOS ASPECTOS DE NETWORKING E  CONTENT DELIVERY...
+
+
+
+
+
+
+
+
+
+MAS HÁ OUTRO RELATED SERVICE QUE 
+
+VALE A PENA CONHECER...
+
+
+
+
+
+
+
+
+
+
+
+É O SERVICE DE AWS CERTIFICATE MANAGER --> É UM SERVICE QUE TE AJUDA 
+
+
+A __ REQUESt_ E MANAGE SEUS SSL CERTIFICATES...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC PODE MANAGEAR ESSE CERTIFICATE 
+
+
+DE DENTRO DESSE CONSOLE OU DO CLI... MAS 
+
+
+
+VC TAMBÉM 
+
+FREQUENTEMENTE VAI INTERAGIR COM ESSE 
+
+
+SERVICE 
+DE DENTRO 
+DE OUTROS 
+SERVICES,
+
+COMO 
+
+
+O 
+
+SERVICE DE LOAD BALANCER,
+
+
+OU 
+
+O CLOUDFRONT..
+
+
+
+
+
+
+
+
+
+PQ DIGAMOS QUE VC ESTÁ USANDO O CLOUDFRONT PARA 
+
+FAZER DELIVER DE CONTENT...
+
+
+
+
+
+
+
+
+DIGAMOS QUE VC  _ ESTÁ 
+
+DELIVERANDO CONTENT DE 1 BUCKET S3.. ( ou de outra origin, nao interessa)... ->  SE VC 
+
+
+ESTÁ USANDO 
+
+CLOUDFRONT PARA ISSO,
+
+
+
+
+
+
+
+
+_ VC ACTUALLY PODE ENABLAR 
+
+
+SSL ENCRYPTION DIRETAMENTE NO CLOUDFRONT,
+
+
+
+
+E AÍ 
+
+
+O 
+
+
+
+PRÓPRIO CLOUDFRONT VAI REALIZAR A SSL TERMINATION --> QUER DIZER QUE 
+
+
+__ ELE_ JÁ VAI FAZER A ENCRYPTION DO REQUEST DO USER ENVIADO A VOCE,
+
+
+
+E AÍ VAI FORWARDAR 
+
+O UNENCRYPTED REQUEST 
+
+AO SEU CONTENT,
+
+
+TUDO ACONTECENDO DENTRO DA AWS NETWORK -> aí seu 
+
+
+
+REQUEST VAI FICAR PROTEGIDO,
+
+
+
+
+PQ NAO VAI MAIS ESTAR EXPOSTO A INTERNET (vai estar dentro da rede network)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA USAR ESSA SSL TERMINATION,
+
+
+VC PRECISA SETTAR 1 SSL CERTIFICATE, QUE SERÁ USADO... -> E VC PODE 
+
+
+FAZER ISSO PARA OS LOAD BALANCERS EXATAMENTE 
+
+DA MESMA MANEIRA QUE 
+
+VC 
+
+
+FAZ COM O CLOUDFRONT (dentro das pages de cloudfront/load balancer)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> BASTA CLICAR EM CHOOSE CERTIFICATE/REQUEST A CERTIFICATE --> ISSO 
+
+VAI 
+
+TE 
+
+
+DIRECIONAR ÀQUELE MANAGER 
+
+DE 
+
+
+CERTIFICATES (CERTIFICATE MANAGER SERVICE),
+
+
+EM QUE 
+
+VC 
+
+PODERÁ COLOCAR 
+
+SEU DOMAIN NAME,
+
+
+
+
+ESCOLHER OPTIONS DE VALIDATION (dns validation),
+
+
+
+E AÍ 
+
+
+
+
+ENTAO 
+
+ASSIGNAR 
+
+
+SEU SSL CERTIFICATE AO SEU LOAD BALANCER/CLOUDFRONT..
+
+
+
+
+
+
+
+
+com isso, seus users vao conseguir enviar https requests ao seu 
+
+server,
+ que 
+
+ vai 
+
+
+ responder apropriadamente,
+
+ pq o load balancer/cloudfront vai fazer essa ssl encryption...
