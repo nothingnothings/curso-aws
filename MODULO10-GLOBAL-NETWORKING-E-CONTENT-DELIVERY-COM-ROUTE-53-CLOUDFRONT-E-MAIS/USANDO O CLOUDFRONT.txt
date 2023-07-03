@@ -1,0 +1,870 @@
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+ 
+
+
+ PARA NOS MOSTRAR COMO PODEMOS 
+
+
+ USAR O CLOUDFRONT,
+
+
+
+
+
+
+
+
+ O PROFESSOR 
+
+ USA 
+
+ 1 
+
+ STATIC WEBSITE 
+
+ HOSTEADO 
+
+ NO S3...
+
+
+
+
+
+
+
+
+
+
+
+ É AQUELE SITE SIMPLES MOSTRADO NA COURSE SECTION DO S3 BUCKET...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-->  E É CLARO QUE PODEMOS VISITAR ESSE SITE COM A AJUDA 
+
+
+
+
+DA URL _ QUE NOS FOI CONCEDIDA PELO PRÓPRIO S3... (devidamente configurado)...
+
+
+
+
+
+
+E É CLARO QUE 
+
+
+
+PODEMOS TAMBÉM USAR/CONFIGURAR (conectar) 1 CUSTOM DOMAIN 
+
+
+
+AO 
+
+SERVE 
+
+
+DO CONTEÚDO DESSE BUCKET (files desse bucket),
+
+
+
+
+
+
+
+
+mas é claro que COM ISSO AINDA CONTINUARÍAMOS USADNO 
+
+
+ESSE MESMO 
+
+
+WEBSITE SERVER (s3 bucket),
+
+
+
+
+
+
+
+
+
+A ÚNICA COISA QUE MUDARIA É QUE 
+
+
+
+
+ACABARÍAMOS USANDO 
+
+
+ESSE DNS, 
+
+
+ESSE CUSTOM DOMAIN CONVENIENTE,
+
+QUE COMPRAMOS ANTERIORMENTE... ( o custom domain/DNS redireciona o customer à url ""COMUM"" do BUCKET, que está servindo o site...)
+
+
+
+
+
+
+
+
+
+
+-->  MAS O PROBLEMA, AQUI, É QUE 
+
+NOSSO BUCKET 
+
+EXISTE LÁ
+
+EM NORTH VIRGINIA -->  E ISSO QUER DIZER QUE 
+
+ESSE 
+
+BUCKET 
+
+FICA LONGE DO BRASIL/ASIA..
+
+
+
+
+
+
+
+
+
+
+
+PORTANTO, O QUE PODEMOS FAZER É 
+
+
+___"""cREATE A CLOUDFRONT DISTRIBUTION""",
+
+
+
+PARA 
+
+ENTAO 
+
+FAZER LEVERAGE 
+
+
+
+
+__ DESSA NETWORK DE EDGE LOCATIONS, DO AWS...
+
+
+
+
+
+
+
+--> PARA ISSO,
+
+
+
+
+
+ENTRAMOS NO CONSOLE DO CLOUDFRONT...
+
+
+
+
+
+
+DENTRO DALI,
+
+
+
+
+
+
+
+
+CLICAMOS EM ""CREATE A CLOUDFRONT DISTRIBUTION"""
+
+
+
+
+
+
+
+
+
+
+--> ENTAO, DEVEMOS ESCOLHER NOSSO ""ORIGIN DOMAIN'"..
+
+
+
+
+
+
+
+
+
+--> E O NEGÓCIO JÁ VAI SUGERIR 
+
+NOSSO SERVICE DE S3 BUCKET 
+
+
+
+COMO 
+
+
+1 
+POSSIBLE 
+
+
+ORIGIN...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O CLOUDFRONT ```CREATE DISTRIBUTION```TAMBÉM 
+SUGERE 
+
+
+
+__ O APPLICATION LOAD BALANCER 
+
+
+COMO OUTRA ORIGIN,
+
+
+
+
+
+
+PQ __ É CLARO QUE VC NAO ESTÁ LIMITADO AO DISTRIBUTE 
+
+DE CONTÉUDO S3... ->   VC TAMBÉM 
+PODE 
+
+
+FAZER DISTRIBUTE 
+
+DE 
+
+WEBSITE FILES 
+
+ 
+
+
+ __ SERVIDAS __ POR 1 WEBSITE SERVER (como EC2)
+
+ MANAGEADO COM A AJUDA 
+
+ DE 
+
+ 1 LOAD BALANCER...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ok.... CONTINUAMOS SETTANDO 
+
+
+
+NOSSA DISTRIBUTION...
+
+
+
+
+
+
+
+-> O PROFESSOR  ESCOLHE O S3,
+
+
+
+NOSSO BUCKET S3,
+
+COMO ORIGIN...
+
+
+
+
+
+
+
+
+
+
+
+
+-> AÍ PODEMOS COLOCAR MAIS SETTINGS..
+
+
+
+
+
+
+
+
+
+-> O NAME DA DISTRIBUTION.... -> VC PODE SETTAR ISSO...
+
+
+
+
+
+
+
+
+
+
+--> OK... O NOME QUE VC COLOCA  ___ nÃO É O DOMAIN 
+
+
+
+
+QUE SERÁ USADO 
+
+PELO AWS... -> EM VEZ DISSO,
+
+
+O CLOUDFRONT 
+
+VAI 
+
+
+
+
+_GERAR_ 1 DOMAIN __ AUTOMATICAMENTE PARA 
+
+
+VC.... EXATAMENTE COMO VÁRIOS OUTROS SERVICES 
+AWS... --------> ELE TE DÁ 1 DOMAIN NAME QUE VC PODE USAR ,
+
+SIM,
+
+
+
+MAS _ VC TAMBÉM PODE ASSIGNAR 1 CUSTOM DOMAIN _ POR MEIO _ DO ROUTE 53... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+SE VC QUER ASSIGNAR 1 CUSTOM DOMAIN A ESSA DISTRIBUTION, COM O ROUTE 53,
+
+
+
+
+BASTA __CRIAR __ 1 ALIAS __ COM O ROUTE 53 QUE 
+
+
+APONTE _A 1 CLOUDFRONT DISTRIBUTION (
+
+
+
+    basta escolher 
+
+    ""Alias to CloudFront Distribution" em vez de ""Alias to Application and Classic Load balancer"",
+
+    nesse exemplo...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+QUER DIZER QUE PODEMOS ASSIGNAR 1 CUSTOM DOMAIN 
+
+
+
+A 
+
+1 CLOUDFRONT DISTRIBUTION...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO... AÍ TEMOS OUTRAS SETTINGS,
+
+SECURITY SETTINGS,
+
+
+
+QUE PODEM NOS AJUDAR COM O PROTECT
+ 
+
+ DO CONTEÚDO... (sao coisas avançadas)..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> MAS A PARTE MAIS IMPORTANTE É A SETTING 
+
+
+
+ DE NOSSO _ CACHE BEHAVIOR ------> PODEMOS FAZER ISSO 
+
+
+
+
+
+ POR MEIO _dE 1 CACHING POLICY,
+
+ SE QUISERMOS...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> BASTA CLICAR NA PARTE DE ""policies"",
+
+ na esquerda -> AÍ PODEMOS ADICIONAR 
+
+
+ POLICIES 
+
+ A NOSSAS DISTRIBUTIONS...
+ 
+
+
+
+
+
+
+ -> OU ENTAO PODEMOS CRIAR 
+
+ O CACHING BEHAVIOR PARA 1 DISTRIBUTION BEM NO MOMENTO EM QUE 
+
+ CRIAMOS 
+
+ A DISTRIBUTION EM SI...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> NESSA POLICY,
+
+
+
+ DEFINIMOS QUAL TIPO DE TRÁFEGO QUEREMOS 
+
+
+ _ HANDLE_,
+
+
+ E COMO 
+ O 
+
+ CONTENT DEVE SER CACHED...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> O PROFESSOR CONTINUA COM TODAS AS DEFAULT SETTINGS..
+
+
+
+
+
+
+
+
+ -> E AÍ ELE CRIA ESSA DISTRIBUTION...
+
+
+
+
+
+
+
+
+
+
+
+
+ MAS O QUE ISSO FAZ?
+
+
+
+
+
+
+
+
+ ISSO NOS DÁ UM NOVO DOMAIN NAME.... -> COMO 
+
+
+
+ d1rgasdas12daws.cloudfront.net...
+
+
+
+
+
+
+
+
+
+
+
+ ESSE NOVO DOMAIN NAME 
+
+ PODE SER USADO... ->  PODEMOS DIRECIONAR 
+
+ NOSSOS REQUESTS A ESSE DOMAIN NAME.... OU, ENTAO 
+
+ ANEXAR 
+
+
+
+ NOSSO PRÓPRIO ROUTE 53 MANAGED DOMAIN NAME,
+
+ E AÍ 
+
+
+ 
+
+
+ ENVIAR OS REQUESTS AO ROUTE 53 MANAGED DOMAIN NAME,
+
+ QUE 
+
+ AÍ 
+
+
+ VAI ACABAR REDIRECIONANDO 
+
+ NOSSOS REQUESTS 
+
+
+
+ A ESSE ""CLOUDFRONT"", se configurarmos tudo certinho....
+
+
+
+
+
+
+
+
+
+ ----> MAS DE QUALQUER FORMA,
+
+ VAMOS ENVIAR REQUESTS AO 
+
+ CLOUDFRONT----> E, COM ISSO,
+
+
+ O CLOUDFRONT SERVICE VAI GARANTIR QUE 
+
+
+ __ A EDGE LOCATION MAIS PRÓXIMA AO 
+ USER 
+
+ SERÁ ESCOLHIDA,
+
+
+ 
+
+
+ E ESSA LOCATION MAIS PRÓXIMA FARÁ SERVE DAS FILES AO USER,
+
+
+
+
+
+ REDUZINDO O TEMPO DE LOAD CONSIDERAVELMENTE... (para aquele user)..
+
+
+
+
+
+
+
+
+
+
+
+ -> CERTO... E ISSO, NO CASO,
+
+
+ É TIPICAMENTE ALGO QUE 
+ VC 
+
+ QUER 
+
+ ADICIONAR A QUASE QUALQUER WEBSITE... PQ 
+
+
+ ACELERAR 
+
+
+ WEBSITES,
+
+ E GARANTIR QUE 
+
+
+ CÓPIAS DE SEUS USERS 
+
+
+
+
+FICAM PRÓXIMAS DE SEUS USERS __ É UMA ÓTIMA FEATURE,
+
+E QUE 
+
+PODE 
+
+
+ENHANCE SEUS WEBSITES MUITO...
+
+
+
+
+
+
+
+
+
+
+-> OK... TAMBÉM VALE A PENA 
+
+DESTACAR 
+
+QUE 
+
+
+
+__ __DISTRIBUTIONS E O CLOUDFRONT SAO 
+
+1 
+
+FEATURE GLOBAL.... VC NAO PRECISA PICK UP 1 REGION...
+
+
+
+
+
+
+
+
+-> MAS VC PRECISA SELECIONAR 1 REGION QUANDO VC SELECIONA 1 ORIGIN...
+
+
+
+
+
+
+PQ QUANDO VC ESCOLHE 1 ORIGIN,
+
+É CLARO QUE 
+
+VC
+
+
+TERÁ DE ESCOLHER 1 ORIGIN,
+
+E 
+ORIGINS SAO SEMPRE BASEADOS 
+EM 1 SERVICE AWS,
+QUE FOI
+
+
+CRIADO EM ALGUMA REGION...
+
+
+
+
+
+
+
+
+
+
+MAS _ A DISTRIBUTION EM SI É GLOBAL,
+
+O QUE FAZ SENTIDO,
+
+PQ 
+
+A IDEIA POR TRÁS DO CLOUDFRONT É JUSTAMENTE 
+
+
+QUE 
+
+ELE É 
+
+UM GLOBAL SERVICE,
+
+COM 
+
+ESSA NETWORK 
+
+
+GLOBAL DE EDGE LOCATIONS,
+
+QUE 
+
+PODEM SER ACESSADAS DE QUALQUER LUGAR DO MUNDO...
+
+
+
+
+
+
+
+
+
+
+--> certo... E, UNDER THE HOOD,
+
+O SITE DO PROFESSOR 
+
+
+VAI TER SIDO SERVED 
+
+
+
+DA LOCATION MAIS PRÓXIMA A ELE,
+POR CONTA 
+
+DESSE SERVICE DO CLOUDFRONT...
+
+
+
+
+
+
+
+
+
+
+--> CLOUDFRONT --> É UM SERVICE QUE É ÓTIMO PARA DELIVER 
+
+CONTENT 
+
+A SEUS 
+WEBSITE VISITORS DE FORMA EFICIENTE..
