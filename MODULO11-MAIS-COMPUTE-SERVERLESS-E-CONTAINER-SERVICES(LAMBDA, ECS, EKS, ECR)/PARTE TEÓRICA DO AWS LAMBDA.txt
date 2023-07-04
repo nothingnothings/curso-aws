@@ -1,0 +1,615 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... E SOBRE O QUE É ESSE SERVICE AWS LAMBDA...
+
+
+
+
+
+
+
+
+
+
+
+-> BEM, ELE É ALL ABOUT O EXECUTE DE CODE....
+
+
+
+
+
+
+
+
+
+
+
+
+--> CÓDIGO QUE DEVE SER EXECUTADO COMO __ CONSEQUENCIA _ 
+
+DE 
+
+1 CERTO EVENTO QUE ACONTECA....  
+
+
+
+
+
+
+
+
+--> HÁ UMA AMPLA VARIEDADE  DE EVENTS QUE PODEMOS 
+
+ESCOLHER...
+
+
+
+
+
+
+
+
+
+-> também podemos fazer com que 2 EVENTS DIFERENTES TRIGGEM 
+1 MESMO CÓDIGO... podemos configurar tudo isso...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> VC PODE CONFIGURAR VÁRIOS ASPECTS 
+
+
+DESSA CODE EXECUTION,
+
+
+AINDA QUE 
+
+VC 
+
+NAO 
+
+CONFIGURE O UNDERLYING SERVER (nao modifica 
+o software do negócio)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COM O AWS LAMBDA, 
+
+ACERCA DO CÓDIGO,
+
+
+VC PODE SIMPLESMENTE 
+
+
+UPLOADAR O SEU CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+--> ALTERNATIVAMENTE, 
+VC 
+
+PODE 
+
+DEFINIR 
+
+O CÓDIGO DIRETAMENTE 
+
+NO AWS LAMBDA 
+
+MANAGEMENT 
+
+CONSOLE...
+
+
+
+
+
+
+
+
+
+--> HÁ DIFERENTES MANEIRAS 
+
+DE CONSEGUIR SEU CÓDIGO AO  
+
+
+AWS LAMBDA..
+
+
+
+
+
+
+
+
+
+
+--> VC PODE PROVIDENCIAR 1 DOCKER CONTAINER,
+
+1 ZIP FILE,
+
+TUDO ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+DOCKER CONTAINER --> O LAMBDA NAO É UM CONTAINER-RUNNING SERVICE -> MAS PROVIDENCIAR 
+
+1 
+
+DOCKER CONTAINER 
+É UMA 
+
+MANEIRA CONVENIENTE 
+
+DE 
+
+
+
+ENVIAR SEU CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------> AÍ VC DEVE ESCOLHER 1 PROGRAMMING LANGUAGE...
+
+
+
+
+
+
+
+
+
+
+--> O LAMBDA SUPORTA TODAS AS PROGRAMMING LANGUAGES, NA TEORIA...
+
+
+
+
+
+
+
+
+
+
+--> ISSO PQ _ VOCE PODE _ CONSTRUIR SUA PRÓPRIA 
+
+SUPPORT LANGUAGE...
+
+
+
+
+
+
+
+
+
+-> E NON-SUPPORTED LANGUAGE DEVEM SER ADICIONADAS POR VOCE/COMUNIDADE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC PODE COLOCAR ADVANCED SETTINGS,
+
+
+COMO ENVIRONMENT VARIABLES (que podem ser usadas dinamicamente no código)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS THATS IT,
+
+
+VC PROVIDENCIA O CÓDIGO, E AÍ ELE FICA LÁ PARA SER EXECUTADO,....
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO FEITO,
+
+
+VC 
+
+
+
+VAI __ ESCOLHER ALGUM DOS EVENTS.. -> TEMOS MTOS EVENT SOURCES..
+
+
+
+
+
+
+
+
+EX: ""1 FILE FOI ENVIADA __ AO S3"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EX: "1 HTTP REQUEST FOI ENVIADO A 1 OUTRO SERVICE"
+
+
+
+
+
+
+
+
+
+
+
+
+em geral,
+ 
+ HÁ UMA AMPLA VARIEDADE DE SUPPORTED EVENTS,
+
+ QUE 
+
+
+ PODEM TRIGGAR CODE EXECUTION...
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE SETTAR 
+
+VÁRIOS ASPECTOS AVANCADOS DESSE EVENT,
+
+
+COMO 
+
+""fILTERING"" (
+    para que 
+
+    o código SÓ SEJA ___ EXECUTADO __ A PARTIR _ 
+
+    DE CERTAS VARIATIONS DESSE EVENT..
+)
+
+
+
+
+
+
+
+
+
+
+
+ex: PODERÍAMOS FILTRAR POR FILES ESPECÍFICAS SENDO UPLOADADAS,
+
+
+EM VEZ DE 
+
+
+RODAR A ACTION PARA __ cADA_ FILE QUE 
+É 
+
+UPLOADADA..
+
+
+
+
+
+
+
+
+
+
+
+
+--> NO FINAL DAS CONTAS,
+
+VC 
+
+
+TEM 1 EVENT,
+
+
+TEM O CÓDIGO,
+
+E AÍ
+
+
+CONFIGURA A EXECUTION ENVIRONMENT...
+
+
+
+
+
+
+
+
+
+
+
+--> VC NAO CONFIGURA O UNDERLYING SOFTWARE,
+
+
+
+MAS VC PODE CONFIGURAR 
+""QUANTO TEMPO A FUNCTION DEVE RODAR ATÉ PARAR" (para que vc nao pague por code 
+execution desnecessária..)
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> VC PODE ESCOLHER A UNDERLYING ARCHITECTURE (qual tipo de processador vc quer)..
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE ANEXAR EFS FILESYSTEMS, SE QUISER... E OUTRAS COISAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AWS LAMBDA --> TIMEOUT --> VC __ PAGA __ APENAS __ PELO TEMPO 
+
+EM QUE 
+
+
+
+_ SEU CÓDIGO É EXECUTADO....
+ 
+ (vc nao paga se seu código 
+ 
+ ESTIVER IDLE...
+ )
+
+
+
+
+
+
+MAS VC PAGA POR CADA MILLISECOND 
+EM QUE 
+
+
+SEU CÓDIGO É EXECUTADO...
+
+
+
+
+
+
+
+
+
+
+
+COMO SEMPRE, AS PRICING PAGES SAO AS PAGES QUE VC DEVE 
+
+
+VISITAR...
+
+
+
+
+
+
+
+MAS CADA MES,
+
+
+
+O 
+
+LAMBDA 
+
+TE DÁ 1 MILHAO 
+
+
+DE FREE REQUESTS....
+
+
+
+
+
+
+3.2 MILLION SECONDS DE COMPUTE TIME.... é mt tempo..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE ATTACHEAR 1 EXECUTION ROLE 
+
+
+NA SUA LAMBDA FUNCTION... PARA QUE O CÓDIGO EXECUTADO
+
+
+
+CONSIGA ASSUMIR CERTAS PERMISSIONS...
+
+
+
+
+(
+    EX: SE O LAMBDA PRECISA ARMAZENAR 
+
+    1 FILE EM 1 S3 BUCKET,
+
+
+    O CÓDIGO PRECISA 
+    TER PERMISSAO PARA ISSO... POR MEIO DE ROLES...
+)
+
+
+
+
+
+
+
+
+
+
+--> SE NECESSÁRIO,
+
+
+VC PODE _ CONECTAR __ 
+
+
+SEU LAMBDA SERVERLESS 
+
+A 
+
+1 VPC... 
+
+
+
+(
+
+    SEU AWS SERVERLESS LAMBDA 
+
+
+    _ NAO FICA DENTRO DO VPC,
+
+
+    MAS ELE GANHA ACESSO AO VPC.. CASO ELE PRECISE SE CONECTAR A OUTRAS 
+    INSTANCES EC2 E COISAS DO GENERO...
+)
