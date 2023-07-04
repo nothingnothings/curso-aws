@@ -1,0 +1,291 @@
+
+
+
+
+
+
+
+
+
+
+
+--> OK... 
+
+
+
+
+APRENDEMOS SOBRE ECS E EKS...
+
+
+
+
+
+
+
+
+
+
+--> MAS HÁ OUTRO CONTAINER-RELATED SERVICE,
+QUE É O 
+
+ECR..
+
+
+
+
+
+
+
+
+
+
+
+ELASTIC CONTAINER REGISTRY -> É UM 
+
+
+""MANAGED CONTAINER IMAGE REGISTRY""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---> PQ QUANDO TRABALHAMOS COM CONTAINERS,
+
+
+
+
+CONSTRUÍMOS IMAGES...
+
+
+
+
+
+
+E SE VC QUER CONSTRUIR 
+
+CONTAINERS COM BASE NESSAS IMAGES,
+
+
+
+VC 
+
+
+
+__PRECISA PROVIDENCIAR ESSAS IMAGES AO SOFTWARE QUE 
+
+
+VAI BUILDAR O CONTAINER..
+
+
+
+
+
+
+
+
+
+
+-> SE VC 
+
+NAO ESTÁ FAZENDO ISSO NA SUA MAQUINA,
+
+
+ISSO QUER DIZER QUE 
+
+
+SUA IMAGE PRECISA SER PUSHED A 1 REPOSITORY,
+
+DE ONDE PODERÁ 
+
+
+
+SER __ PULLED PELO SERVER EM QUE 
+
+VC 
+QUER BUILDAR 
+
+
+O CONTAINER...
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE É UM REPOSITORY 
+
+
+EM QUE 
+
+
+VC 
+
+PODE ARMAZENAR AS IMAGES...
+
+
+
+
+
+
+
+
+
+
+
+
+E O ECR É UM DESSES CONTAINER REGISTRIES...
+
+
+
+
+
+
+
+
+
+
+
+É TIPO O DOCKERHUB DA AMAZON...
+
+
+
+
+
+
+
+
+
+
+
+
+
+AWS -> ECR -> É O DOCKERHUB DA AMAZON --> PODEMOS 
+
+
+
+MANAGEAR REPOSITORIES (
+
+    SAO TIPO FOLDERS QUE CONTEM AS FILES....
+
+    
+    SAO AS COISAS QUE CONTEM AS IMAGES...
+)
+
+
+
+
+
+
+
+
+
+
+--> E QUANDO CRIAMOS REPOSITORIES,
+
+
+PODEMOS ESCOLHER SE SERAO PUBLIC OU PRIVATE (
+
+
+    para que 
+    sejam usadas apenas pelas pessoas com acesso ao repository...
+)
+
+
+
+
+
+
+
+
+
+--> TAMBÉM PODEMOS ENABLAR EXTRA ENCRYPTION OU 
+
+IMAGE SCANNING,
+
+PARA AUMENTAR A SEGURANCA DO SEU REPOSITORY 
+
+E DE SUA IMAGE...
+
+
+
+
+
+
+
+
+
+
+
+--> COM O REPOSITORY CRIADO,
+
+VC PODE MANAGEAR IMAGES COM A AJUDA DELES... POR MEIO 
+
+DO PUSH DE IMAGES 
+AOS 
+
+REPOSITORIES 
+
+ECR...
+
+
+
+
+
+
+
+
+
+
+
+
+- podemos usar essas images em outros softwares, como 
+
+o 
+
+ecs e eks...
+
+
+
+
+
+
+
+
+POR FIM, PODEMOS COMPARTILHAR ESSA IMAGE COM OUTRAS PESSOAS,
+
+NO CASO DE PUBLIC REPOSITORIES..
+
+
+
+
+
+
+
+
+
+
+
+
+ECR -> ELASTIC CONTAINER REGISTRY --> É O LOCAL EM QUE 
+
+VC 
+
+ARMAZENA IMAGES,
+
+E QUE 
+
+É USADO POR ECS E EKS...
