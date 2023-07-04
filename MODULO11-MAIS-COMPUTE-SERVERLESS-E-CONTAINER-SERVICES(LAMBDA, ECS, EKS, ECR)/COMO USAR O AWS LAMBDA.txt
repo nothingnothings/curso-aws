@@ -1,0 +1,457 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> PARA USAR O SERVICE AWS LAMBDA,
+
+VC PODE USAR:
+
+
+
+
+
+1) MANAGEMENT CONSOLE 
+
+
+
+2) CLI 
+
+
+
+3) SDK
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O CONSOLE NOS DÁ A USER INTERFACE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VISITAMOS A SERVICE PAGE DO LAMBDA..
+
+
+
+
+
+
+
+CRIAMOS FUNCTIONS, NESSA PAGE..
+
+
+
+
+
+
+
+
+
+
+
+
+-----> AS FUNCTIONS SAO AS COISAS QUE 
+
+CONTEM 
+
+
+O SEU CÓDIGO..
+
+
+
+
+
+
+
+
+
+
+
+--> LAMBDA É UM REGIONAL SERVICE --> VC PODE TER DIFERENTES FUNCTIONS,
+
+EM DIFERENTES REGIONS...
+
+
+
+
+
+
+
+
+A REGION QUE VC ESCOLHE IMPORTA, PARA O LAMBDA...
+
+
+
+
+
+
+
+
+
+
+QUANDO VC CRIA 1 FUNCTION, VC PODE:
+
+
+
+1) START FROM SCRATCH 
+
+
+
+
+2) USE A BLUEPRINT -> ESSES EXEMPLOS PODEM TE AJUDAR 
+A 
+
+APRENDER MAIS SOBRE O LAMBDA,
+
+
+VER COMO ELE FUNCIONA E O QUE VC PODE FAZER COM ELE..
+
+
+
+
+
+
+
+
+
+
+
+
+--> 
+
+SE VC ESCOLHE FROM SCRATCH,
+
+VC DÁ UM NOME A 
+
+SUA 
+FUNCTION...
+
+
+
+
+
+
+
+
+-> DEPOIS VC ESCOLHE SUA PROGRAMMING LANGUAGE --> E É POSSÍVEL USAR OUTRAS LANGUAGES,
+
+QUE NAO ESTAO NA LISTA,
+
+MAS É MAIS DIFÍCIL...
+
+
+
+
+
+
+
+
+
+
+
+
+--> DEPOIS VC TEM A ESCOLHA DE ARCHITECTURE--> ESCOLHE O TIPO DE PROCESSADOR A SER USADO (
+
+    x86_64 
+
+    ou arm64...
+)
+
+
+
+
+
+
+
+
+
+--> PERMISSIONS --> PODEMOS COLOCAR 1 EXECUTION ROLE,
+
+
+SE NECESSÁRIO (para conversar com o s3, etc etc)...
+
+
+
+
+
+--> E ESSES ROLES 
+
+
+SERIAM CRIADOS COM O IAM,
+
+
+ou entao
+ 
+
+
+__ VC DEIXA O LAMBDA CRIAR 1 ROLE PARA VOCE, 
+QUE 
+
+SERÁ 
+
+
+1 
+BASIC ROLE,
+
+
+
+
+QUE VAI DEIXAR O LAMBDA 
+
+ESCREVER 
+
+LOGS EM 1 LOGGING SERVICE (que veremos mais tarde)...
+
+
+
+
+
+
+
+
+
+
+
+
+AÍ TEMOS ALGUMAS ADVANCED  SETTINGS (
+    como o attach 
+    dessa lambda function a 1 vpc, por exemplo...
+     
+)
+
+
+
+
+
+
+
+
+
+
+ASSIM QUE VC ESCOLHER TUDO ISSO,
+
+VC PODERÁ 
+
+EDITAR O CÓDIGO QUE 
+
+
+
+
+SERÁ EXECUTADO A PARTIR DOS EVENTS...
+
+
+
+
+
+
+
+
+PARA UPLOADAR SUA FUNCTION,
+
+
+VC PODE:
+
+
+
+
+
+1) ESCREVER SEU CÓDIGO DIRETAMENTE 
+
+
+2) UPLOADAR SEU CÓDIGO VIA ZIP FILE 
+
+
+
+3) UPLOADAR O CÓDIGO VIA DOCKER CONTAINER..
+
+
+
+
+
+
+
+
+
+-> VC TAMBÉM PODE 
+
+
+CONFIGURAR OUTROS ASPECTOS,
+
+COMO O TIMEOUT TIME,
+
+
+A MEMORY QUE DEVERÁ FICAR AVAILABLE PARA 
+
+
+RODAR SUA FUNCTION (decreases execution time, costs more)...
+
+
+
+
+
+
+----------> MAS VC NAO ESCOLHE 1 HARDWARE PROFILE,
+
+NEM PROCESSADOR... E SIM APENAS 
+ESCOLHE 
+
+ESSAS POUCAS OPTIONS PARA TWEAKAR 
+
+O 
+
+
+ENVIRONMENT EM QUE 
+
+ESSE CÓDIGO É EXECUTADO..
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM PODE UPDATAR 
+
+O ROLE QUE É ATTACHEADO AO CODE, SE NECESSÁRIO...
+
+
+
+
+
+
+
+
+
+CERTO...
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE 1 PARTE CRUCIAL É OS EVENTS...
+
+
+
+
+
+
+
+
+
+EVENT --> PARA ISSO, VC DEVE CLICAR EM ""ADD TRIGGER"" --> VC PODE ESCOLHER 
+
+
+
+DE DIVERSOS SERVICES OFERECIDOS 
+PELO 
+
+
+
+AWS, COMO O S3..
+
+
+
+
+
+
+
+
+
+--> EX: PODEMOS ESCOLHER 1 BUCKET,
+
+E AÍ 
+
+
+__ DIZER ""QUANDO OBJECTS FOREM CRIADOS NO BUCKET,
+
+ESSA FUNCTION DEVE SER EXECUTADA"">..
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS COLOCAR FILTERS (""ativar essa function apenas a partir de upload de arquivos com extensao .jpg")... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---------> PODERÍAMOS TER CODE QUE EXTRAI 
+
+
+DATA DO BUCKET SEMPRE QUE 
+
+OBJECTS MUDAREM/NOVOS OBJECTS FOREM ADICIONADOS,
+
+E AÍ 
+
+FAZER 
+
+COISAS A PARTIR DISSO..
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MTOS AWS SERVICES 
+
+TRIGGAM EVENTS... LAMBDA É MT VERSÁTIL E PODEROSO...
