@@ -1,0 +1,390 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O QUE SAO SERVERLESS SERVICES?
+
+
+
+
+
+
+
+
+
+
+--> BEM....
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR FALOU BREVEMENTE SOBRE ISSO, MAIS CEDO NO CURSO..
+
+
+
+
+
+
+
+
+
+MAS DEVEMOS TER O MESMO UNDERSTANDING DESSES SERVICES..
+
+
+
+
+
+
+
+
+
+
+SERVERLESS SERVICES, NO MUNDO AWS E NO MUNDO CLOUD,
+
+
+
+
+SAO BASICAMENTE SERVICES EM  QUE 
+
+
+
+""""VC NAO PRECISA PROVISIONAR, CONFIGURE, 
+
+NEM PAY"""""
+
+
+
+
+
+
+
+
+
+
+
+
+--> ou seja,
+
+
+SAO SERVICES EM QUE 
+VC 
+
+
+NAO PRECISA SE PREOCUPAR 
+
+
+COM A UNDERLYING INFRASTRUCTURE E A CONFIG DESSA INFRASTRUCTURE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PQ COM AS EC2 INSTANCES,
+
+TEMOS QUE NOS IMPORTAR COM O CHOOSE 
+
+
+DA MÁQUINA CORRETA,
+
+
+
+O OPERATING SYSTEM CORRETO, ETC ETC.... --> VC É OBRIGADO A SE IMPORTAR 
+COM ESSA 
+
+PARTE DE ""SERVER CONFIGURATION""
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS COM SERVERLESS SERVICES,
+
+
+A IDEIA É QUE VC NAO TEM DE SE IMPORTAR COM ISSO.... -> A IDEIA É QUE 
+
+VC 
+
+
+SIMPLESMENTE 
+
+
+__dEFINE _a  TASK__ QUE DEVE SER PERFORMED (
+
+
+    tipo um code snippet que precisa ser executado
+),
+
+
+
+E AÍ 
+VC 
+
+DEFINE __ QUANDO _ ESSA TASK _ DEVE SER PERFORMED (
+    sob quais circunstancias deve ser executada...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+TASK --> PODE __ SER __ 1 CÓDIGO QUE __ COPIA __ 1 IMAGE FILE QUE 
+
+FOI UPLOADADA/STORADA EM ALGUM LUGAR...
+
+
+
+
+
+
+
+EVENT --> É O EVENTO QUE VAI __ TRIGGAR__ ESSA TASK.... --> NESSE CASO, PODE SER 
+
+""iMAGE WAS UPLOADED TO THE S3 BUCKET"".....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> nesse caso, talvez gostaríamos de copiar essa image para outro 
+
+bucket,
+
+ou qualquer coisa do genero.
+
+
+
+
+
+
+
+
+
+
+-> e o AWS OFERECE 1 SERVICE QUE 
+
+RESOLVE ESSES TIPOS DE CENÁRIOS ESPECÍFICOS..
+
+
+
+
+
+
+
+
+
+-> É O SERVICE AWS LAMBDA --> É UM DOS SERVICES  __ MAIS IMPORTANTES__ 
+
+
+OFERECIDOS PELO AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS É CLARO QUE EXISTEM OUTROS 
+
+SERVICES QUE VC PODERIA 
+
+
+CHAMAR DE SERVERLESS....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+""AWS LAMBDA"" --> É O __ MAIN SERVERLESS ''COMPUTE'' SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS É CLARO QUE ""COMPUTE'" NAO É A ÚNICA COISA QUE EXISTE 
+
+NA NUVEM.... VC PODE FAZER OUTRAS COISAS NA NUVEM...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> POR EXEMPLO,
+
+
+APRENDEMOS ANTERIORMENTE SOBRE O SERVICE S3,
+
+QUE 
+
+NOS AJUDA 
+
+
+A STORE FILES NA CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+-> SE VC PENSAR BEM SOBRE ISSO,
+
+VC PODERIA 
+
+CHAMAR O S3 BUCKET 
+
+
+
+
+
+DE """SERVERLESS STORAGE SERVICE""",
+
+
+
+
+PQ REALMENTE 
+
+NAO 
+
+TEMOS DE NOS IMPORTAR 
+
+COM A UNDERLYING INFRASTRUCTURE,
+
+NAO CONFIGURAMOS NADA,
+
+NAO INSTALAMOS 
+
+OPERATING SYSTEMS, ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> S3 -- PODERIA SER CHAMADO DE SERVERLESS SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS NESSA SECTION FOCAREMOS EM SERVERLESS COMPUTE SERVICES --> 
