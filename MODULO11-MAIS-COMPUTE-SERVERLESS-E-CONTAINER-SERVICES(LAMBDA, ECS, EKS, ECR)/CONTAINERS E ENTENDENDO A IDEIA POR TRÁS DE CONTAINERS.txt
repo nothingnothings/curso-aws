@@ -1,0 +1,64 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> nao precisamos ter nenhuma additional server configuration --...
+
+
+
+
+
+
+
+
+
+
+
+--> E PODEMOS TAMBÉM BREAK UP COMPLEX APPLICATIONS EM MÚLTIPLAS IMAGES,
+
+QUE TRABALHAM EM CONJUNTO,
+
+
+E AÍ UPDATAR E SHIP ESSA IMAGES, 
+
+DE FORMA INDEPENDENTE 1 EM RELACAO A OUTRA,
+
+
+E AÍ BUILD 1 MICRO-SERVICES 
+
+ARCHITECTURE...
+
+
+
+
+
+
+
+
+
+
+
+ESSA É A IDEIA POR TRÁS DE CONTAINERS...
+
+
+
+
+
+
+
+
+CONTAINERS SAO MT POPULARES,
+ E O RUN DE APPS COM CONTAINERS TAMBÉM É SUPER POPULAR...
