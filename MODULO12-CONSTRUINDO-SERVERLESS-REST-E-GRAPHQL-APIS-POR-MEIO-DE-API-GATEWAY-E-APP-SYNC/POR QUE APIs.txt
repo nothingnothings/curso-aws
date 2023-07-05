@@ -1,0 +1,601 @@
+
+
+
+
+
+
+
+
+
+
+
+WEB APPS E MOBILE APPS, E A AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... SE PENSARMOS SOBRE WEB E MOBILE APPS,
+
+E A COMBINACAO DELES, COM O AWS,
+
+
+
+UMA TYPICAL PICTURE SERIA ESTA:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+(WEB OU MOBILE APPS rodando no user)  <------------------> BACKEND HTTP API 
+                                            communicate 
+                                            (send requests, receive responses)..
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO PQ _ UM MONTE DE NOSSO CÓDIGO FICA NA NUVEM.... -> O CÓDIGO PARA TRANSFORMAR 1 
+
+UPLOADED IMAGE -> ELE EXISTE NA NUVEM....
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS TBM  
+
+
+O CÓDIGO PARA ""LOAD ALL THE PRODUCTS WE WANNA SHOW TO OUR USERS"" --> esse código também 
+
+provavelmente existirá na nuvem,
+
+pq 
+
+nossa database existe 
+
+na nuvem,....
+
+
+
+
+
+
+
+
+
+
+
+-> PARA TRIGGAR CERTAS ACTIONS, COMO O FETCHING DE TODA PRODUCT DATA,
+
+E PARA RETORNAR TODA ESSA DATA AO MOBILE APP EM QUE SERÁ DISPLAYADA,
+
+PARA ISSO TIPICAMENTE 
+
+USAMOS HTTP APIs -->  QUER DIZER QUE 
+
+
+USAMOS __ sERVERS__ 
+
+
+
+QUE DEAL COM INCOMING HTTP REQUESTS,
+
+
+
+
+
+E AÍ RETORNAM RESPONSES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ESSAS RESPONSES PODEM SER:
+
+
+
+
+1) HTML --> WEBSITES INTEIROS...
+
+
+
+
+
+
+
+
+
+2) RAW DATA (JSON) ---> ESSA DATA  ENTAO É USADA POR 1 STANDALONE  FRONTEND CLIENT.. (COMO 1 MOBILE APP)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+E ESSAS DATA-DRIVEN APIs,,
+
+
+
+DATA-FOCUSED WEB APIs,
+
+
+
+
+
+SAO TIPICAMENTE CONSTRUÍDAS COMO REST APIs,
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+REST API --> É APENAS UMA CERTA MANEIRA DE CONSTRUIR 
+
+ESSAS WEB APIs... uma CERTA FILOSOFIA...
+
+
+
+
+
+
+
+
+
+
+
+GRAPHQL API -> É UM APPROACH ALTERNATIVO AOS REST APIs....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PARA ESSE CURSO, NAO PRECISAMOS SABER O QUE SAO ESSAS APIs...
+
+
+
+
+
+
+
+
+
+
+
+
+-> O QUE VC TEM DE SABER/ENTENDER É QUE 
+
+
+_FREQUENTEMENTE EXISTE 
+
+
+
+A NECESSIDADE 
+
+
+DE 
+
+
+
+FRONTEND APPS (web, mobile) SE COMUNICAREM COM SEUS 
+
+CLOUD SERVICES... --> E, ENTAO,
+
+QUE 
+
+ESSAS 
+WEB APIs,
+
+
+QUE VC PODE CONSTRUIR,
+
+
+PODEM TE AJUDAR COM ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+REST APIs        VS         GRAPHQL  APIs..
+
+
+
+
+
+
+
+
+
+
+REST:
+
+
+
+1) VC TEM CERTAS ROUTES/PATHS/URLS QUE VC SUPORTA,
+
+A QUE 
+
+OS REQUESTS SAO ENVIADOS (ex: /books/1 --> faz get do book de n1)...
+
+
+
+
+
+2) O QUE ACONTECE, TIPICAMENTE, 
+
+
+
+É QUE A API VAI ENVIAR TODA A DATA PARA O SELECTED RESOURCE....
+
+
+
+
+
+3) SAO UTILIZADOS HTTP VERBS,
+
+COMO GET, POST, PUT, DELETE, ETC,
+
+
+PARA DESCREVER SE VC QUER 
+
+FAZER GET DO LIVRO OU EDITAR, ETC....
+
+
+
+
+
+
+
+
+4) É UMA MANEIRA EXTREMAMENTE COMUM DE 
+
+CONSTRUIR 
+
+APIs...
+
+
+
+
+
+
+
+
+
+
+
+
+
+GRAPHQL API...
+
+
+
+
+
+
+
+
+1) VOCE ENVIA REQUESTS SEMPRE A MESMA 
+
+URL... AO MESMO ENDPOINT...
+
+
+
+
+
+2) MAS O REQUEST EM SI NAO É COMO 
+O REQUEST HTTP DO REST....
+
+
+
+
+
+3) O REQUEST EM SI VAI CONTER 
+
+""GRAPHQL QUERY STATEMENT""...
+
+
+
+
+
+
+4) o request EM SI CONTÉM DATA,
+
+
+CONTÉM 1 QUERY LANGUAGE,
+
+
+QUE É EVALUATED PELO GRAPHQL CODE.... (EVALUATED PELO CODE NO SERVER)...
+
+
+
+5) COM O GRAPHQL,
+
+É BEM MAIS FÁCIL DE REQUISITAR ""PARTIAL DATA"",
+
+
+
+PQ __ VC TEM ESSA DETAILED QUERY COMO PARTE 
+
+
+DO REQUEST...
+
+
+
+
+
+
+
+6) VOCE NAO USA HTTP VERBS NOS SEUS REQUESTS,
+
+
+PQ VC _ TEM APENAS __ POST __ REQUESTS... 
+
+
+
+
+
+
+
+7) VC TEM APENAS POST REQUESTS --> ISSO PQ POST REQUESTS 
+
+ACEITAM 
+
+DATA EXTRA... essa data EXTRA SERÁ JUSTAMENTE A QUERY QUE 
+
+É ENVIADA JUNTO DO REQUEST... (get requests nao conseguem fazer isso)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> O KEY TAKEAWAY É QUE TEMOS ESSES DIFERENTES TIPOS DE API,
+
+
+QUE PODEM SER CONSTRUÍDOS...
+
+
+
+
+
+
+
+
+
+
+
+REST APIs- -> extremamente comuns...
+
+
+
+
+
+
+
+GRAPHQL APIs --> TAMBÉM MT POPULARES,
+
+PQ 
+
+PODEMOS 
+
+
+TER 
+
+
+
+RESPONSES MAIS LEAN... REDUNDANCIA 
+
+REDUZIDA,
+
+
+PQ 
+VC É CAPAZ 
+DE ENVIAR 
+
+EXATAMENTE A DATA QUE É REQUISITADA PELO CLIENT,
+
+
+EM VEZ DE ENVIAR DE VOLTA ""TUDO""....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+É CLARO QUE O TIPO DE API QUE VC ESCOLHE (REST OU GRAPHQL)
+
+
+DEPENDE 
+
+
+DA SUA COMPANHIA,
+
+
+DA FILOSOFIA, ETC...
+
+
+
+
+
+
+
+
+
+
+---> AMBAS SAO POPULARES,
+
+E AMBOS TYPES PODEM SER CONSTRUÍDOS COM CÓDIGO...
+
+
+
+
+
+
+
+--> VC PODE RODAR ESSE CÓDIGO DENTRO DE 1 EC2 INSTANCE,
+
+OU EM 1 CONTAINER,
+
+
+
+OU EM 1 LAMBDA FUNCTION (até certa medida, pq 
+
+ela pode PARSEAR 1 QUERY QUE FAZ PARTE DO REQUEST,
+
+OU ENTAO PODE HANDLAR REQUESTS QUE FORAM ENVIADOS A CERTOS ENDPOINTS/RESOURCE 
+PATHS...
+)
+
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE AMBOS OS TYPES PODEM SER CONSTRUÍDOS COM CÓDIGO...
+
+
+
+
+
+
+
+
+
+MAS AS COISAS FICAM AINDA MAIS FÁCEIS SE VC 
+
+NAO PRECISA AS ESCREVER...
+
+
+
+
+
+
+
+
+
+
+
+-> É POR ISSO QUE O AWS 
+TE OFERECE 
+
+1 
+
+SERVICE QUE 
+
+TE DEIXA __ BUILD REST APIs 
+
+
+
+__ SEM PRECISAR ESCREVER CÓDIGO... É O SERVICE """" API GATEWAY"""....
