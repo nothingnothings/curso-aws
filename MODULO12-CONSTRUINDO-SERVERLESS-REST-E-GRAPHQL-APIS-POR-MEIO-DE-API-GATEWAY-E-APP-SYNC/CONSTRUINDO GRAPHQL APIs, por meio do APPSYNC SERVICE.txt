@@ -1,0 +1,270 @@
+ 
+
+
+
+
+
+
+
+
+
+
+ GRAPHQL APIs, com o APPSYNC SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> OK... REST APIs sao 1 tipo de api que podemos construir,
+
+
+ com o api gateway...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> MAS GRAPHQL APIs sao outro tipo de api,
+
+ e existe 1 service 
+
+ que nos permite as construir,...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ -> ESSE SERVICE 
+
+ NOS DEIXA CONSTRUIR ESSE TIPO DE API SEM TER 
+ DE ESCREVER QUALQUER ACTUAL CODE PARA 
+
+
+ ESSAS APIs...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ APPSYNC --> É UM MANAGED GRAPHQL API service...
+
+
+
+
+
+
+
+
+
+
+
+ -> A IDEIA DISSO É QUE VC CONSTROI 1 ACTUAL API 
+
+
+ SEM 
+ ESCREVER 
+
+ O ACTUAL API 
+
+ CODE,
+
+
+ E SEM TER DE SE IMPORTAR 
+
+ COM O DEPLOYMENT 
+
+ DESSE API...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1) com graphQL APIS, VC DEFINE A API STRUCTURE NESSE SERVICE...
+
+
+
+
+
+
+
+
+2) ""API STRUCTURE"" -> QUER DIZER QUE VC VAI DEFINIR TODOS SEUS SCHEMAS, QUERIES, MUTATIONS, ETC...
+
+
+
+
+
+
+
+3) VC ENTAO CONECTA SEUS SCHEMAS A ""DATA SOURCES"" E RESOLVERS... -> VC 
+
+BASICAMENTE 
+DIZ AO 
+
+APPSYNC 
+
+SERVICE 
+
+"""para qual tipo de QUERY VC QUER EXECUTAR QUAL TIPO DE CODE, OU 
+
+GET DATA DE QUAL TIPO DE SOURCE"""...
+
+
+
+
+
+
+
+4) voce pode ADICIONAR AUTHENTICATION, SE NECESSÁRIO...
+
+
+
+
+
+
+
+
+
+5) POR FIM,
+
+
+
+VC PODE HANDLAR REQUESTS 
+
+COM A AJUDA 
+
+DO 
+
+APPSYNC SERVICE...
+
+
+
+
+
+
+ 
+ 6) SIMILAR AO API GATEWAY,
+
+
+
+ O APPSYNC __ SUPORTA 
+
+
+ ""ON-DEMAND'" E REAL-TIME 
+
+ CONNECTIONS... (apis normais, request e response, e WEBSOCKETS...)
+
+
+
+
+
+
+
+
+
+ 7)  TAMBÉM POSSUI BUILT-IN OPTIMIZATION E CACHING,
+
+ PARA MELHORAR A PERFORMANCE 
+
+ DA API..
+
+
+
+
+
+
+
+
+
+
+
+
+ -> PODEMOS ENCONTRAR ESSE SERVICE 
+
+
+ LÁ EM APPSYNC -> PODEMOS COMECAR FROM SCRATCH,
+
+
+ OU ENTAO USAR BLUEPRINTS PARA VER COMO ISSO FUNCIOAN,
+
+
+ E VER COMO ESSA API 
+
+ PODE SER CONSTRUÍDA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ VC NAO PRECISA SABER 
+
+ USAR ESSE SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+ --> TENHA CUIDADO COM AS BILLS (dinheiro)..
