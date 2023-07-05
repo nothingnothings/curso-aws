@@ -1,0 +1,562 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> NA ULTIMA AULA,
+
+O PROFESSOR NOS MOSTROU O COGNITO... ELE NOS AJUDA A IMPLEMENTAR USER AUTH 
+
+
+NOS SEUS APPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ENTRETANTO, O COGNITO ERA APENAS A PARTE __ BACKEND DA AUTHENTICATION... A PARTE QUE ACONTECE NA NUVEM..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> MAS SE VC TIVER 1 WEB APP/MOBILE APP,
+
+
+
+VC PRECISA SE COMUNICAR COM O COGNITO..
+
+
+
+
+
+
+
+
+
+É AÍ QUE OUTRA TOOL, FORNECIDA PELO AWS,
+
+ENTRA NA JOGADA...
+
+
+
+
+
+
+
+
+
+
+É A TOOL DO ""AMPLIFY""...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AMPLIFY,
+
+NO FINAL DAS CONTAS,
+
+ 
+
+
+
+
+
+ É UMA 
+
+
+
+ """"
+
+ APPLICATION DEVELOPMENT PLATFORM E FRAMEWORK
+
+ """""
+
+
+
+
+
+ FORNECIDA PELO AWS... -------> É UM SET DE TOOLS,
+
+ QUE 
+
+ DEIXA MAIS 
+
+ FÁCIL O BUILD 
+
+ DE 
+
+
+
+
+ WEB/MOBILE APPS QUE __ FAÇAM EMBRACE DO AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> E O AMPLIFY TEM TANTO 
+
+ CAPACIDADES BACKEND COMO FRONTEND..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ AMPLIFY ----> TE DEIXA FOCAR NO PRODUCT,
+
+
+ EM VEZ 
+
+ DE FOCAR 
+
+ NOS SERVICES QUE VC VAI USAR...
+
+
+
+
+
+
+
+
+
+
+
+
+ AMPLIFY --> É UMA PLATFORM/SET DE FEATURES 
+
+
+
+ __ QUE __ SAO MEANT TO BE USADAS 
+
+
+ POR 
+
+
+
+ _DEVELOPERS QUE NAO SAO AWS EXPERTS,
+
+
+
+ MAS QUE 
+ QUEREM USAR 
+
+
+
+ A AWS CLOUD PARA O BACKEND 
+
+ PARA 
+
+ O MOBILE/WEB APP QUE 
+
+
+ QUEREM CONSTRUIR..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> E AÍ, A IDEIA POR TRÁS DO AMPLIFY É USAR 
+
+
+ TODOS ESSES SERVICES QUE 
+
+ APRENDEMOS ATÉ AGORA __ _ ""ON YOUR BEHALF"",
+
+
+
+ POR TRÁS DAS CENAS...
+
+
+
+
+
+
+
+
+
+
+
+ QUER DIZER QUE NAO PRECISAMOS:
+
+
+ 1) CREATE OUR OWN EC2 INSTANCES...
+
+
+
+
+
+
+ 2) SETUP OUR OWN DATABASES...
+
+
+
+
+
+
+
+
+
+
+
+ PQ O AMPLIFY VAI FAZER TUDO ISSO PARA NÓS,
+
+ A PARTIR 
+
+ DE CERTOS CONFIG ITEMS QUE SETTARMOS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> ALÉM DISSO,
+
+ O AMPLIFY 
+
+ PROVIDENCIA 1 
+
+ FRONTEND CODE SDK 
+
+
+ PARA __ LINGUAGENS DE PROGRAMACAO 
+
+ POPULARES,
+
+ QUE 
+
+
+
+ VC PODE INTEGRAR 
+
+ NO SEU 
+
+ MOBILE/WEB APP PARA __ CONVERSAR 
+
+ COM ESSE BACKEND,
+
+ CONVERSAR 
+
+
+  
+  CONVERSAR __ COM OS AWS SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+  -> E PODEMOS USAR ESSA SDK 
+
+
+
+  __ ATÉ MESMO SE VC NAO ESTIVER USANDO O AMPLIFY PARA CRIAR E ESTRUTURAR 
+
+  O BACKEND (
+
+QUER DIZER QUE 
+
+MESMO 
+
+
+SE VC 
+
+ESTIVER FAZENDO TUDO MANUALMENTE NO BACKEND,
+
+SETTANDO OS SERVICES MANUALMENTE,
+
+
+VC AINDA __ PODE USAR __O AMPLIFY SDK 
+PARA _ SE COMUNICAR 
+
+COM ESSES SERVICES,
+
+E SIMPLIFICAR ESSA PARTE...
+
+
+  )
+
+
+
+
+
+
+
+
+
+
+
+
+--> POR EXEMPLO, NAS DOCS PAGES 
+
+
+
+
+DO ""AMPLIFY FRONTEND JAVASCRIPT TOOLKIT"" (
+
+    uma 
+
+    das programming languages suportadas...
+)
+
+
+
+
+https://docs.amplify.aws/start/?sc_icampaign=start&sc_ichannel=docs-home
+
+
+
+
+
+
+
+--------------------------------------------------
+
+
+
+
+
+
+
+
+PODEMOS APRENDER A USAR ESSA SDK NO SEU FRONTEND CODE,
+
+
+PARA ENTAO PODERMOS AUTENTICAR COM AMAZON COGNITO,
+
+
+
+
+
+E ENTAO APRENDEMOS A ADICIONAR CÓDIGO A NOSSO APP 
+
+
+
+PARA SE CONECTAR 
+
+
+
+AO COGNITO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... ISSO É O AMPLIFY --> É SOBRE O SIMPLIFY 
+
+
+
+DO CÓDIGO FRONTEND QUE 
+
+SE CONECTA A SEU BACKEND...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS, COMO MENCIONADO,
+
+SE VC QUISER,
+
+
+ISSO TAMBÉM TE AJUDA 
+
+COM O BUILD DE  1 BACKEND,
+
+OU COM O HOST DE 1 APP..
+
+
+
+
+
+
+
+
+
+
+
+---> E VC PODE DEIXAR O AMPLIFY MANAGEAR 
+
+ESSES SERVICES E OS CRIAR,
+
+ON YOUR BEHALF,
+
+
+
+
+E AÍ ELE ATÉ MESMO TE AJUDA COM O MANAGE DE DATA 
+
+ARMAZENADA EM DATABASES...
+
+
+
+
+
+
+
+
+
+
+
+--> TEM MTAS FEATURES...
+
+
+
+
+
+
+
+
+-> TEM TAMBÉM O AMPLIFY STUDIO, QUE PODE SER USADO PARA 
+
+CONFIGURAR SEU BACKEND... (é tipo um content management system...)
+
+
+
+
+
+
+
+
+
+-> VC PODE MANAGEAR TUDO COM O BACKEND,
+
+
+A INFRAESTRUTURA,
+
+A DATA,
+
+
+E AÍ A CONECTAR COM SEUS FRONTEND APPS...
+
+
+
+
+
+
+
+-> OU VC PODE USAR SÓ A PARTE FRONTEND,
+
+
+PARA ENTAO CONVERSAR COM BACKEND SERVICES QUE VC JÁ CONFIGUROU MANUALMENTE...
+
+
+
+
+
+
+
+
+
+
+
+AMPLIFY --> É UMA PLATFORM DE TOOLS,
+
+QUE PODE SIMPLIFICAR O PROCESSO DE BUILD DE BACKENDS INTEIROS... E 
+
+
+TAMBÉM DE USAR AWS SERVICES 
+
+SEM OS ENTENDER... mas também pode ser 
+
+a tool/sdk que 
+
+vc 
+
+usa 
+
+nos seus frontend apps,
+
+para conversar com seus aws services...
