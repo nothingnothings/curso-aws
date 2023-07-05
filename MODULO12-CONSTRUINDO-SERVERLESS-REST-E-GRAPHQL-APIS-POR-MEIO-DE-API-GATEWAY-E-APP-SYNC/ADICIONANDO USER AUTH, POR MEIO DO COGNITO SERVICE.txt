@@ -1,0 +1,471 @@
+
+
+
+
+
+
+
+
+
+
+
+USER AUTHENTICATION, COM O COGNITO...
+
+
+
+
+
+
+
+
+
+
+
+QUANDO CONSTRUÍMOS APPS E APIs,
+
+
+
+
+TIPICAMENTE 
+
+
+
+TEMOS DE LIDAR COM USER AUTH... 
+
+
+
+
+
+
+
+
+
+
+
+AQUI O AWS TEM OUTRO SERVICE QUE NOS AJUDA COM ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-. o service é o aws cognito..
+
+
+
+
+
+
+
+
+
+
+
+É UM MANAGED APP USER AUTHENTICATION SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SUPER IMPORTANTE -> VC PODERIA CONFIGURAR O COGNITO COM O IAM SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+--. PQ, COM O IAM SERVICE,
+
+
+CRIAMOS VÁRIOS USERS... USERS QUE 
+SAO CAPAZES DE ACESSAR ESSA AWS ACCOUNT...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ENTRETANTO,
+
+
+AQUELE IAM SERVICE 
+
+
+
+SERVIA PARA HANDLAR __ USERS _ APENAS NA CONTA AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SERVICE IAM _ NAO TEM NADA _a  VER COM OS USERS 
+
+QUE 
+
+ESTAO 
+
+USANDO O APP QUE VC ESTÁ CONSTRUINDO..
+
+
+
+
+
+
+
+
+
+
+-> SE VC ESTIVER 
+rodando 1 online shop,
+
+é claro que 
+
+
+
+VC TERÁ USERS QUE 
+
+USARAO ESSA ONLINE SHOP...
+
+
+
+
+
+
+
+
+
+
+
+
+MAS É CLARO QUE ESSES USERS NAO DEVEM TER ACESSO A SUA CONTA AWS,
+
+A SUA UNDERLYING STRUCTURE...
+
+
+
+
+
+
+
+
+
+
+
+
+QUER DIZER QUE 
+VC 
+
+NAO PRECISA DE IAM PARA OS USERS DE SEU PRODUCT,
+
+
+
+E SIM 
+
+
+APENAS PRECISA DISSO PARA PERMISSIONS RELACIONADAS A SUA CONTA AWS..
+
+
+
+
+
+
+
+
+
+
+
+
+
+EM VEZ DISSO,
+
+É ESSE COGNITO SERVICE,
+
+OFERECIDO PELA AWS,
+
+QUE 
+
+TE 
+
+AJUDA A DEAL COM USERS DE SEU APP --> TE AJUDA A MANAGEAR 
+
+USERS EM SEU APP..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+COGNITO:
+
+
+
+
+
+1) TE DEIXA CRIAR/MANAGE __ USER __ POOLS _....
+
+
+
+
+
+
+
+
+2) USER POOLS --> SAO AWS-MANAGED DATABASES, QUE ARMAZENAM A DATA DE SEUS USERS...
+
+
+
+
+
+
+3) ELE TE DEIXA_ CONFIGURAR USER CREDENTIALS REQUIREMENTS...
+
+
+
+
+
+
+
+
+4) CONFIGURA A USER AUTHENTICATION EXPERIENCE...
+
+
+
+
+
+
+
+
+5) O COGNITO GARANTE QUE 
+
+TODA A DATA SERÁ ARMAZENADA CORRETAMENTE...
+
+
+
+
+
+
+
+6) ELE TAMBÉM GARANTE O VALIDATE E VERIFY DESSA DATA...
+
+
+
+
+
+7) AÍ VC PODE FACILMENTE INTEGRAR O COGNITO COM SUAS FRONTEND APPLICATIONS,
+
+PARA AÍ 
+
+CONVERSAR 
+
+
+COM ELE, DE DENTRO DE SEUS FRONTEND APPS,
+
+
+
+PARA DESCOBRIR SE 1 CERTO USER ESTÁ AUTHENTICATED,
+
+
+OU ENTAO PARA TROCAR O AUTH STATUS DE 1 USER...
+
+
+
+
+
+
+
+
+
+
+
+8) E O QUE O COGNITO FAZ, POR TRÁS DAS CENAS,
+
+
+QUANDO 
+
+1 USER DE SEU APP ESTIVER LOGGED IN,
+
+
+
+É TALVEZ __ ENTREGAR IAM PERMISSIONS  A ESSE USER,
+
+SE NECESSÁRIO,
+
+TUDO 
+
+PARA QUE 
+
+
+
+
+ESSE USER 
+
+
+
+POSSA FAZER COISAS COMO 
+
+
+""""UPLOAD FILES TO YOUR S3 BUCKETS"""",
+
+
+ISSO SE ESSA FOR 1 COISA NECESSÁRIA AO SEU APP...
+
+
+
+
+(
+    mas ainda é voce que controla quais permissions sao garantidas aos seus users,
+
+    a partir do auth com o cognito... e é claro que essas  sao permissions bem ESTRITAS...
+)
+
+
+
+
+
+
+
+
+
+
+
+9) ALÉM DE MANAGEAR USER AUTH, SIGNUP E LOGIN,
+
+
+O 
+
+
+COGNITO TAMBÉM 
+
+SUPORTA 
+
+
+
+
+
+__ O INTEGRATE__ DE THIRD PARTY PROVIDERS PARA _ AUTHENTICATION (
+
+    suporta social sign in services... -------> SE VC QUISER USAR THIRD PARTY PROVIDERS,
+
+    VC 
+
+    TEM DE CRIAR 
+
+    ""FEDERATED IDENTITY POOLS"",
+
+
+    EM QUE 
+
+
+    VC NO FINAL DAS CONTAS
+
+
+    SIMPLESMENTE 
+
+
+    CONFIGURA QUAIS IDENTITY PROVIDERS,
+
+    QUAIS ID PROVIDERS VC QUER SUPORTAR PARA AUTH,
+
+
+    COMO GOOGLE, FACEBOOK, APPLE,
+
+    ETC... -> aí o cognito te 
+
+    ajuda a autenticar esses users com esses providers, e também dá 
+
+    iam permissions a eles..
+
+
+)
+
+
+
+
+
+
+
+
+
+
+
+10) ou seja,
+
+
+o cognito suporta tanto auth com email e password 
+
+
+
+como também 
+
+
+existing accounts de outros providers (apple, google, facebook)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+TAMBÉM PODEMOS ADICIONAR MULTI-FACTOR AUTHENTICATION, etc..
+
+
+
+
+
+
+
+
+--> TAMBÉM PODE CONFIGURAR OS EMAILS DE AUTH QUE SAO ENVIADOS AOS SEUS USERS....
