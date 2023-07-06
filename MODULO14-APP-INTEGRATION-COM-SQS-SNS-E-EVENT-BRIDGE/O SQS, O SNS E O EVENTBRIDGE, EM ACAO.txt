@@ -1,0 +1,845 @@
+
+
+
+
+
+
+
+
+
+-----> OK....
+
+
+
+
+
+
+
+
+
+----> PARA DEIXAR ESSES SERVICES 1 POUCO MENOS ABSTRATOS,
+
+
+
+DEVEMOS OS VER EM ACAO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+-. PARA ISSO,
+
+O PROFESSOR COMECA COM O SQS..
+
+
+
+
+
+
+
+CONFORME MENCIONADO,
+
+
+ESSE SERVICE (simple queue service)
+
+
+É 
+
+ALL ABOUT QUEUES,
+
+
+
+
+
+
+
+POR ISSO 
+
+O PROFESSOR 
+
+
+
+CRIA 1 FILA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> COLOCA 1 nome de 
+
+
+demo-queue...
+
+
+
+
+
+
+
+-------> DEVEMOS ESCOLHER O TYPE DE QUEUE --> 
+
+O TYPE BASICAMENTE 
+
+DETERMINA 
+
+
+SE 
+
+
+AS COISAS QUE SAO EMPURRADAS 
+
+NA QUEUE 
+SAO 
+
+
+""STRICTLY ORDERED""
+
+OU SE PODEM TROCAR DE ORDER...
+
+
+
+
+
+
+
+
+
+
+
+--> AÍ TEMOS OUTRAS SETTINGS --> CONTROLAM 
+
+
+"""QUANTO TEMPO AS MESSAGES FICARAO NA QUEUE, SE AINDA NAO 
+FORAM PROCESSADAS""", etc...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE CONTROLAR ALGUMAS PERMISSIONS... TIPO 
+
+""QUEM PODE FAZER PUSH À QUEUE,
+
+QUEM PODE FAZER READ DA QUEUE""""
+
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE ADICIONAR ENCRYPTION À QUEUE,
+
+
+E TAMBÉM CONFIGURAR O QUE 
+
+
+
+DEVE ACONTECER COM MESSAGES QUE NAO FORAM PROCESSADAS CORRETAMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> NO FINAL DAS CONTAS,
+
+
+VC 
+
+
+CRIA 1 DESSAS QUEUES,
+
+
+E AÍ VC PODE __ FAZER SEND E READ 
+
+DE QUEUES 
+
+DE 
+DENTRO 
+
+DE OUTROS 
+
+SERVICES..
+
+
+
+
+
+
+
+
+
+
+
+-> VC PODE USAR O CONSOLE PARA PLAY AROUND,
+
+
+
+
+
+
+PARA ENVIAR 1 MESSAGE COM A AJUDA DELE..
+
+
+
+
+
+
+
+
+
+
+
+--> DE NOVO, VC TIPICAMENTE ENVIARIA ESSAS MESSAGES 
+
+
+
+DE DENTRO DO CÓDIGO, COM A AJUDA 
+
+
+
+DOS SDKs 
+
+
+da amazon...
+
+
+
+
+
+
+
+
+
+
+MAS AQUI O PROFESSOR VAI ENVIAR 1 MESSAGE DE DENTRO 
+
+
+
+DO MANAGEMENT CONSOLE...
+
+
+
+
+
+
+
+
+
+
+
+--> E TAMBÉM PODEMOS RECEBER A MESSAGE,
+
+
+
+
+
+BASTA VER QUE 
+
+
+TEMOS 
+
+""MESSAGES AVAILABLE = 1"""
+
+
+
+
+
+
+
+
+
+TEMOS 1 MESSAGE NA QUEUE --> SE CLICAMOS 
+
+"""POLL FOR MESSAGES""",
+
+
+podemos 
+
+visualizar 
+
+
+nossa message, a acessar... -> TAMBÉM PODEMOS MARCÁ-LA 
+
+COMO PROCESSADA,
+
+
+
+BASTA CLICAR NO SEU CHECKBOX,
+
+E AÍ CLICAR EM DELETE... (
+
+
+    E É ISSO QUE OUTROS APPS FARIAM,
+
+    ELES MARCARIAM
+
+    ESSAS MESSAGES COMO PROCESSED,
+
+    E ENTAO 
+
+    A DELETARIAM DA QUEUE...  COM A AJUDA DA SDK 
+    DO AWS....
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+OK.... ESSE É O SQS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SNS
+ TAMBÉM PODE SER ACESSADO 
+
+
+ COM A AJUDA 
+
+ DO MANAGEMENT 
+ CONSOLE...
+ 
+
+
+
+
+
+
+
+
+
+
+
+ ELE É ALL ABOUT ESSAS SUBSCRIPTIONS -->  LÁ 
+
+
+
+
+
+ NO SNS,
+
+
+
+ NÓS 
+
+
+ 
+ DEVEMOS CRIAR __ 1 """""TOPIC"""""...
+
+
+
+
+
+
+
+ --> NOVAMENTE,
+
+ PODEMOS ESCOLHER SE AS MESSAGES ENVIADAS A ESSES ""TOPICS'"
+
+
+ DEVERAO SER STRICTLY ORDERED OU NAO... 
+
+
+
+
+
+
+
+
+
+
+ --> TAMBÉM PODEMOS CONTROLAR ENCRYPTION,
+
+ ACCESS POLICIES (quem pode publish ou subscribe a esse topic)...
+
+
+
+
+
+
+
+
+
+
+ -> PODEMOS MANTER OS DEFAULTS..
+
+
+
+
+
+
+
+ COM 1 TOPIC CRIADO,
+
+
+
+ PODEMOS __ ADICIONAR __ SUBSCRIBERS 
+
+
+ A ESSE TOPIC,
+
+
+
+
+ POR MEIO DO CREATE DE 1 SUBSCRIPTION...
+
+
+
+
+
+
+
+
+
+
+
+ E É CLARO QUE 
+
+
+ EXISTE 1 AMPLA VARIEDADE DE COISAS QUE 
+
+
+
+ PODEM SER ""SUBSCRIBERS"" --> POR EXEMPLO,
+
+
+
+ SQS PODERIA SER 1 SUBSCRIBER (
+
+O QUE QUER DIZER QUE 
+
+AS MESSAGES SERIAM FORWARDADAS A UMA QUEUE... -> ESSA É UMA 
+
+ÓTIMA MANEIRA 
+
+DE FAZER 
+PUSH 
+
+DAS MESSAGES A UMA QUEUE,
+
+SEM INTERAGIR DIRETAMENTE COM 
+
+O SQS, SE VC QUISER FAZER ISSO...
+
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> OK... MAS VC TAMBÉM PODE USAR 1 LAMBDA FUNCTION COMO 
+
+
+ 1 SUBSCRIBER --> PARA QUE 
+
+
+ 1 
+ LAMBDA FUNCTION 
+
+ SEJA CHAMADA SEMPRE QUE 
+
+ 1 
+ NOVA MESSAGE SEJA PUSHED...
+
+
+
+
+
+
+
+
+
+
+ -----> VC TAMBÉM PODE ENVIAR _ 1 EMAIL,
+
+ A ALGUM ENDERECO..
+
+
+
+
+
+
+
+ --> VOCE TAMBEM PODE ENVIAR 
+
+ 1 HTTP REQUEST 
+
+
+ A 
+
+ ALGUMA OUTRA API.... OU ENTAO 
+
+
+
+ 1 NOTIFICATION SMS...
+
+
+
+
+
+
+
+
+ MTAS OPTIONS...
+
+
+
+
+
+
+
+
+
+ É TIPO O SERVICO DO FIDELIZOU.ME...
+
+
+
+
+
+
+
+
+
+
+
+ VC PODE ENVIAR 1 EMAIL A 1 EMAIL ADDRESS, 
+
+ MAS 
+ ESSE 
+
+ EMAIL 
+
+ __PRECISA _ SER CONFIRMADO ANTES...
+
+
+
+
+
+
+-> AÍ, ASSIM QUE 
+ESSA SUBSCRIPTION 
+
+
+FOR CRIADA,
+
+E ASSIM QUE 
+
+VC 
+
+FIZER 
+
+
+PUSH 
+
+
+
+DE MESSAGES 
+
+A ESSE TOPIC,
+
+
+A ESSE CHANNEL,
+
+
+
+
+ASSIM QUE ISSO ACONTECER,
+
+
+DENTRO DO SEU CÓDIGO (com os AWS SDKS),
+
+
+
+
+
+ESSA MESSAGE 
+
+SERÁ ENTREGUE A TODOS OS SUBSCRIBERS DESSE TOPIC...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E PODEMOS TER DIFERENTES SUBSCRIBERS PARA 1 MESMO TOPIC...
+
+
+
+
+
+
+
+
+
+
+
+--> JÁ COM O EVENTBRIDGE,
+
+
+
+
+
+___ VC __ VAI _ CRIAR RULES.... ----> CADA RULE É 1 ELEMENTOO..
+
+
+
+
+
+
+
+
+
+
+
+----> E EM CADA RULE,
+VC PODE DECIDIR 
+
+
+SE 
+
+A RULE 
+SERÁ:
+
+
+
+1) SCHEDULED --> OU SEJA, SE A ACTION DEVE SER EXECUTADA A CADA HORA, OU ALGO ASSIM... (sao cronjobs, tipo isso)...
+
+
+
+
+
+
+
+
+
+2) OU, ENTAO, FAZEMOS REACT IMEDIATO A EVENTS...
+
+
+
+
+
+( o schedule também faz ""react a events"", mas faz isso 
+PARA  A PASSAGEM DO TEMPO, E NAO PARA 1 EVENT ESPECÍFICO... EX: O EVENT É A PASSAGEM 
+DE 1 HORA..)
+
+
+
+
+
+
+
+--> PODEMOS REACT A VÁRIOS EVENTS...
+
+
+
+
+
+
+--> POR EXEMPLO,
+PODEMOS FAZER LISTEN TO A AWS EVENTS,
+
+
+
+
+OU ENTAO A EVENTS CUSTOM (produzidos por nós),
+
+
+
+E TAMBÉM PODEMOS 
+
+
+CRIAR TEST EVENTS (
+    para ver 
+
+    se 
+
+
+    ESSE EVENT 
+
+    TRIGGARIA O EVENT LISTENER QUE 
+    VC VAI SETTAR, AQUI...
+
+)
+
+
+
+
+
+
+
+
+
+--> ok... AÍ VC SETTA O ACTUAL EVENT LISTENER 
+
+EM 
+
+""EVENT PATTERN"" -->  PODEMOS COLCOAR 
+
+
+""LISTEN TO ALL S3 EVENTS'"....
+
+
+
+
+
+
+
+
+
+
+
+
+--> NA PRÓXIMA ETAPA,
+
+INFORMAMOS QUAL _ TARGET DEVERÁ SER TRIGGADO/ACTION A SER 
+
+TOMADA,
+
+A PARTIR DAQUELE EVENT...
+
+
+
+
+
+
+
+-> POR EXEMPLO,
+
+O PROFESSOR COLOCA QUE 
+
+UMA AWS LAMBDA  FUNCTION DEVE SER TRIGGADA 
+
+
+
+__ SE ESSE EVENT OCORRER...
+
+
+
+
+
+
+
+
+
+-> TAMBÉM HÁ SETTINGS ADICIONAIS QUE PODEMOS SETTAR, AQUI...
+
+
+
+
+
+
+
+
+
+
+--> COM ESSA RULE EVENTBRIDGE SETTADA,
+
+
+
+
+PARA TODOS OS EVENTS QUE VC DEFINIR,
+
+O SERVICE 
+QUE VC 
+DEFINIU COMO TARGET 
+
+SERÁ INVOKED/NOTIFIED 
+SEMPRE 
+QUE 
+
+
+
+__ O EVENT _A QUE VC ESTIVER FAZENDO LISTEN TO OCORRER...
+
+
+
+
+
+
+
+
+
+
+
+
+Besides its own message broker (SQS), AWS also supports open-source message broker services (Apache ActiveMQ and RabbitMQ) via the Amazon MQ service.
+
+These are simply non-AWS-owned alternatives to SQS. The Amazon MQ service primarily helps customers that don't want to (or can't) use AWS own cloud-native solution SQS.
+
+
