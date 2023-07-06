@@ -1,0 +1,1353 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... E PQ ESSES PROBLEMAS DE INTEGRACAO EXISTEM, PARA MTAS COMPANHIAS,
+
+
+
+
+O AWS  _ OFERECE 1 SET OF SERVICES DEDICADOS,
+
+QUE PODEMOS USAR NO LUGAR DO SET MANUAL DE APP INTEGRATION..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS APP INTEGRATION SERVICES,
+
+
+QUE 
+
+NOS AJUDAM 
+
+
+A FAZER O COMMUNICATE  ENTRE APPS,
+
+E QUE 
+
+TE AJUDAM A SHARE DATA E MESSAGES ENTRE APPS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+AQUI,
+TEMOS 3 SERVICES QUE DEVEMOS TER EM MENTE:
+
+
+
+
+
+
+
+
+
+
+
+
+1) SQS --> SIMPLE QUEUE SERVICE 
+
+
+
+
+
+
+
+
+
+
+2) SNS --> SIMPLE NOTIFICATION SERVICE 
+
+
+
+
+
+
+
+
+3) EVENTBRIDGE --> EVENTBRIDGE....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SQS ---> COMO O NOME SUGERE, É UM QUEUEING 
+
+SERVICE (MANAGED MESSAGE QUEUE SERVICE)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MANAGED MESSAGE QUEUE SERVICE ----> """""MESSAGE"""" (data package)...
+
+
+
+
+
+
+
+
+--> É UM SERVICE EM QUE __ VC __ FAZ _ PUSH _ DE MESSAGES 
+
+EM 
+
+1 QUEUE...
+
+
+
+
+
+
+
+
+-> ESSAS MESSAGES SAO PUSHADAS LÁ DO APP A... --> AÍ, A PARTIR DISSO,
+
+
+OUTRAS APPLICATIONS,
+
+COMO 
+
+O APP B,
+
+
+
+SERAO CAPAZES DE ___LER__ MENSAGENS DESSA QUEUE... 
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+
+
+PARA DEMONSTRAR, PODEMOS USAR O EXEMPLO DE ANTES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> TEMOS O APP A    E    O    APP B...
+
+
+
+
+
+
+
+
+
+--_> NESSE EXEMPLO,
+
+
+O
+
+
+SQS 
+
+
+
+NOS DARIA UMA __ _QUEUE, UMA FILA...
+
+
+
+
+
+
+
+
+
+
+NESSA FILA,
+
+PODERÍAMOS FAZER ___PUSH__ DE MESSAGES,
+
+DO APP A PARA O APP B...
+
+
+
+
+
+
+
+
+
+
+
+
+
+NA VERDADE, É POSSÍVEL FAZER COM QUE MÚLTIPLOS APPS 
+
+FACAM PUSH 
+
+A ESSA QUEUE (nao somos limitados a apenas 1 app)...
+
+
+
+
+
+
+
+
+1 MESSAGE, NO CASO,
+
+
+É SIMPLESMENTE UMA DATA PACKAGE,
+
+COM QUALQUER DATA 
+
+DE SUA ESCOLHA, NO FINAL DAS CONTAS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CERTO... E AÍ VC PODE TER DIFERENTES MESSAGES NESSA QUEUE -> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+EX:
+
+
+
+
+
+
+
+
+
+
+
+(message 1, message 2, message 3)
+ I -------- QUEUE ----------
+ I                         V
+APP A                     APP B
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PODEMOS TER DIFERENTES MESSAGES NESSA QUEUE... --> AÍ OUTROS 
+
+
+APPS PODEM 
+QUERIAR 
+ESSA QUEUE,
+
+
+
+E PUXAR MESSAGES DESSA QUEUE,
+
+PARA AS PROCESSAR... POR FIM, ESSES APPS 
+
+
+
+FARIAM ""LET THE QUEUE KNOW"" QUE ELES JÁ PROCESSARAM A MESSAGE...
+
+
+
+
+
+
+
+
+
+
+
+É ASSIM QUE O SQS FUNCIONA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ISSO QUER DIZER QUE, NO FINAL DAS CONTAS,
+
+
+O 
+
+
+SQS É UM 
+
+
+
+
+____SERVICE __ DE ASYNCHRONOUS PROCESSING... ->  ELE É ISSO PQ 
+
+
+
+
+__VC PODE __ FAZER PUSH __ 
+
+
+
+DE MESSAGES DE 1 APP A OUTRO... E, NESSE OUTRO APP,
+
+PODEMOS 
+
+
+PROCESSAR 
+
+ESSAS 
+
+MESSAGES 
+
+
+
+
+AT A LATER POINT OF TIME... --------> PQ QUANDO 
+
+
+DIZEMOS QUE 
+
+"""FIZEMOS PUSH DE 1 MESSAGE A 1 QUEUE"",
+
+
+isso nao quer dizer que 
+
+essa message foi processada imediatamente --> em vez disso,
+
+
+sao os outros apps, que fazem 
+
+
+pull das messages dessa queue,
+
+que vao 
+
+processar essa message, quando tiverem tempo para tal...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> VOCE FAZ, NO ENTANTO,
+
+
+
+O __tRIGGER __ DO PUSH MECHANISM,
+
+
+DE DENTRO DOS 
+
+
+APPS QUE DE FATO ENVIAM ESSA MESSAGE (
+
+    """THE MESSAGE SUBMISSION TO 
+    SQS IS DIRECTLY TRIGGERED FROM INSIDE OTHER SERVICES/CODE""
+)
+
+
+
+
+
+
+--> ok... mas o que interessa é que 
+
+a message é 
+processada 
+
+MAIS TARDE,
+por outro app,
+que 
+
+a pegará 
+da fila...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> PORTANTO, O SQS É UMA 
+
+MANEIRA 
+POPULAR 
+
+
+
+E COMUM DE _ CONNECT _ MÚLTIPLOS APPS ENTRE SI... PQ PODEMOS 
+
+COMPARTILHAR ESSAS DATA PACKAGES...
+
+
+
+
+
+
+
+--> E __ COMPARTILHAMOS ESSAS DATA PACKAGES DE MODO QUE 
+
+A PROCESSING APPLICATION VAI AS PROCESSAR 
+
+SOMENTE QUANDO 
+
+TIVER TEMPO PARA ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> MAS O SQS NAO É A ÚNICA SOLUCAO QUE EXISTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> A ALTERNATIVA É O __ _SNS___...
+
+
+
+
+
+
+
+
+
+
+
+
+"""""SNS'""" --> SIMPLE NOTIFICATION SERVICE ->  É UM 
+
+
+"""MANAGED PUSH MESSAGE (data package) SERVICE""""
+
+
+
+
+
+
+
+
+
+
+managed PUSH MESSAGE service...
+
+
+
+
+
+
+
+
+
+
+
+
+--> É UM """PUSH NOTIFICATION SERVICE"""
+
+
+
+
+
+
+
+
+
+
+
+--> com o SNS, 
+
+NÓS NAO 
+
+FAZEMOS 
+
+PUSH _DE MESSAGES A UMA QUEUE,
+
+UMA QUEUE 
+
+QUE 
+
+É PROCESSADA 
+
+
+EM 1 PONTO 
+
+POSTERIOR NO TEMPO,
+
+
+
+
+
+__ E SIM _, EM VEZ DISSO,
+
+
+
+
+
+
+AS MESSAGES __ SAO DIRETAMENTE PUSHED 
+
+
+A __ """"iNTERESTED SUBSCRIBERS'"""" --> ISSO QUER DIZER QUE,
+
+
+
+COM O 
+
+SNS (simple notification service),
+
+
+
+
+TEMOS 
+
+
+_sYNCHRONOUS PROCESSING ACONTECENDO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+E, COM O SNS,
+
+
+
+
+NÓS TRIGGAMOS O ""MESSAGE SEND""
+
+
+
+
+
+__ DE DENTRO _ DO __ APP _ QUE QUER ENVIAR __ 
+
+A MESSAGE -------->   OU SEJA,
+
+
+VC 
+
+
+FAZ PUSH 
+DA MESSAGE 
+
+AO SNS (de dentro do seu app),
+
+
+
+MAS, AO CONTRÁRIO DO 
+CASO 
+
+DO SQS,
+
+
+ESSA MESSAGE/DATA PACKAGE 
+
+
+É 
+
+
+
+___ IMEDIATAMENTE FORWARDADA 
+
+
+ÀS SUBSCRIBING 
+
+
+
+APPLICATIONS,
+
+QUE 
+
+REGISTRARAM COMO SUBSCRIBERS,
+
+
+
+
+E QUE SE REGISTRARAM 
+
+JUSTAMENTE PARA __ PROCESS__ INCOMING MESSAGES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> OK... QUER DIZER QUE A ESTRUTURA FICA ASSIM:
+
+
+
+
+
+
+
+(OU SEJA, NAO TEMOS FILA, É IMEDIATAMENTE FORWARDADO)
+                    (MESSAGE 1)
+            I --------   SNS    ----------
+            I                            V
+            APP A                        APP B
+
+
+
+-----------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+isso, by the way,
+
+É O MESMO 
+
+MECANISMO 
+
+
+
+QUE TEMOS NOS NOSSOS CELULARES,
+
+
+QUANDO 
+
+RECEBEMOS 
+
+1 PUSH NOTIFICATION,
+
+
+PUSH NOTIFICATION PQ 
+
+
+1 AMIGO ENVIOU UMA CHAT MESSAGE,
+
+
+OU QUALQUER COISA DO GENERO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E, DE FATO,
+
+O SNS 
+
+PODE 
+SER 
+
+USADO 
+
+PARA __ FAZER __ 
+
+
+PUSH _ DE MESSAGES A MOBILE PHONES.. -> MAS TAMBÉM 
+
+
+É  1 SERVICE POPULARMENTE USADO 
+
+PARA 
+
+FAZER 
+
+PUSH 
+
+DE MESSAGES 
+
+DE 
+
+1 
+
+APP 
+
+A OUTRO, DE DENTRO DA CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> quer dizer que 
+
+É UM SERVICE DE PUSH NOTIFICATION USADO NAO SÓ PARA 
+
+ATINGIR 
+
+END USERS,
+
+MAS 
+
+
+TAMBÉM PARA FAZER PUSH DE MESSAGES 
+
+
+ENTRE APPS..
+
+
+
+
+
+
+
+
+
+
+--> E COMO ESCOLHEMOS ENTRE SQS E SNS... ----> DEVEMOS RESPONDER A PERGUNTA 
+
+
+
+
+
+SE 
+
+"""QUEREMOS QUE O RECEPIENT SEJA FORCADO A IMEDIATAMENTE 
+
+RECEBER A MESSAGE E A PROCESSAR, E FAZER ALGUMA COISA COM ELA""",
+
+
+ou 
+
+entao 
+
+""ACEITAMOS/EXIGIMOS QUE ESSA MESSAGE SEJA PROCESSADA  
+
+
+EM 1 LATER POINT OF TIME'"""
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É CLARO QUE TUDO ISSO DEPENDE DO TIPO DE 
+TRABALHO QUE PRECISA SER FEITO... 
+
+
+
+
+
+
+
+
+
+--> DEPENDE SE __ O TRABALHO DEVE SER FEITO IMEDIATMAENT,
+
+
+OU ENTAO SE 
+DEVE SER FEITO MAIS TARDE,
+
+QUANDO EXISTIR TEMPO PARA ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-. O TERCEIRO TIPO DE SERVICE 
+
+
+
+RELACIONADO A MAIN APP INTEGRATION 
+É 
+O 
+
+___ EVENTBRIDGE.... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-----> EVENTBRIDGE -->  ISSO, NO FINAL DAS CONTAS,
+
+É UM 
+
+""""eVENT BUS"""" 
+
+
+
+
+
+
+
+
+
+
+
+--> O QUE ISSO FAZ, NO FINAL DAS CONTAS,
+
+
+
+
+É UM _ LISTEN TO __ A EVENTS....
+
+
+
+
+
+
+
+
+
+
+--. OU, ENTAO, OUTROS SERVICES PODEM FAZER __ REPORT_ DE _ 
+EVENTS 
+
+
+AO EVENTBRIDGE (para sermos mais precisos...)
+
+
+
+
+
+
+
+
+
+
+--> ENTAO, A PARTIR 
+
+DOS EVENTS,
+
+
+
+O EVENTBRIDGE É CAPAZ __ DE TRIGGAR __ ACTIONS EM OUTROS SERVICES (
+
+    é tipo um lambda, entao...
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> LISTEN TO EVENTS E TRIGGER ACTIONS...
+
+
+
+
+
+
+
+
+
+
+
+--> EVENTBRIDGE -> RECEBE EVENTS,
+
+E ENTAO É CAPAZ 
+DE TRIGGAR ACTIONS EM OUTROS SERVICES...
+
+
+
+
+
+
+
+
+
+
+-> CERTO... E É CAPAZ DE REAGIR A TODOS TIPOS DE EVENTS,
+
+
+
+ATÉ MESMO CUSTOM EVENTS, EVENTS QUE VC CRIA NO SEU PRÓPRIO CÓDIGO,
+
+E QUE 
+
+VC PODE 
+
+ENTAO ENVIAR AO 
+
+EVENTBRIDGE,
+ATRAVÉS 
+
+DA SDK 
+
+DO AWS...
+
+
+
+
+
+
+
+
+
+--> VC PODE, PORTANTO,
+
+USAR O EVENTBRIDGE 
+
+
+__ PARA __ GET UM EVENT DO APP A
+
+
+
+E ENTAO 
+
+TRIGGAR 1 REACTION NO APP B...
+
+
+
+---------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ISSO QUER DIZER QUE O EVENTBRIDGE FUNCIONA ASSIM:
+
+
+
+
+
+
+
+1) ALGUMA COISA ACONTECE NO APP A...
+
+
+
+
+
+2) COMO O EVENTBRIDGE __ FAZ LISTEN TO _ A TODOS OS EVENTS,
+
+ELE __ É NOTIFICADO SOBRE ESSA COISA QUE ACONTECE NO APP A... (ex: THE CRAWLER FINISHED ITS WORK...)
+
+
+
+
+3) A PARTIR DO EVENT DISPARADO PELO APP A,
+
+
+O EVENTBRIDGE 
+
+IMEDIATAMENTE TRIGGA UMA ACTION __ NA APPLICATION B...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE É 
+UM POUCO SIMILAR AO SNS... -> MAS É DIFERENTE...
+
+
+
+
+
+
+
+
+
+NO SNS,
+
+A APPLICATION FEZ PUSH DE 1 MESSAGE AO __ SNS, 
+
+PARA 
+
+ENTAO TRIGGAR ALGO NO APP B...
+
+
+
+
+
+
+
+
+
+
+
+MAS COM O EVENTBRIDGE,
+
+
+O APP __ A __ 
+
+
+
+NAO FEZ PUSH DE NADA (nenhuma message),
+
+E SIM 
+
+
+APENAS REPORTOU 
+
+
+
+UM __ GENERAL EVENT (event qualquer)... -> e se vc 
+
+configurou 
+
+o eventBridge 
+
+
+
+
+DE MODO _ QUE __ ELE FACA _ ALGO A _ PARTIR __ DESSE 
+
+EVENT, FACA LISTEN A ESSE EVENT,
+
+
+
+ O __ EVENTBRIDGE GOES AHEAD E 
+
+ TRIGGA ALGO 
+
+
+ LÁ NO APP B... 
+
+ (
+
+    ENTRETANTO,
+
+    COM O EVENTBRIDGE,
+
+    
+    O APP A __ NAO _ SABE, NECESSARIAMENTE,
+
+    QUE 
+
+    ALGO ESTÁ ACONTECENDO 
+
+    NO APP B... ele NAO TEM NECESSARIAMENTE 
+    CIENCIA 
+    DE QUE 
+    ALGUÉM ESTÁ FAZENDO LISTEN _TO _ A ESSE EVENT QUE 
+    ELE, APP A, DISPAROU...
+ )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> PORTANTO, COM 
+
+ O 
+ EVENTBRIDGE,
+
+
+
+ VC __ TAMBÉM TEM SYNCHRONOUS EVENT PROCESSING...
+
+
+
+
+
+
+
+
+--> PQ QUANDO O EVENT ACONTECE,
+
+A ACTION TAMBÉM 
+
+É TRIGGADA IMEDIATAMENTE... (exatamente como no SNS,
+
+
+EM QUE A MESSAGE TAMBÉM ERA FORWARDADA IMEDIATAMENTE..
+
+
+)
+
+
+
+
+
+
+
+
+
+
+
+--> ENTRETANTO,
+
+
+COM O EVENTBRIDGE,
+
+A ACTION REALIZADA NO SERVICE/APP B ACONTECE 
+
+
+INDIRETAMENTE,
+ 
+
+PQ NAO HÁ NENHUMA MESSAGE SENDO PUSHADA 
+
+MANUALMENTE 
+
+AO EVENTBRIDGE (De dentro do código)...
+
+
+
+
+
+
+
+
+
+
+
+
+PORTANTO, TEMOS ESSAS 3 TOOLS AÍ, QUE SAO USADAS 
+
+PARA PASSAR MESSAGES ENTRE 
+
+
+DIFERENTES APPS... 
+
+
+
+
+""""DIFERENTES APPS PODEM FAZER DIFERENTES COISAS,
+
+
+SEMPRE QUE OUTROS APPS TERMINAREM DE FAZER ALGO...."""" (
+
+    é para isso que servem, esses services de connection,
+
+    o SQS, O SNS E O eventBridge....
+)
