@@ -1,0 +1,230 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK...
+
+
+
+
+
+SQS, SNS E EVENTBRIDGE... SAO SERVICES QUE 
+
+NOS AJUDAM 
+
+
+COM 
+
+CROSS-SERVICE/CROSS-APP COMMUNICATION...
+
+
+
+
+
+
+
+-> ALGUMA COISA QUE TEM A VER COM ISSO,
+
+MAS NAO MUITO,
+
+
+
+É O ___ SERVICE__ """""SES""""
+
+
+
+
+
+
+
+
+
+
+
+
+SES --> SIMPLE EMAIL SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SIMPLE EMAIL SERVICE --> O NOME É PARECIDO COM 
+SNS E SQS (simple notification service e simple queue service),
+
+
+
+
+
+MAS ELE 
+
+
+SOLUCIONA 
+
+
+
+
+
+1 PROBLEMA BEM DIFERENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SQS E SNS --> SAO ALL ABOUT """CROSS APP COMMUNMICATION""
+
+
+(CROSS SERVICE COMMUNICATION)...
+
+
+
+
+
+
+
+
+
+
+
+--> JÁ O SES --> TE AJUDA A ENVIAR 
+
+___TRANSACTIONAL OU BATCH EMAILS __ A USERS...
+
+
+
+
+
+
+
+
+
+--> OU SEJA,,
+
+
+O SES NAO É USADO _ PARA TER  A COMMUNICATION ENTRE 
+
+SERVICES,
+
+
+OU ENTRE APPS,
+
+
+E SIM 
+
+
+É USADO 
+
+PARA 
+
+
+__ENVIAR __ EMAILS __ AOS USERS 
+
+
+DE SEUS 
+PRODUCTS,
+
+DAS COISAS QUE 
+VC 
+
+ESTÁ CONSTRUINDO COM A AJUDA DO AWS...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> SE VC ESTÁ CONSTRUINDO UMA ONLINE SHOP NA AWS,,
+
+
+
+E SE VC QUER ENVIAR ORDER CONFIRMATIONS AOS SEUS 
+CUSTOMERS,
+
+
+VC 
+
+PODE FAZER ISSO COM O SES....
+
+
+
+
+
+
+
+--> O PROFESSOR INCLUI ESSE SERVICE 
+
+NESSA SECTION MESMO
+
+QUE 
+
+ELE NAO 
+
+SEJA 
+
+
+SOBRE 
+
+
+"""cROSS SERVICE"" E ""cROSS APPLICATION"" COMMUNICATION,
+
+
+E NAO É SOBRE 
+
+APP INTEGRATION..
+
+
+
+
+
+
+
+
+
+
+
+--> ELE TEM 1 NOME PARECIDO,
+
+MAS NAO É PARECIDO... É ALL ABOUT O SEND DE EMAILS AOS USERS 
+
+DE SEUS PRODUCTS...
