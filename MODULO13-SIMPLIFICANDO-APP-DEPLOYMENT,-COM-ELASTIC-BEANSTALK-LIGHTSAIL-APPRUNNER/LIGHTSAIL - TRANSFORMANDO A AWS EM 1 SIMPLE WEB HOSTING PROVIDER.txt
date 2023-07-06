@@ -1,0 +1,266 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+LIGHTSAIL --> SIMPLIFICADOR DO EC2...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ELASTIC BEANSTALK -->  PODE SER 1 SERVICE 
+
+IMPORTANTE PARA DEIXAR O USO DA CLOUD MAIS FÁCIL...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> ELASTIC BEANSTALK --> É ÚTIL ESPECIALMENTE SE VC É NOVO A CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+OUTRO SERVICE QUE DEIXA O USO DA CLOUD MAIS FÁCIL 
+
+
+É __ O LIGHTSAIL__...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+VC PODERIA CHAMAR O LIGHTSAIL DE UM 
+
+
+"""""VERY SIMPLIFIED EC2 MANAGEMENT CONSOLE"""" --> a ideia por trás 
+
+do LIGHTSAIL
+
+
+é que 
+
+
+vc pode 
+
+
+
+FAZER LAUNCH DE EC2 INSTANCES 
+
+
+
+POR MEIO 
+
+DE 1
+ 
+
+
+ WIZARD BEM MAIS SIMPLIFICADO.... COM ISSO, VC PODE FOCAR 
+
+
+
+ EM TASKS 
+
+ ESPECÍFICAS (
+    como INSTALL + CONFIGURE WORDPRESS...
+ )
+
+
+
+
+
+
+
+
+
+
+
+ -> SE VC QUER HOSTEAR 1 WORDPRESS APP,
+
+
+
+ O LIGHTSAIL 
+
+ TE DÁ 
+
+ ESSE USE-CASE 
+ ESPECÍFICO -->  AÍ ELE FAZ LAUNCH 
+
+ DE UMA EC2 INSTANCE 
+
+
+ COM O WORDPRESS 
+
+ JÁ INSTALADO,
+
+
+ SE VC 
+
+ QUISER ISSO...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> SE VC RODA O LIGHTSAIL,
+
+
+ VC 
+
+ VERÁ QUE ELE 
+
+ TEM UMA PAGE BEM DIFERENTE DAS PAGES DOS OUTROS 
+
+
+ SERVICES...
+
+
+
+
+
+
+
+
+
+
+ O LIGHTSAIL EXISTE PARA COMPETIR COM OS OUTROS 
+
+ HOSTING PROVIDERS...
+
+
+
+
+
+
+
+
+
+
+ NAO É ALGO QUE DEVE SER USADO POR 
+
+ AWS EXPERTS...
+
+
+
+
+
+
+
+
+ VC SÓ ESCOLHE A SUA PLATAFORMA,
+
+
+ E ENTAO 
+
+ ESCOLHE 
+
+
+
+ A LINGUAGEM QUE VC QUER USAR...
+
+
+
+
+
+
+
+
+ --> DEPOIS DISSO,
+
+
+ O 
+
+ AWS 
+
+ VAI 
+
+
+
+ CRIAR 
+
+ 1 EC2 INSTANCE 
+
+
+ COM AS SETTINGS APROPRIADAS, 
+
+ BEHIND THE SCENES..
+
+
+
+
+
+
+
+
+
+
+
+ --> TAMBÉM TEMOS PRICING MODELS,
+
+ PARA 
+ DEIXAR TUDO MAIS FÁCIL PARA BEGINNERS....
