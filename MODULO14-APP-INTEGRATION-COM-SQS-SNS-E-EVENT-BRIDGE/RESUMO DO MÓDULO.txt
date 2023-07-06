@@ -1,0 +1,185 @@
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+ --> ACABAMOS COM ESTE MÓDULO...
+
+
+
+
+
+
+
+
+ NESSA SECTION, FALAMOS SOBRE APPLICATION INTEGRATION...
+
+
+
+
+
+
+
+
+
+
+
+
+ ISSO É IMPORTANTE,
+
+ PQ DIFERENTES APPS QUE RODAM NA CLOUD FREQUENTEMENTE 
+
+ PRECISAM 
+ SER 
+
+ CAPAZES 
+
+
+
+ DE SE COMUNICAR ENTRE SI... ----> E ESSES APPS 
+
+ NAO 
+
+ VAO NECESSARIAMENTE 
+
+ RODAR 
+
+
+
+ EM 1 MESMO SERVER OU NETWORK -> TALVEZ VC USE 
+
+
+ DIFERENTES SERVICES,
+
+ PARA DIFERENTES 
+
+ APPS,
+
+ EM DIFERENTES 
+
+ NETWORKS,
+
+
+
+
+ MAS VC AINDA QUER GARANTIR QUE 
+
+ VC 
+
+ CONSIGA 
+
+
+ _PASSAR _ DATA E INFORMATION ENTRE ESSES 
+
+ DIFERENTES SERVICES....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> VC PODERIA CONSTRUIR CUSTOM SOLUTIONS (API),
+
+
+ MAS ISSO PODE SER 
+
+ DIFÍCIL E CARO,
+
+ POR ISSO 
+
+
+ O AWS 
+
+
+ OFERECE 
+
+
+ DEDICATED INTEGRATION SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ --> MAIS IMPORTANTE,
+
+ O 
+
+
+ AWS OFERECE 
+
+ SQS, SNS E EVENTBRDIGE...
+
+
+
+
+
+
+
+
+
+SQS ----> MESSAGE QUEUEING SERVICE --> ELE É ASYNC, PQ 1 APP FAZ PUSH DE 1 MESSAGE À QUEUE,
+                                         MAS OUTRO APP VAI ENTAO PROCESSAR ESSA MESSAGE,
+                                         POTENCIALMENTE EM 1 LATER POINT IN TIME...
+                                        (ASYNC)
+
+
+SNS --> É UMA PUSH NOTIFICATION SERVICE -> EM QUE NÓS FAZEMOS __ PUSH DE 1 MESSAGE 
+                                            A TODOS INTERESTED SUBSCRIBERS,
+                                            QUE VAO RECEBER ESSA MESSAGE 
+                                            PRATICAMENTE INSTANTANEAMENTE...
+                                            (SYNC)
+
+
+EVENTBRIDGE --> SIMPLESMENTE FAZ LISTEN DOS EVENTS, 
+                E AÍ TRIGGA ACTIONS EM OUTROS SERVICES,
+                SEMPRE QUE ESSES EVENTS OCORREM...
+
+
+
+
+
+
+
+
+
+STEP FUNCTIONS -> SAO OUTRO SERVICE ÚTIL, QUE TE AJUDAM
+                    A ORQUESTRAR WORKFLOWS COMPLEXOS,
+                    DEFINE COMO STEPS DEVEM SER EXECUTADAS 
+                    1 ATRÁS DA OUTRA, E SE __ DEVEM SER EXECUTADAS 
+                    ALTERNATIVAMENTE, CONDICIONALMENTE, ETC, EM PARALELO,
+                    ETC... 
+
+                    (
+                        E POR MEIO DO PASS DE INPUT E OUTPUT ENTRE 
+                        AS DIFERENETS STEPS,
+                        É POSSÍVEL EXECUTAR 
+                        COMPUTE TASKS 
+
+                        DE MANEIRA REPRODUCIBLE E ORDERED....
+                    )
