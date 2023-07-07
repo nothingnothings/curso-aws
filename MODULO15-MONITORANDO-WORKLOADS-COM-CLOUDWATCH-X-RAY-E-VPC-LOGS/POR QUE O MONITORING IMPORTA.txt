@@ -1,0 +1,95 @@
+
+
+
+
+
+
+
+
+
+
+-> ok, mas o que significa monitoring, e porque isso é importante?
+
+
+
+
+
+
+
+
+
+-> bem, é provável que vc tenha múltiplos workloads rodando na clo0ud....
+
+
+
+
+
+
+
+
+
+
+--> pode ter LAMBDA FUNCTION QUE TRANSFORMA IMAGES,
+
+PODE TER VARIOS WORKLOADS RODANDO NA CLOUD..
+
+
+
+
+
+
+
+
+
+E É CLARO QUE VC QUER QUE ESSES SERVICES RODEM DA FORMA 
+
+CORRETA...
+
+
+(UP AND RUNNING)...
+
+
+
+
+
+
+
+
+-> 1 WORKLOAD NEM SEMPRE 
+
+VAI 
+
+
+SE COMPORTAR DE FORMA ADEQUADA --> 1 WEB SERVER 
+
+PODE 
+
+CRASHAR, POR ALGUMA RAZAO,
+
+
+OU ENTAO PODE COMECAR A PRODUZIR ERROS 4XX OU 5XX 
+
+E OS ENVIAR A CUSTOMERS..
+
+
+
+
+
+
+
+
+
+
+UMA LAMBDA FUNCTION PODE ACABAR RODANDO COM MT FREQUENCIA,
+
+E TE CUSTAR DINHEIRO DEMAIS --> É POR ISSO QUE 
+
+EXISTE O MONITORING,
+
+PARA VC ATUAR CEDO,
+
+E 
+
+EVITAR 
+
+FICAR COM PROBLEMAS MAIORES...
