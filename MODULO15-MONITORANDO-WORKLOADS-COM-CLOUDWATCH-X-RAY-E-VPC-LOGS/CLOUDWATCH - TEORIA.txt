@@ -1,0 +1,634 @@
+
+
+
+
+
+
+
+
+
+--. MONITORANDO, COM O CLOUDWATCH.
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O KEY-SERVICE DE MONITORING É O CLOUDWATCH....
+
+
+
+
+
+
+
+
+
+É UM MANAGED MONITORING SERVICE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CLOUDWATCH -> É ALL ABOUT ""COLLECT"" E ANALYZE DE DATA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUANDO FALAMOS DO COLLECT DE DATA,
+
+QUEREMOS DIZER QUE 
+
+PODEMOS 
+
+COLETAR __ LOGS_.. ----> E ESSES LOGS...
+
+
+
+
+
+
+
+
+
+-> ALGUNS LOGS ESCREVEM LOGS AUTOMATICAMENTE AO CLOUDWATCH (
+    tipo o lambda,
+
+    ele faz esse write automaticamente, ao cloudwatch...
+)
+
+
+
+-> OUTROS SERVICES,
+
+COMO EC2 INSTANCES,
+
+
+
+
+PODEM FAZER WRITE DE LOGS __ MANUALMENTE AO CLOUDWATCH (
+
+    quer dizer que podemos 
+
+    INTERAGIR COM O CLOUDWATCH,
+    DE DENTRO 
+
+    DO CÓDIGO,
+
+    E ENTAO WRITAR SUAS 
+
+    FILES AO CLOUDWATCH... OU, ENTAO,
+
+    VC PODE USAR EXTRA TOOLS PARA ISSO... VEREMOS ISSO MAIS TARDE..
+)
+
+
+
+
+
+
+
+
+
+
+
+
+-> ALÉM DE 
+
+
+PODER ESCREVER LOG FILES,
+
+
+MTOS SERVICES __ 
+
+
+
+
+TAMBÉM PUBLICAM __ METRICS__ E INFO _ 
+
+AO CLOUDWATCH --> INFO COMO 
+
+""""CPU UTILIZATION"",
+
+
+
+
+OU A QUANTIDADE DE BYTES ARMAZENADOS 
+
+EM UM S3 BUCKET..
+
+
+
+
+
+
+
+
+INFORMATION COMO ESSA É PUBLICADA AUTOMATICMAENTE 
+
+
+
+AO 
+
+
+CLOUDWATCH....
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> E ___ MUUUUITOS__ AWS SERVICES 
+
+
+
+SE INTEGRAM COM O CLOUDWATCH,
+
+E PUBLICAM 
+
+
+METRICS E INFORMATION AO CLOUDWATCH.... BASICAMENTE 
+
+
+TODOS 
+
+OS 
+
+SERVICES AWS QUE 
+
+TE DEIXAM 
+
+
+FAZER QUALQUER COISA...
+
+
+
+
+
+
+
+
+
+
+-> BASICAMENTE TODOS OS AWS SERVICES...
+
+
+
+
+
+
+
+
+
+
+---> E, ALÉM DESSAS DEFAULT METRICS,
+
+QUE 
+
+SAO 
+PUBLICADAS PELOS SERVICES (
+    pelo menos quando vc enabla 
+    logging,
+
+    quando usa 1 service... basta lembrar que, para vários services,
+    podemos escolher se queremos loggar data ou nao,
+
+    quando startamoos 1 service... (option do cloudwatch)....
+
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK... MAS SE VC TIVER ALGO QUE _ NAO ESTÁ SENDO LOGGED,
+OUT OF THE BOX,
+
+
+VC PODE CUSTOMIZAR,
+
+PODE 
+
+USAR 
+1 
+
+
+TOOL CHAMADA DE """CLOUDWATCH AGENT""""",
+
+OU ENTAO 
+
+ENVIAR 
+
+
+
+
+API _ CALLS DIRETAS AO CLOUDWATCH,
+PARA 
+
+
+LOGGAR 
+
+QUALQUER ARBITRARY DATA 
+
+ OU ADDITIONAL METRICS 
+
+ SUPORTADAS PELO AWS...
+
+
+
+
+
+
+
+
+
+--> E O CLOUDWATCH AGENT É UMA TOOL MT ÚTIL,
+
+
+
+QUE VC PODE, POR EXEMPLO, INSTALAR EM EC2 INSTANCES 
+
+PARA _ _ COLETAR __ ADDITIONAL DATA 
+
+
+E __ DESBLOQUEAR CAPACIDADES EXTRAS,
+
+QUE 
+
+TE 
+
+DEIXARÃO REALIZAR UM LOGGING MAIS DETALHADO..
+
+
+
+
+
+
+
+
+
+
+
+
+--> VC TAMBÉM SEMPRE PODE USAR O SDK DO 
+
+AMAZON,
+
+A PARTE DO CLOUDWATCH DELA,
+
+PARA 
+
+LOGGAR QUALQUER 
+
+
+
+INFO, DE SUA ESCOLHA,
+
+AO CLOUDWATCH..
+
+
+
+
+
+
+
+
+
+-> QUER DIZER QUE PODEMOS COLETAR BASICAMENTE QUALQUER DATA QUE 
+
+QUISERMOS,
+
+
+
+E A LOT OF DATA É COLETADA, OUT OF THE BOX,
+
+AUTOMATICAMENTE....( basta ligar o logging, quando comecamos a usar certos services)..
+
+
+
+
+
+
+
+
+
+
+
+--> O COLLECT DE DATA É BOM,
+
+MAS O CLOUDWATCH TAMBÉM NOS AJUDA COM __ o ANALYZE 
+
+DESSA DATA -->  OU SEJA,
+
+
+
+ELA OFERECE 
+
+FEATURES 
+
+COMO """"LOG INSIGHTS""""
+
+
+
+e ""SERVICE LENS"""""-->  SAO FEATURES BUILT-IN NO CLOUD WATCH,
+
+
+QUE 
+
+TE 
+
+DEIXAM DIVE DEEPER EM ANALYTICS ESPECÍFICSA..
+
+
+
+
+
+
+
+
+
+
+
+
+-> CERTO... MAS UMA DAS KEY FEATURES PROVIDENCIADAS PELO 
+
+CLOUDWATCH É 
+
+
+
+A POSSIBILIDADE _
+
+
+
+DE __ ""CALCULATE METRICS E CREATE CHARTS""
+
+
+
+
+
+
+
+
+--> ou SEJA, PODEMOS CRIAR DASHBOARDS,
+
+EM QUE PODEMOS OLHAR ESSES CHARTS.... -. PARA VER COMO 
+
+
+SEUS DIFERENTES SERVICES ESTAO OPERATING,
+
+E PARA VER SE TUDO ESTÁ EM ORDEM..
+
+
+
+
+
+
+
+
+
+
+--> TAMBÉM HÁ ENHANCED CAPABILITIES 
+
+
+PARA CONTAINERS E LAMBDA,
+
+QUE TE DEIXAM DIVAR AINDA MAIS DEEP 
+
+
+NESSAS FEATURES... TE DEIXAM VER COMO 
+
+
+UMA GIVEN LAMBDA FUNCTION ESTÁ SENDO EXECUTADA,
+
+
+E EM QUE LUGAR ELA PODE FALHAR...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ALÉM DO ANALYZE DE DATA POR MEIO DAS DIVERSAS TOOLS PROVIDENCIADAS 
+
+PELO CLOUDWATCH,
+
+
+ELE TAMBÉM TE DEIXA ""ACT"" EM CIMA DE CERTOS 
+
+
+PROBLEMAS.... -> ISSO POR MEIO  DO:
+
+
+
+
+1) OU POR MEIO DO FORWARD 
+
+DE LOGS/METRICS A OUTROS SERVICES/SOFTWARE,
+
+
+PARA QUE VC CONSIGA USAR 1 THIRD PARTY 
+
+ANALYTICS PROVIDERS (
+
+    para poder rodar 
+    analytics ainda mais avancados,
+
+    com a ajuda daquele provider...
+)
+
+
+
+
+
+2) o cloudwatch também te deixa settar alarms,
+
+
+PARA QUE VC FIQUE NOTIFIED SEMPRE QUE 
+
+
+
+1 __ METRIC __ CHEGUE OUTSIDE OF THE EXPECTED RANGE (
+    outra key feature
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+ESSA É OUTRA KEY FEATURE,
+
+PQ SER CAPAZ DE CRIAR ESSES CLOUD WATCH ALERTS 
+
+
+
+
+FAZ COM QUE VC SEJA NOTIFICADO  MAIS CEDO,
+
+SEMPRE QUE 
+
+ALGO DÁ ERRADO...
+
+
+
+
+
+
+
+
+
+--> PARA SETTAR 1 ALERT, BASTA ESCOLHER 
+
+1 METRIC... 
+
+
+
+
+
+
+EX: average bytes stored in a bucket, in 1 day...
+
+
+
+
+
+
+EX: average  CPU utilization for a EC2 INSTANCE 
+
+in a 5 minute period..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> AÍ COLOCAMOS AS ALERT CONDITIONS..
+
+
+
+
+ex:  mais de 5000 byttes 
+
+
+
+
+ex: mais de 80%....
+
+
+
+
+
+
+
+
+
+
+
+-> E AÍ, DEPOIS DE DEFINIDAS AS ALERT CONDITIONS,
+
+
+VC 
+
+
+PODE DEFINIR 
+
+
+
+__ UMA ACTION A PARTIR DISSO...
+
+
+
+
+
+
+
+
+--> ACTION --> PODE SER 
+
+
+""NOTIFICATION , COM A AJUDA DO SNS""
+
+
+
+
+
+
+
+--> ACTION -> PODEMOS, COM O EC2, ADICIONAR MAIS INSTANCES,
+AUTOMATICAMENTE.... (auto-scaling)..
+
+
+
+
+
+QUER DIZER QUE O AUTOSCALING PODE SER SETTADO 
+
+NAO SÓ
+COM O AUTOSCALE,
+
+
+
+
+MAS TAMBÉM MANUALEMNTE, COM A AJUDA DESSES ALERTS DO CLOUDWATCh...
