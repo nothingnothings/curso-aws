@@ -1349,5 +1349,5 @@ SEMPRE QUE OUTROS APPS TERMINAREM DE FAZER ALGO...."""" (
 
     é para isso que servem, esses services de connection,
 
-    o SQS, O SNS E O eventBridge....
+    o SQS, O SNS E O eventBridge.... 
 )
