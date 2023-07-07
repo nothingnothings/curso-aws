@@ -1,0 +1,19 @@
+Systems Manager is a huge service with many capabilities. It's a service that's clearly built for large-scale customers with complex compute (or, to be precise, server) architectures.
+
+Systems Manager helps with managing fleets of EC2 instances and even servers located in customers' own data centers (on-premises; by installing "SSM Agent" on those servers).
+
+But two key features that also helps small-scale customers (e.g., start ups or small businesses) are Parameter Store and AppConfig.
+
+Parameter Store
+That's a service that helps customers distribute values to their code bases. Values that are needed in the application code of the applications running on top of other AWS services (not necessarily EC2 instances - any compute service can be used instead).
+
+A typical example would be some configuration needed in code. For example, the current (REST) API endpoint URL for a backend API a certain application should talk to (i.e., it should send HTTP requests to). By storing the value in a central place (=> Parameter Store) different applications and code files can all access the same value - it therefore doesn't have to be stored ("hard-coded") directly in the code.
+
+Side-note: For values that should not be shared publicly (i.e., that should not be visible to everyone), Secrets Manager can be used instead - a service that will be covered later in the course!
+
+AppConfig
+AppConfig takes Parameter Store to the next level. When using Parameter Store, application code has to actively query that service to fetch a certain value from it.
+
+This is often all you need or want. But in some cases, you might want to be able to push new configuration values to your application code, so that your applications change / update without you releasing a new version.
+
+AppConfig allows you to do that. You can store values with it, too - but you can then also publish new versions and have your application code use those values automatically. For that, the application code of course must connect to AppConfig (via the AWS SDK for that service) in order to listen to such configuration changes.
