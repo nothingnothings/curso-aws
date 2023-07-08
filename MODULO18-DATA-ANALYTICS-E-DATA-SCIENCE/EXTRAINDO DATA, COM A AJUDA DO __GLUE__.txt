@@ -1,0 +1,443 @@
+
+
+
+
+
+
+
+
+
+--> OK... O STORE DE DATA,
+
+NAO IMPORTA SE ESSE STORE É FEITO COM O 
+
+REDSHIFT,
+
+
+OU COM 1 DATA LAKE (coisas como S3),
+
+OU COM 
+
+1 
+COMBINATION DOS 2,
+
+
+
+É UMA COISA...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS VC TIPICAMENTE ARMAZENA DATA PARA QUE 
+ELA 
+
+SEJA __ ANALISADA...
+
+
+
+
+
+
+
+
+-> MAS PARA QUE 
+
+1 CONJUNTO DE DATA SEJA ANALISADO,
+FREQUENTEMENTE 
+
+É 
+NECESSÁRIO 
+
+
+
+TRANSFORMAR E PADRONIZAR ESSA DATA, ANTERIORMENTE...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> É COM ISSO QUE ""EMR"" E ""GLUE""
+
+PODEM NOS AJUDAR...
+
+
+
+
+
+
+
+
+
+
+
+-> GLUE --> É UM __ SERVERLESS,
+
+
+""""""MANAGED ETL SERVICE"""""" ---> 
+
+
+
+
+
+
+E ETL 
+
+SIGNIFICA 
+
+
+
+""""EXTRACT, TRANSFORM, LOAD""""...
+
+
+
+
+
+
+
+
+
+
+--> OU SEJA,
+
+É UM SERVICE QUE EXISTE PARA TE AJUDAR A ____EXTRACT___ 
+
+
+INFO 
+QUE 
+ESTÁ 
+
+
+ARMAZENADA EM ALGUM LUGAR (
+
+    nao interessa se essa data está em um s3 bucket,
+
+    em uma database, ou qualquer outro lugar...
+)
+(EXTRACT)
+
+
+
+
+
+
+
+
+--> E, ENTAO,
+
+VC __ PODE TRANSFORMAR ESSA DATA,
+
+PARA AÍ 
+
+SE LIVRAR 
+
+DE FIELDS 
+
+EM QUE 
+VC 
+
+NAO TEM INTERESSE...
+
+(TRANSFORM)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-> por fim,,
+
+
+VC _ PODE __ MOVER ESSA DATA PARA 1 SOURCE DIFERENTE....
+
+
+
+
+
+
+--> PODE CARREGAR ESSA DATA NO REDSHIFT, POR EXEMPLO,
+
+OU QUALQUER 
+
+OUTRA DATABASE,
+
+
+
+EM QUALQUER LUGAR 
+
+
+
+
+EM QUE _ ESSA DATA É NECESSÁRIA...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> OU SEJA,
+
+
+O __ GLUE__ É UM 
+
+
+SERVICE QUE __ FACILITA__ 
+
+
+O PROCESSO DE __ CRAWLING,
+PARSING 
+
+E TRANSFORM 
+
+DE 
+RAW DATA....
+
+
+
+
+
+
+
+
+
+
+--> VC FAZ TUDO ISSO, ESSENCIALMENTE,
+
+POR MEIO DO CREATE 
+
+DE 
+
+UM """"DATA SCHEMA'""" para sua data...
+
+
+
+
+
+
+
+
+
+-> E ISSO, O CREATE DE UM DATA SCHEMA,
+
+ACTUALLY PODE SER FEITO AUTOMATICAMENTE PELO GLUE,
+
+
+POR MEIO 
+
+DO 
+
+CRAWL DE SUA DATA...
+
+
+
+
+
+
+
+
+
+
+-> O GLUE INCLUI 1 CRAWLER,
+
+QUE PODE 
+
+SER 
+
+STARTADO 
+
+PARA __""LOOK INTO YOUR DATA""
+
+
+
+E PARA ENTAO FAZER  ""INFER'" DE
+
+
+UM DATA SCHEMA DA DATA QUE VC ESTÁ PROVIDENCIANDO AO CRAWLER...\
+
+
+
+
+
+
+
+
+--> POR FIM,
+
+
+ELE DEIXA FÁCIL O SET _ 
+
+DE TRANSFORMATION __ JOBS__,
+
+
+
+
+TUDO DENTRO DO GLUE CONSOLE,
+
+
+PARA 
+
+
+AÍ TRANSFORMAR SEUS DADOS...
+
+
+
+
+
+
+
+
+
+--> ELE TAMBÉM OFERECE 1 "VISUAL JOB EDITOR"",
+
+
+QUE PODE SER USADO 
+
+PARA _ CRIAR __ 
+
+
+1 TRANSFORMATION JOB,
+
+PARA GARANTIR QUE 
+
+__ A DATA__ SEJA __ 
+
+
+TRANSFORMADA EXATAMENTE DA MANEIRA DESEJADA...
+
+
+
+
+-------------------------
+
+
+
+
+
+
+
+
+
+
+
+E AÍ, EM UMA ETAPA POSTERIOR,
+
+ESSA DATA PODERIA 
+
+
+__ SER ANALISADA COM OUTRAS TOOLS...
+
+
+
+
+
+
+
+
+
+
+
+OU, ENTAO,
+
+FAREMOS 
+LOAD DE DATA PARA DENTRO DO REDSHIFT,
+
+COM A AJUDA DO GLUE --> COM ISSO,
+
+O GLUE 
+
+NOS AJUDA 
+
+A TRANSFORMAR 
+
+A RAW 
+
+DATA ATÉ MESMO ANTES 
+
+
+
+DE ESSA DATA 
+__ ENTRAR NA NOSSA DATA WAREHOUSE...
+
+
+
+
+
+
+
+
+--> É UM SERVICE QUE NOS AJUDA COM 
+
+
+O TRANSFORM E LOAD DE DATA... E 
+
+
+
+É UM SERVICE QUE 
+
+
+
+PODEMOS USAR SEM NOS IMPORTARMOS COM A UNDERLYING 
+
+SERVER STRUCTURE (
+
+    pq é um serverless 
+    service,
+
+    em que nao precisamos selecionar instance 
+    types,
+
+    e em que 
+    APENAS PAGAMOS 
+
+    PELA ACTUAL USAGE.... SE VC N USAR O 
+
+    GLUE, VC N PAGA NADA... 
+)
+
+
+
+
+
+
+
+
+
+
+COMO É UM MANAGED SERVICE,
+
+
+É O AWS QUE TOMA CONTA DA INFRAESTRUTURA,
+
+UNDERLYING SERVERS, ETC....
