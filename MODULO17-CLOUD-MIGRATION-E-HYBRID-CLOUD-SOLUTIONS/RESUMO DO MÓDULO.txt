@@ -1,0 +1,210 @@
+
+
+
+
+
+
+
+
+
+
+
+--> OK... ACABAMOS COM ESSA COURSE SECTION...
+
+
+
+
+
+
+APRENDEMOS QUE 
+
+
+SE MOVER PARA A CLOUD PODE SER 
+
+
+1 
+DESAFIO...
+
+
+
+
+
+
+
+
+
+
+
+
+NEM TODAS COMPANIES COMECAM NA CLOUD..
+
+
+
+
+
+
+
+
+
+OS PROCESSOS DE MIGRATING PODEM SER COMPLEXOS...
+
+
+
+
+
+
+
+
+
+--> O AWS OFERECE SERVICES QUE AJUDAM COM MIGRATION...
+
+
+
+
+
+
+
+
+-> TAMBÉM HÁ SERVICES QUE 
+TE AJUDAM A CRIAR 
+
+HYBRID SOLUTIONS (
+
+    misturam o local com o cloud.... infrastructure mista...
+)
+
+
+
+
+
+
+
+
+QUANDO O ASSUNTO É MIGRATION,
+
+
+
+
+HÁ VARIOS SERVICES OFERECIDOS PELO AWS,
+
+COMO 
+
+
+
+
+
+""ÄPPLICATION E DATABASE MIGRATION SERVICES""
+
+
+
+
+
+
+
+
+
+TAMBÉM O DATASYNC, E OUTROS...
+
+
+
+
+
+
+
+
+
+
+
+
+QUANDO O ASSUNTO É TRANSFER DE DATA,
+
+PODEMOS ESCOLHER:
+
+
+
+
+1) PUBLIC INTERNET 
+
+2) VPNS 
+
+3) DIRECTCONNECT (O MAIS CARO E INVIÁVEL)...
+
+
+
+
+
+
+
+
+-> POR FIM,
+
+VC PODE CONSTRUIR 
+
+1 
+HYBRID CLOUD SOLUTION (
+    em que 
+
+    
+
+    parte do seu workload 
+
+    roda 
+
+    na infraestruturaa 
+    remota...
+)
+
+
+
+
+
+
+
+
+--> OK... PARA HYBRID SOLUTIONS,
+
+TEMOS SOLUTIONS
+
+COMO 
+
+
+STORAGE GATEWAY,
+
+SYSTEMS MANAGER,
+
+OUTPOSTS,
+
+
+
+ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+OK... 
+
+
+ACABAMOS..
+
+
+
+OUTPOSTS- > ADIICONA AWS INFRASTRUCTURE NO SEU LOCAL DATA CENTER...
+
+
+
+
+
+
+
+
+
+
+
