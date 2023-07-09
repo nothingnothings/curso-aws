@@ -1,0 +1,169 @@
+
+
+
+
+
+
+
+
+
+
+
+
+    --> ok... ao longo desse modulo,
+
+    aprendemos sobre 1 monte de services de security...
+
+
+
+
+
+
+
+
+
+
+
+--> APRENDEMOS SOBRE 1 SERVICE, O SERVICE 
+
+
+
+DE FIREWALL MANAGER,
+
+QUE AGREGA ALGUNS DESSES SERVICES... TODOS OS SERVICES RELACIONADOS 
+
+A FIREWALL,
+
+PARA QUE 
+
+
+SEJA MAIS FÁCIL O MANAGE DE TODOS ESSES SERVICES, TAMBÉM AO LONGO DE MÚLTIPLAS ACCOUNTS 
+(SE VC ESTIVER USANDO O SERVICE DE ORGANIZATIONS)...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MAS 1 SERVICE SIMILAR EXISTE PARA _ ESSES OUTROS SERVICES 
+
+DE SECURITY...
+
+
+
+
+
+VC CONSEGUE TER 
+
+""CONSOLIDATED SECURITY STATUS MANAGEMENT"""
+
+
+
+
+
+
+
+
+COM O __ SERVICE 
+
+
+"""SECURITY HUB""",
+
+OFERECIDO PELO AWS --------> ELE INTEGRA 
+
+
+DIFERENTES AWS SERVICES DE SEGURANCA EM 1 ÚNICA PAGE....
+
+
+
+
+
+
+
+
+--> PARA SERMOS PRECISOS,
+
+ELE 
+
+TE 
+
+DÁ ACESSO FÁCIL AO:
+
+
+
+
+1) GUARDDUTY (ver actions de seus users/accounts)
+
+
+2) INSPECTOR (inspecionar em detalhes as actions de seus users e de suas instances/services)
+
+(encontra vulnerabilities em ec2 instances, containers e seu software )
+
+3) MACIE
+
+ (ajuda a encontrar SENSITIVE DATA EXPOSTA/EM PERIGO)
+
+
+
+
+
+
+
+
+
+
+
+
+
+ O SECURITY HUB INTEGRA TODOS ESSES SERVICES,
+
+ PARA QUE VC OS VISUALIZE DE 1 LUGAR CENTRAL (TBM VISUALIZA DE DIFERENTES CONTAS,
+ AWS ORGANIZATIONS)
+
+
+
+
+
+
+
+
+
+
+
+ --> SECURITY HUB --> TE DEIXA FAZER MAIS DO QUE O MONITOR DE FINDINGS,
+
+ PQ TAMBÉM TE DEIXA 
+
+ TAKE ACTION AO LONGO DE 
+
+ SERVICES E ACCOUNTS,
+ TUDO 
+
+ DE 
+ 1 LUGAR CENTRAL... -> PODEMOS REMEDIAR 
+
+ CERTOS PROBLEMAS....
+
+
+
+
+
+
+
+
+
+
+
+ --> COMO O FIREWALL MANAGER SERVICE,
+
+
+ É OUTRO SERVICE QUE VC PODE USAR, PQ TE AJUDA A MANAGE 
+ VARIOS ASPECTOS DE SEGURANCA EM 1 LUGAR CENTRAL...
