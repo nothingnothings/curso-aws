@@ -1,0 +1,331 @@
+
+
+
+
+
+
+
+
+
+OK... DEVEMOS TER 1 OVERVIEW 
+
+
+DOS DIFERENTES SERVICES QUE 
+
+
+
+O AWS OFERECE, EM CONJUNTO COM 
+
+
+O CÓDIGO E APP DEVELOPMENT E DEPLOYMENT....
+
+
+
+
+
+FAREMOS ISSO 
+
+
+POR MEIO DE 1 REVIEW 
+
+
+DO TIPICO PROCESSO QUE VC VAI SEGUIR,
+
+QUANDO CONSTRUIR E DEPLOYAR 1 APP....
+
+
+
+
+
+AS ETAPAS SAO ESTAS:
+
+
+
+
+
+
+1) VC ESCREVE O CÓDIGO...
+
+
+
+
+
+2) ARMAZENA O CÓDIGO, EM ALGUM REPOSITORY (REMOTE STORAGE SERVICE),,
+
+PQ VC TIPICAMENTE TRABALHA NO CÓDIGO EM 
+GRUPO.... E É COMUM ARMAZENAR SEU 
+
+CÓDIGO EM 1 REPO, PARA QUE 
+
+
+SE SUA MAQUINA QUEBRAR OU SER PERDIDA,
+VC CONSIGA ACESSAR SEU CÓDIGO...
+
+
+
+
+
+
+3) VC __ COMECA PELO RUN DE ALGUNS AUTOMATED 
+
+TESTS, ANTES DE BUILDAR SEU APP....
+
+
+
+
+
+SE ESSES TESTS FOREM BEM SUCEDIDOS,
+
+SE VC CHECAR MANUALMENTE O APP E TUDO DEU CERTO,
+
+VC 
+
+
+
+
+
+
+4) BUILDA A APPLICATION 
+
+
+
+
+
+
+
+
+5) ISSO FEITO, VC PEGA O EXECUTÁVEL/ARQUIVOS
+ 
+ E O EXECUTA EM 1 SERVER...
+
+
+
+
+ PODE SER TAMBEM 1 DOCKER IMAGE, QUE VC VAI 
+
+
+ RODAR EM 1 CONTAINER...
+
+
+
+
+
+
+
+
+
+
+
+
+ -> E O AWS OFERECE DIFERENTES SERVICES, QUE PODEM 
+
+ TE AJUDAR 
+
+ DURANTE ESSAS DIFERENTES ETAPAS..
+
+
+
+
+
+
+
+ --> PASSO 1 --> WRITE DE CODE --> 
+
+
+ VC PODERIA FAZER ISSO LOCALMENTE,
+
+ COM COISAS COMO O VISUAL STUDIO CODE...
+
+
+
+
+
+
+
+ ---> MAS O AWS TAMBÉM OFERECE 1 IDE 
+
+ PRÓPRIO,
+
+ QUE É 
+
+ O CLOUD9 --> QUE É UM CLOUD-BASED IDE...
+
+
+
+
+
+
+
+
+ --> CLOUD9... TIPO O TIME...
+
+
+
+
+
+
+
+
+ --> PARA ARMAZENAR O CÓDIGO EM 1 REPOSITORY,
+
+ VC PODE USAR O GITHUB..
+
+
+
+
+
+
+
+
+ A ALTERNATIVA DO GITHUB É O 
+
+
+ CODECOMMIT (GIT REPOSITORY DO AWS)..
+
+
+
+
+
+
+
+
+
+
+
+
+-> DEPOIS DISSO, VC TEM A ETAPA 
+
+DE RUN DE TESTS E BUILD DE SEU APP -> 
+
+
+PARA ISSO,
+
+TEMOS O 
+
+SERVICE 
+
+
+
+
+DO ___ CODEBUILD --> É UM SERVICE QUE TE 
+
+DA 1 EXECUTION ENVIRONMENT,
+
+EM QUE PODEMOS RODAR NOSSOS TESTS 
+E __ TAMBEM _ 
+
+
+BUILDAR NOSSO APP (É UM SERVICE QUE FAZ AS 2 COISAS)...
+
+
+
+
+
+
+
+
+
+
+
+5) QUANDO VC QUER DEPLOYAR SEU APP,
+
+
+DEPLOYAR A 1 EC2 INSTANCE, EC2, EKS, LAMBDA FUNCTION,
+
+
+
+
+
+
+O __ AWS TE OFERECE O CODEDEPLOY,
+
+
+
+QUE __ É UM __ SERVICE QUE SERVE 
+
+
+PARA DEPLOYAR PACKAGES 
+
+E QUALQUER COISA ÀQUELES SERVICES (
+    EC2, ECS, EKS, LAMBDA, ETC...
+)
+
+
+
+
+
+
+
+
+
+
+---> certo... e é claro que como temos esse 
+
+workflow (
+    e isso tipicamente nao é um one-time workflow,
+
+    pq vc vai optimizar isso 
+
+    frequentemente... provavelmente multiplas 
+    vezes por dia...
+)
+
+
+
+
+
+
+
+
+vc vai optimizar esse processo 
+
+
+multiplas vezes... para o automatizar,
+o aws 
+
+oferece o CODEPIPELINE,
+
+
+
+
+
+
+QUE É UM SERVICE QUE BASICAMENTE
+ 
+ INTEGRA 
+
+ ESSES OUTROS SERVICES,
+
+
+
+
+ PARA __ ENTAO __ SIMPLIFICAR ESSE WORKFLOW TODO,
+ E PARA O AUTOMATIZAR....
+
+
+
+
+
+
+
+
+
+
+
+---> E O AWS TAMBÉM OFERECE "CODESTAR",
+
+
+QUE É BASICAMENTE UMA VERSAO SIMPLIFICADA 
+
+DO CODEPIPELINE (exatamente como tinhamos o 
+elastic beanstalk, que
+
+era uma versao simplificada do ec2 service)
+
+
+
+
+
+
+
+mas agora vamos aprofundar tudo isso...
