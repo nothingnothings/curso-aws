@@ -1,0 +1,197 @@
+
+
+
+
+
+
+
+
+
+
+
+
+--> OK.... AGORA VAMOS COMECAR COM A AWS PARTNER NETWORK (APN)...
+
+
+
+
+
+
+
+
+
+
+
+
+--> É UMA NETWORK DE  __REGISTERED __ 
+
+AWS USERS __ E SERVICE VENDORS.... QUE 
+
+
+__SAO REGISTRADOS COMO AWS PARTNERS...
+
+
+
+
+
+
+
+
+
+
+--> BEM, REGISTRAR COMO AWS PARTNER 
+
+
+
+É MAIS DO QUE APENAS CRIAR 1 ACCOUNT.. -> PQ VC TEM QUE 
+
+""APPLY"" PARA SE TORNAR 1 NETWORK --> VC TEM QUE 
+
+
+
+SE JUNTAR A ESSA NETWORK,
+
+DESCREVER VOCE 
+
+E 
+
+
+SUA COMPANY,
+
+E AÍ 
+SER APROVADO 
+
+PELO AWS...
+
+
+
+
+
+
+
+
+
+
+--> ASSIM QUE VC É APROVADO,
+
+
+VC GANHA ALGUMAS VANTAGENS E BENEFITS,
+
+E PODE SER MENCIONADO POR ELES
+
+
+
+NA 
+
+GRANDE CONFERENCE AWS RE:INVENT, SE VC 
+
+ESTIVER 
+
+OFERECENDO
+ 
+ CERTOS SERVICES A USERS, SERVICES QUE 
+
+ PODEM SER ÚTEIS...
+
+
+
+
+
+
+
+
+
+
+
+--> PQ, COMO PARTNER,
+VC PODE 
+
+VENDER 
+
+SERVICES, SOFTWARE E 
+
+TAMBÉM 
+
+HARDWARE,
+
+TUDO 
+
+PELO 
+
+AWS MARKETPLACE (
+    um construct que veremos na próxima licao
+),
+
+
+
+e por outros sites amazon..
+
+
+
+
+
+
+
+
+
+
+
+
+além do sell de coisas,
+
+vc ganha acesso a 1 network de partners.. pode discutir 
+
+com esses partnerss,
+
+
+construir coisas com os partners,
+
+etc...
+
+
+
+
+
+
+
+
+em geral,
+
+
+podemos simplesmente 
+acelerar nossa journey na cloud...
+
+
+
+
+
+
+
+
+--> ser 1 partner é benéfico, mas nao é obrigatorio para 
+
+usar o aws..
+
+
+
+
+
+
+
+
+--> 1 dos grandes benefícios de virar 
+
+1 partner 
+
+é que 
+
+
+
+VC GANHA 
+
+
+__ ACESSO AO AWS MARKETPLACE -> E ESSE NEGÓCIO IMPORTA 
+
+PARA MTOS PARTNERS,
+
+MAS TAMBÉM PARA CUSTOMERS...
