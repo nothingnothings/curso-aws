@@ -162,4 +162,200 @@ NESSE SEU ENVIRONMENT (É UM ARQUIVOYAML)...
 
 
 
+mas é claro que vc nao fará apenas isso...
+
+
+
+
+
+
+
+--> no buildspec 
+
+
+
+
+vc pode estipular varios passos,
+
+talvez 
+
+""baixar alguns packages,
+rodar alguns tests, etc"....
+
+
+
+
+
+
+
+--> mas voce pode executar qualquer tipo de command,
+
+para testar o que vc quer testar,
+
+
+para buildar seu app corretamente...
+
+
+
+
+
+
+
+
+--> vc também pode definir o local 
+
+do build output,
+
+
+se for gerado 1 output -> se vc fizer build 
+
+do app,
+
+vc talvez tenha 1 compiled code... --> e aí,
+
+vc pode estipular onde, no s3, esse code 
+
+
+poderá 
+
+ficar armazenado...
+
+
+
+
+
+
+
+
+
+
+
+
+com todas as steps definidas, vc pode rodar 
+
+o código manualmente, ou com base 
+
+em triggers...
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> CERTO... ALÉM DO CODEBUILD,
+
+TEMOS O CODEARTIFACT... --> 
+
+
+
+O CODEARTIFACT É ESPECIALMENTE 
+
+OPTIONAL...
+
+
+
+
+
+
+
+
+
+
+
+
+CODEARTIFACT --> É PQ É UM SERVICE QUE 
+
+
+TE DÁ 
+1 
+
+__MANAGED __ REPOSITORY PARA PRIVATE E PUBLIC 
+
+APP PACKAGES...
+
+
+
+
+
+A IDEIA É QUE VARIOS BUILD PROCESSES,
+
+
+VARIOS PROJECTS/CODEBASE 
+
+
+DEPENDEM DE THIRD PARTY PACKAGES QUE 
+VC USA 
+
+NO SEU CÓDIGO...
+
+
+
+
+
+
+PACKAGES QUE ADICIONAM CERTAS FUNCIONALIDADES...
+
+
+
+
+
+
+ESSAS PACKAGES SAO DISTRIBUÍDAS POR PUBLIC 
+
+REPOSITORIES, E VC DEFINITIVAMENTE PODE USAR 
+
+
+ESSES REPOSITORIES... 
+
+
+
+
+
+
+
+MAS VC PODE USAR O CODEARTIFACT 
+
+
+PARA CLONAR 
+
+AUTOMATICAMENTE 
+
+REPOSITORIES, PARA QUE VC POSSA USAR O CODEARTIFACT
+
+
+EM VEZ DOS PUBLIC REPOSITORIES... ISSO PODE 
+
+TE DAR 1 VANTAGEM 
+
+DE 
+
+VELOCIDADE... VC TAMBEM PODE USAR 
+
+O CODEARTIFACT PARA ARMAZENAR
+
+PACKAGES DE SUA EMPRESA, DE FORMA COMPLETAMENTE 
+
+PRIVADA...
+
+
+(COMPANY-INTERNAL PACKAGES)
+
+
+
+
+
+VC PODE USAR O CODEARTIFACT DURANTE O BUILD PROCESS,
+
+E É UMA ALTERNATIVA A REPOSITORIES PUBLIC/PRIVATE 
+
+DO GITHUB...
+
+
 
