@@ -1,0 +1,180 @@
+
+
+
+
+
+
+
+
+
+
+
+
+-> lentamente, vc __ teve 1 introducao a todas as key capabilities do 
+aws...
+
+
+
+
+
+
+
+
+
+-> vc tem um bom overview sobre o que é oferecido pelo aws,
+
+
+
+
+e o que vc pode geralmente fazer, com esses services...
+
+
+
+
+
+
+
+
+
+
+
+mas assim que vc comecar a usar o aws para workloads de verdade,
+
+vc vai querer garantir que 
+vc 
+
+
+
+está o utilizando corretamente, que vc está seguindo best practices,
+
+que 
+vc 
+
+é capaz 
+
+de IDENTIFICAR 
+
+
+
+PROBLEMAS COM CERTAS ESTRUTURAS... -> VC QUER MELHORAR SUA CLOUD 
+
+SERVICE USAGE,
+
+QUER MELHORAR A INFRAESTRUTURA QUE VC 
+
+CONSTRUIU...
+
+
+
+
+
+
+MELHORAR AS SOLUTIONS QUE VC INVENTOU.... --> ESSA COURSE SECTION 
+
+É SOBRE ISSO... VAMOS 
+
+
+EXPLORAR 
+
+1 
+
+
+
+CONCEITO CHAMADO DE 
+
+
+"""WELL-ARCHITECTED FRAMEWORK""",
+
+
+QUE É UM DOCUMENTO PUBLICADO PELO AWS,
+
+EM QUE 
+
+
+GANHAMOS IDEAS 
+
+E 
+
+BEST PRACTICES,
+
+QUE 
+
+
+NOS AJUDAM 
+
+A 
+
+OLHAR 
+
+PARA NOSSA ARQUITETURA CLOUD E CHECAR SE 
+
+EXISTE 
+
+
+ALGO A SER MELHORADO...
+
+
+
+
+
+
+
+
+
+É UM FRAMEWORK QUE PODE 
+MELHORAR SUA CLOUD E SERVICE USAGE AO LONGO DO TEMPO,
+
+
+E
+ 
+ É UM DOCUMENTO QUE DESCREVE VÁRIAS 
+ BEST PRACTICES E ETC...
+
+
+
+
+
+
+
+
+
+
+
+
+--> VEREMOS QUE FERRAMENTAS O AWS FORNECE PARA __ eVALUATE__ 
+
+SUA CLOUD INFRASTRUCTURE E ARCHITECTURE...
+
+
+
+
+
+
+
+
+-- E VEREMOS QUE TOOLS ELE OFERECE QUE 
+
+__ FAZEM 
+
+AUTOCHECKS 
+
+E 
+
+PROVIDENCIAM 
+RECOMMENDATIONS SOBRE 
+
+IMPROVEMENTS 
+
+
+
+NAS SUAS CONTAS E NOS SERVICES QUE VC RODA NELAS...
+
+
+
+
+
+
+
+-> VEREMOS OS TERMOS DE USO DO AWS,
+
+E O QUE PODEMOS E NAO PODEMOS FAZER COM O AWS CLOUD...
