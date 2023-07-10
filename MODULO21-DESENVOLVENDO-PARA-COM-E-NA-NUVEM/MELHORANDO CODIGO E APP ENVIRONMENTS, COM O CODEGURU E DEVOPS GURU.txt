@@ -1,0 +1,136 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> ok... esses eram os main services que 
+
+
+o 
+
+aws oferece a voce, como dev,
+
+para
+
+
+
+BUILD YOUR APP IN AND FOR THE CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+
+--> E O AWS PROVIDENCIA 2 OUTROS SERVICES,
+
+
+SERVICES QUE 
+
+NAO POSSUEM RELACAO DIRETA COM ESSES SERVICES,
+
+
+MAS QUE PODEM MELHORAR SEU APP...
+
+
+
+
+
+
+
+
+
+
+
+
+
+OS SERVICES SAO:
+
+
+
+
+
+
+
+1) CODEGURU -- É UM MACHINE LEARNING 
+
+CODE ANALYSIS SERVICE... --> ELE ANALISA 
+
+SEU CÓDIGO E ENTAO PROVIDENCIA 
+
+RECOMMENDATIONS A VOCE...
+
+
+
+
+
+
+
+ELE ANALISA O CÓDIGO POR BEST PRACTICES 
+E ISSUES, 
+
+E AÍ 
+
+
+PODE MELHORAR SEU CÓDIGO...
+
+
+
+
+
+
+
+
+
+
+
+
+--> OUTRO SERVICE É DEVOPS GURU --> 
+
+
+
+TAMBÉM É MACHINE LEARNING-BASED,
+
+
+
+
+MAS _ ELE ANALISA _ SEUS RUNNING APPS...
+
+
+
+
+
+
+
+
+PARA SERMOS MAIS PRECISOS, ELE 
+ANALISA CLOUDWATCH LOGS E ETC... --> ELE 
+
+DETECTA ISSUEM EM POTENCIAL 
+
+
+E ENTAO RECOMENDA ALTERACOES NO SEU SETUP....
+
+
+
+
+
+
+
+
+
