@@ -1,0 +1,215 @@
+
+
+
+
+
+
+
+
+
+
+EXEMPLO DE QUESTION..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> O PROFESSOR QUER NOS PREPARAR PARA O EXAM..
+
+
+
+
+
+
+
+
+
+
+--> UMA EXAMPLE QUESTION...
+
+
+
+
+
+
+
+
+
+-> É UMA QUESTION QUE PODERIA SER TRICKY,
+
+A PRIORI...
+
+
+
+
+
+
+
+
+
+
+A QUESTION É ESTA:
+
+
+
+
+
+
+
+
+
+
+"In order to be prepared for increased website traffic, a data  center 
+administrator deploys more IT resources than currently required."
+
+
+Which cloud computing advantage could be utilized here?
+
+
+
+
+
+
+
+TEMOS ESTAS POSSÍVEIS ANSWERS:
+
+
+
+
+
+
+
+
+
+
+
+Protect Data in Transit  (nao)
+
+
+Shared Responsibility model  (nao)
+
+
+Stop guessing capacity  (sim)
+
+
+Go global in minutes... (nao)
+
+
+
+
+
+
+
+
+
+
+--> STOP GUESSING CAPACITY, ACHO QUE É 
+
+A VANTAGEM CORRETA...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS ESSA QUESTION PODE SER OVERWHELMING,
+
+PQ 
+
+
+VC PODE TER OUVIDO SOBRE 
+
+
+ALGUNS DESSES TERMOS,
+
+MAS O RESTO 
+
+
+DAS COISAS 
+
+
+
+TALVEZ NAO TE DIGA NADA...
+
+
+
+
+
+
+
+
+
+
+--> MAS JÁ APRENDEMOS BASTANTE SOBRE ISSO... --> O CLOUD COMPUTING 
+
+
+TE AJUDA 
+
+A 
+
+DEIXAR DE PAGAR POR EXTRA RESOURCES...
+
+
+
+
+
+
+
+
+--> COM CLOUD COMPUTING,
+
+VC PODE SPIN UP OS RESOURCES SÓ QUANDO FOREM NECESSÁRIOS...
+
+
+
+
+
+
+-> VC SÓ PAGA POR RESOURCES QUE VC ACTUALLY NEED,
+
+
+
+PQ VC AVOID 
+
+O PAGAMENTO EXTRA...
+
+
+
+
+
+
+
+
+
+PODEMOS DEDUZIR/INFERIR 
+QUE
+
+
+""STOP GUESSING CAPACITY""
+
+é a opcao correta...
+
+
+
+
+
+
+
+
+
+
+certo... mas não devemos baixar nossa guarda...
