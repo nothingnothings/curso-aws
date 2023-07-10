@@ -1,0 +1,341 @@
+
+
+
+
+
+
+
+MACHINE LEARNING -> NAO É NICHO, PARA O AWS...
+
+
+
+
+
+
+
+
+
+
+--> O AWS PODE AJUDAR MT COM O MOVE DE MACHINE LEARNING WORKLOADS À CLOUD...
+
+
+
+
+
+
+
+
+
+
+
+--> MAS ISSO NAO IMPORTA A TODOS OS CUSTOMERS...
+
+
+
+
+
+
+
+
+--> OS PROBLEMAS DE MACHINE LEARNING SAO DIFERENTES DOS PROBLEMAS 
+
+
+
+DE WEB ARCHITECTS...
+
+
+
+
+
+
+
+
+--> MACHINE LEARNING PROBLEMS SAO TIPICAMENTE SOBRE 
+
+O CODE E O MACHINE LEARNING MODEL, E NAO 
+
+SOBRE A INFRAESTRUTURA...
+
+
+
+
+
+
+
+
+--> OK.... AINDA ASSIM,
+DEVEMOS DAR 1 OLHADA NAQUILO QUE O AWS OFERECE,
+QUANDO O ASSUNTO É 
+
+
+MACHINE LEARNING...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+AS COISAS QUE APRENDEMOS PODEM SER USADAS PARA TER 
+
+"""SELF-MANAGED ML WORKLOADS"" --> PODEMOS RUN OUR OWN SERVERS/TASKS WITH 
+
+YOUR OWN MACHINE LEARNING PROCESSES --> PODEMOS USAR SERVERS (EC2/EMR) 
+
+OU CONTAINERS (ex: ECS)...
+
+
+
+
+
+
+
+
+E SE VC FOR 1 DEV EXPERIENTE,
+
+ESSA PODE 
+
+SER UMA BOA OPCAO, PQ PODEMOS FAZER QUALQUER 
+
+COISA QUE QUEREMOS DENTRO DE EC2 INSTANCES,
+
+
+PODEMOS ALUGAR POWERFUL EC2 INSTANCES,
+GPU OPTIMIZED,
+
+PARA QUE 
+
+CONSIGAMOS RODAR 
+
+
+
+COMPUTATIONS NA CLOUD... ------> MAS SE VC  NAO É TAO EXPERIENTE,
+
+E SE NAO QUER RODAR SEUS PROPRIOS CLUSTERS 
+
+
+DE 
+
+EC2 INSTANCES,
+
+VC 
+
+PODE USAR 1 
+
+DOS __ KEY__ MACHINE LEARNING 
+
+SERVICES 
+
+OFERECIDOS 
+
+
+PELO AWS,
+
+
+QUE É 
+
+
+O 
+
+
+""""AWS SAGEMAKER"""" --> É UM SERVICE QUE TE DÁ 
+
+MANAGED INFRASTRUCTURE E TOOLING PARA __ DEVELOP 
+
+E TEST 
+
+
+
+__MACHINE LEARNING MODELS...
+
+
+
+
+
+
+
+
+
+SAGEMAKER ---> DEIXA BEM FÁCIL O GET STARTED COM MACHINE LEARNING --> E TEM 
+
+
+
+FEATURES PARA TODOS,
+
+
+PROS E BEGINNERS ALIKE....
+
+
+
+
+
+
+
+
+-> VC TEM 1 CODE E VISUAL EDITOR,
+
+PARA QUE 
+
+
+VC 
+
+COMECE COM MACHINE LEARNING SEM TER 
+
+DEEP KNOWLEDGE SOBRE O TÓPICO... 
+
+
+
+
+
+
+
+
+
+
+
+
+--> O SAGEMAKER TAMBÉM TEM INTEGRATED FEATURES QUE 
+
+AJUDAM COM O CREATE E DEPLOY DE MACHINE LEARNING 
+
+COM OUTROS SERVICES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> QUER DIZER QUE O SAGEMAKER É O SERVICE QUE VC QUER EXPLORAR,
+
+SE QUISER APRENDER MAIS SOBRE MACHINE LEARNING...
+
+
+
+
+
+
+
+
+
+->  MAS TAMBÉM HÁ A POSSIBILIDADE DE VC TER 1 PROBLEMA CONCRETO QUE 
+
+VC 
+
+QUER 
+
+
+RESOLVER RÁPIDO, SEM TER DE 
+CRIAR 
+1 MACHINE LEARNING MODEL... --> EX: QUER RECONHECER FACES EM 
+
+IMAGES,
+
+OU CRIAR 
+
+CAPTIONS, PARA 1 VIDEO --> EM VEZ DE CRIAR 1 PRÓPRIO MODEL PARA ISSO,
+
+O QUE SERIA BEM DIFÍCIL,
+
+O 
+
+
+AWS OFERECE 
+
+VÁRIOS 
+
+
+AI SERVICES QUE 
+
+TE AJUDAM 
+
+
+
+COM TODAS ESSAS COISAS...
+
+
+
+
+
+
+
+
+
+"""FINISHED AI SERVICES FOR ROUTINE TASKS, LIKE IMAGE 
+PROCESSING, TEXT EXTRACTION"""" --> essas coisas usam 
+
+machine-learning models pré-definidos,
+under the hood,
+
+para resolver 
+
+esses problemas...
+
+
+
+
+
+
+
+
+
+
+
+
+--> PODEMOS:
+
+1) FAZER TUDO POR CONTA PRÓPRIA, COM EC2/EMR 
+
+
+
+
+2) USAR O SAGEMAKER, PARA TER 1 POUCO DE AJUDA 
+
+
+
+
+3) USAR PRE-DEFINED SOLUTIONS, AI FINISHED SOLUTIONS...
+
+
+
+
+
+
+
+As mentioned in the previous lecture, AWS offers a broad selection of AI services that offer finished AI solutions for you to use in your applications & workloads:
+
+Amazon Rekognition: Analyze images and videos and extract meaning and content from such media (https://aws.amazon.com/rekognition)
+
+Amazon Textract: Extract printed text, handwriting and data from documents (e.g., from images or scans) (https://aws.amazon.com/textract)
+
+Amazon Comprehend: Extract meaning (e.g., sentiment) from text (https://aws.amazon.com/comprehend)
+
+Amazon Lex: Build chatbots like Amazon's Alexa (https://aws.amazon.com/lex)
+
+Amazon Transcribe: Convert speech (e.g., videos, audio) to text (https://aws.amazon.com/transcribe)
+
+Amazon Polly: Convert text to speech (https://aws.amazon.com/polly)
+
+Amazon Translate: ML-powered translation of text (https://aws.amazon.com/translate)
+
+Amazon Fraud Detector: Detect online fraud in your applications (e.g., by customers in your online shop) (https://aws.amazon.com/fraud-detector)
+
+Amazon Personalize: Generate real-time user-specific suggestions and recommendations (https://aws.amazon.com/personalize)
+
+Amazon Forecast: Forecast business outcomes via machine learning (https://aws.amazon.com/forecast)
