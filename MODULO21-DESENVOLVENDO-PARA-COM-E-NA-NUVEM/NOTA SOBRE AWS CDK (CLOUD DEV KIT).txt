@@ -1,0 +1,7 @@
+In the "Cloud Management" course section, you learned about CloudFormation - THE key "Infrastructure as Code" service that allows you to define your cloud infrastructure via templates.
+
+A service that builds up on CloudFormation (but requires developer knowledge) is the CDK - the Cloud Development Kit.
+
+The AWS CDK allows you to define your cloud infrastructure via code. No templates and no CloudFormation template language. Instead, you can use languages like Python or TypeScript to define your infrastructure. Under the hood, the CDK tool then creates CloudFormation templates again.
+
+You can learn more about the CDK here: https://aws.amazon.com/cdk/ (you don't have to know or learn more about it to pass the exam though - it's 100% optional)
