@@ -1,0 +1,384 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+O PROFESSOR VAI NOS MOSTRAR A ESTRUTURA DO EXAM...
+
+
+
+
+
+
+
+
+
+--> ELE VAI DISSECAR COMO SAO AS QUESTOES...
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--> AWS CERTIFIED CLOUD PRACTICIONER CERTIFICATION..
+
+
+
+
+
+
+
+
+
+
+-> TEMOS UNS DETALHES SOBRE ESSE EXAM...
+
+
+
+
+
+--> TEMOS RECOMMENDATIONS SOBRE 
+
+A EXPERIENCE 
+
+
+QUE VC DEVE TER,
+
+
+
+
+E ETC...
+
+
+
+
+
+
+
+
+TEMOS O LEVEL DO EXAM... -> É O ENTRY LEVEL...
+
+
+
+
+
+
+
+--> FOUNDATIONAL LEVEL....
+
+
+
+
+
+--> O CUSTO DO EXAME É 100 DOLARES...
+
+
+
+
+
+
+
+--> PER ATTEMPT COST --> QUER DIZER QUE 
+
+ESSE CUSTO TEM QUE SER PAGO 
+
+CADA VEZ QUE 
+
+VC 
+
+FALHA...
+
+
+
+
+
+
+
+
+TEMOS 90MIN PARA FAZER O EXAM...
+
+
+
+
+
+
+
+65 QUESTOES --> OU MULTIPLE CHOICE OU MULTIPLE 
+
+RESPONSE...
+
+
+
+
+
+
+QUER DIZER QUE 
+
+SEMPRE TEREMOS MÚLTIPLAS RESPOSTAS..
+
+
+
+
+
+
+
+E CADA RESPOSTA APONTARÁ SE TERÁ 1 OU MÚLTIPLAS 
+
+
+RESPOSTAS CORRETAS...
+
+
+
+
+
+
+
+--> CERTO... NAO PARECE MT FACIL...
+
+
+
+
+
+
+PODEMOS REALIZAR O EXAME COM 2 PROVIDERS...
+
+
+
+
+
+PEARSON VUE E PSI...
+
+
+
+
+
+
+--> O PROFESSOR 
+
+RECOMENDA 
+
+
+
+
+A VERSAO ONLINE... --> VC SERÁ MONITORADO 
+ENQUANTO VC 
+
+FAZ A PROVA...
+
+
+
+
+
+
+
+
+
+
+
+VC TAMBÉM PODE REALIZAR O EXAME EM MÚLTIPLAS 
+
+
+
+LINGUAS..
+
+
+
+
+
+
+O PRACTICE EXAM QUE VEM COM ESSE CURSO TAMBÉM É BOM PARA 
+
+VER COMO ESSAS QUESTIONS VAO SE PARECER....
+
+
+
+
+
+
+
+AQUI VC 
+
+GANHA TAMBÉM AS ANSWERS A ESSAS QUESTIONS... ÓTIMA PRACTICE...
+
+
+
+
+
+
+
+
+
+
+O EXAM GUIDE TAMBÉM PODE SER INTERESTING, MAS NEM TANTO...
+
+
+
+
+
+
+
+
+
+
+-. DESSAS 65 QUESTOES,
+
+APENAS 50 VAO AFETAR SEU SCORE...
+
+
+
+
+
+
+15 SERAO UNSCORED QUESTIONS --> MAS VOCE NAO VERÁ QUAIS QUESTIONS 
+
+SAO SCORED E QUAIS NAO SAO...
+
+
+
+
+
+
+GANHAREMOS 1 SCORE DE 100 A 1000...
+
+
+
+
+
+VOCE PRECISA TER 70% DAS QUESTOES CORRETAS...
+
+
+
+
+
+
+
+--> O PROFESSOR DIZ 70% PQ NEM TODAS QUESTOES 
+
+TEM O MESMO PESO..
+
+
+
+
+
+
+
+
+ESSE CLOUD PRACTICIONER EXAM É MAIS SOBRE 
+
+
+OS BENEFITS DE USAR A CLOUD,
+
+
+KEY CLOUD CONCEPTS COMO SCALABILITY...
+
+
+
+
+
+
+
+-> TAMBÉM DESCREVER O QUE CADA SERVICE É...
+
+
+
+
+--> VC NAO PRECISA CONSTRUIR COMPLEX ARCHITECTURES,
+MAS DEVE 
+
+SABER O QUE 
+
+CADA 1 DESSES SERVICES É ABOUT,
+
+E COMO DIFEREM 1 EM RELACAO A OUTRO...
+
+
+
+
+
+
+
+
+
+
+
+--> É PROVEITOSO IR ATÉ A CLOUD PQ 
+
+VC NAO TEM QUE GERENCIAR SUA PRÓPRIA INFRAESTRUTURA...
+
+
+
+
+
+FOQUE EM SABER O QUE É A CLOUD, O QUE É O AWS, QUAIS AS ADVANTAGES
+
+
+E QUAIS SAO OS KEY-SERVICES...
+
+
+
+
+
+
+VC DEVE SABER COMO FUNCIONA A SECURITY, O SECURITY MODEL,
+
+
+COMO VC PODE PROTEGER SUA CONTA, E COISAS ASSIM...
+
+
+
+
+
+
+
+
+VC DEVE SABER EM GERAL OS SERVICES MENCIONADOS AO FINAL, TAMBÉM....
+
+
+
+
+
+
+
+
+
+
+
+In order to prepare for the exam in the best possible way, you should not just watch the course videos and go through the course slides.
+
+Instead, in addition to the course resources (videos, slides etc.), you should also visit all service overview pages, visit AWS' general cloud concept / marketing pages and explore the Well-Architected Framework pages.
+
+Like the overview page for the Trusted Advisor service: https://aws.amazon.com/premiumsupport/technology/trusted-advisor/
+
+The brief summaries you find on those pages help a lot with answering the exam questions - especially combined with all the knowledge you gained throughout this course.
+
+The same is true for some key AWS marketing pages that you should visit and study:
+
+Core Cloud Concepts: https://aws.amazon.com/getting-started/cloud-essentials/
+
+AWS Infrastructure: https://aws.amazon.com/about-aws/global-infrastructure/
+
+AWS Benefits: https://aws.amazon.com/application-hosting/benefits/
+
+Cloud Computing Advantages: https://docs.aws.amazon.com/whitepapers/latest/aws-overview/six-advantages-of-cloud-computing.html
+
+Well-Architected Framework: https://aws.amazon.com/architecture/well-architected/?wa-lens-whitepapers.sort-by=item.additionalFields.sortDate&wa-lens-whitepapers.sort-order=desc
+
+
